@@ -157,7 +157,7 @@
 	}
 
 	.breatcome-area {
-		background: url('/assets/img/abbg.png');
+		background: url('/assets/img/contact.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
@@ -196,6 +196,7 @@
 <!--==================================================-->
 <!-- Start Thrown Pricing Area -->
 <!--==================================================-->
+{{#each contacts}}
 <div class="contact-inner-page">
 	<div class="container">
 		<div class="row inner mb-150">
@@ -206,8 +207,7 @@
 					</div>
 					<div class="contact-content">
 						<h4>Phone Number</h4>
-						<span>012-345-6789</span>
-						<span>539-737-1380</span>
+						<span>{{this.Phone}}</span>
 					</div>
 				</div>
 			</div>
@@ -218,8 +218,12 @@
 					</div>
 					<div class="contact-content">
 						<h4>E-mail</h4>
-						<span>inquiry@example.com</span>
-						<span>info@example.com</span>
+						<span>info@hydrosanitary.com</span>
+						<span>sales@hydrosanitary.com</span>
+						<span>accounts@hydrosanitary.com</span>
+						<span>sales1@hydrosanitary.com</span>
+						<span>sales2@hydrosanitary.com</span>
+
 					</div>
 				</div>
 			</div>
@@ -230,8 +234,7 @@
 					</div>
 					<div class="contact-content">
 						<h4>Address</h4>
-						<span>27 Division St, New York</span>
-						<span>NY 10002, USA</span>
+						<span>{{this.Location}}</span>
 					</div>
 				</div>
 			</div>
@@ -292,6 +295,8 @@
 		</div>
 	</div>
 </div>
+
+{{/each}}
 <!--==================================================-->
 <!-- End Thrown Pricing Area -->
 <!--==================================================-->
@@ -581,10 +586,14 @@
 						</ul>
 					</div>
 					<div class="footer-widget-contct-menu">
-						<ul>
-							<li><a href="#">99999 999 99</a></li>
-							<li class="line"><a href="#">example@gmail.com</a></li>
-							<li><a href="#">address here</a></li>
+						<ul class="">
+							{{#each contacts}}
+							<li><i class="bi bi-geo-alt-fill"></i>{{this.Location}}</li>
+							<li><i class="bi bi-telephone-fill"></i>{{this.Phone}}</li>
+							<li><i class="bi bi-envelope"></i> {{this.Email}}</li>
+							<li><i class="bi bi-alarm-fill"></i> Week Days: 08.00 to 10.00
+							</li>
+							{{/each}}
 						</ul>
 					</div>
 				</div>

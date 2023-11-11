@@ -357,9 +357,10 @@
 						</div>
 					</div>
 					<div class="choose-discription">
-						<p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-							aliquip ex ea commodo consequat.</p>
+						<p>ABMTC is striving to ensure total customer satisfaction by providing dedicated service to all
+							levels.
+
+							.</p>
 					</div>
 
 					<div class="section-container">
@@ -959,12 +960,10 @@
 							<h5 class="text-white">Our Mission</h5>
 						</div>
 						<div class="bg2">
-							<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-								aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-								pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-								deserunt mollit anim id est laborum.</p>
+							<p class="text-white">ABMTC, is strived to be one of the most dedicated and committed
+								suppliers in the industry by upholding the values of business ethics. We adhere and
+								adopt stringent measures to achieve quality and workers. workers' health and safety to
+								the international standards..</p>
 						</div>
 					</div>
 				</div>
@@ -1538,11 +1537,13 @@
 						<div class="contact-info">
 							<h2>Contact Info</h2>
 							<ul class="list-style-one">
-								<li><i class="bi bi-geo-alt-fill"></i>Address Here</li>
-								<li><i class="bi bi-telephone-fill"></i>99999999999</li>
-								<li><i class="bi bi-envelope"></i> info@example.com</li>
+								{{#each contacts}}
+								<li><i class="bi bi-geo-alt-fill"></i>{{this.Location}}</li>
+								<li><i class="bi bi-telephone-fill"></i>{{this.Phone}}</li>
+								<li><i class="bi bi-envelope"></i> {{this.Email}}</li>
 								<li><i class="bi bi-alarm-fill"></i> Week Days: 08.00 to 10.00
 								</li>
+								{{/each}}
 							</ul>
 						</div>
 						<ul class="social-box">

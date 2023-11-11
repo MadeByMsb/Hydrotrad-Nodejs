@@ -15,8 +15,64 @@ const verifySignedIn = (req, res, next) => {
 /* GET admins listing. */
 router.get("/", verifySignedIn, function (req, res, next) {
   let administator = req.session.admin;
-  adminHelper.getAllProducts().then((products) => {
+  adminHelper.getAllproducts().then((products) => {
     res.render("admin/home", { admin: true, layout: "adminlayout", products, administator });
+  });
+});
+
+
+
+///////ALL contact/////////////////////                                         
+router.get("/all-contacts", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  adminHelper.getAllcontacts().then((contacts) => {
+    res.render("admin/contact/all-contacts", { admin: true, layout: "adminlayout", contacts, administator });
+  });
+});
+
+///////ADD contact/////////////////////                                         
+router.get("/add-contact", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  res.render("admin/contact/add-contact", { admin: true, layout: "adminlayout", administator });
+});
+
+///////ADD contact/////////////////////                                         
+router.post("/add-contact", function (req, res) {
+  adminHelper.addcontact(req.body, (id) => {
+    res.redirect("/admin/contact/all-contacts");
+  });
+});
+
+///////EDIT contact/////////////////////                                         
+router.get("/edit-contact/:id", verifySignedIn, async function (req, res) {
+  let administator = req.session.admin;
+  let contactId = req.params.id;
+  let contact = await adminHelper.getcontactDetails(contactId);
+  console.log(contact);
+  res.render("admin/contact/edit-contact", { admin: true, layout: "adminlayout", contact, administator });
+});
+
+///////EDIT contact/////////////////////                                         
+router.post("/edit-contact/:id", verifySignedIn, function (req, res) {
+  let contactId = req.params.id;
+  adminHelper.updatecontact(contactId, req.body).then(() => {
+    res.redirect("/admin/contact/all-contacts");
+  });
+});
+
+///////DELETE contact/////////////////////                                         
+router.get("/delete-contact/:id", verifySignedIn, function (req, res) {
+  let contactId = req.params.id;
+  adminHelper.deletecontact(contactId).then((response) => {
+    fs.unlinkSync("./public/images/contact-images/" + contactId + ".png");
+    res.redirect("/admin/contact/all-contacts");
+  });
+});
+
+///////DELETE ALL contact/////////////////////                                         
+router.get("/delete-all-contacts", verifySignedIn, function (req, res) {
+  adminHelper.deleteAllcontacts().then(() => {
+    res.redirect("/admin/contact/all-contacts");
   });
 });
 
@@ -359,16 +415,75 @@ router.get("/delete-all-sites", verifySignedIn, function (req, res) {
 });
 
 
-
-
-
-
+///////ALL product/////////////////////                                         
 router.get("/all-products", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
-  adminHelper.getAllProducts().then((products) => {
-    res.render("admin/all-products", { admin: true, layout: "adminlayout", products, administator });
+  adminHelper.getAllproducts().then((products) => {
+    res.render("admin/product/all-products", { admin: true, layout: "adminlayout", products, administator });
   });
 });
+
+///////ADD Products/////////////////////                                         
+router.get("/add-product", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  res.render("admin/product/add-product", { admin: true, layout: "adminlayout", administator });
+});
+
+///////ADD Products/////////////////////                                         
+router.post("/add-product", function (req, res) {
+  adminHelper.addproduct(req.body, (id) => {
+    let image = req.files.Image;
+    image.mv("./public/images/product-images/" + id + ".png", (err, done) => {
+      if (!err) {
+        res.redirect("/admin/product/all-products");
+      } else {
+        console.log(err);
+      }
+    });
+  });
+});
+
+///////EDIT Products/////////////////////                                         
+router.get("/edit-product/:id", verifySignedIn, async function (req, res) {
+  let administator = req.session.admin;
+  let productId = req.params.id;
+  let product = await adminHelper.getproductDetails(productId);
+  console.log(product);
+  res.render("admin/product/edit-product", { admin: true, layout: "adminlayout", product, administator });
+});
+
+///////EDIT Products/////////////////////                                         
+router.post("/edit-product/:id", verifySignedIn, function (req, res) {
+  let productId = req.params.id;
+  adminHelper.updateproduct(productId, req.body).then(() => {
+    if (req.files) {
+      let image = req.files.Image;
+      if (image) {
+        image.mv("./public/images/product-images/" + productId + ".png");
+      }
+    }
+    res.redirect("/admin/product/all-products");
+  });
+});
+
+///////DELETE Products/////////////////////                                         
+router.get("/delete-product/:id", verifySignedIn, function (req, res) {
+  let productId = req.params.id;
+  adminHelper.deleteproduct(productId).then((response) => {
+    fs.unlinkSync("./public/images/product-images/" + productId + ".png");
+    res.redirect("/admin/product/all-products");
+  });
+});
+
+///////DELETE ALL Products/////////////////////                                         
+router.get("/delete-all-products", verifySignedIn, function (req, res) {
+  adminHelper.deleteAllproducts().then(() => {
+    res.redirect("/admin/product/all-products");
+  });
+});
+
+
+
 
 router.get("/signup", function (req, res) {
   if (req.session.signedInAdmin) {
@@ -424,59 +539,6 @@ router.get("/signout", function (req, res) {
   req.session.signedInAdmin = false;
   req.session.admin = null;
   res.redirect("/admin");
-});
-
-router.get("/add-product", verifySignedIn, function (req, res) {
-  let administator = req.session.admin;
-  res.render("admin/add-product", { admin: true, layout: "adminlayout", administator });
-});
-
-router.post("/add-product", function (req, res) {
-  adminHelper.addProduct(req.body, (id) => {
-    let image = req.files.Image;
-    image.mv("./public/images/product-images/" + id + ".png", (err, done) => {
-      if (!err) {
-        res.redirect("/admin/add-product");
-      } else {
-        console.log(err);
-      }
-    });
-  });
-});
-
-router.get("/edit-product/:id", verifySignedIn, async function (req, res) {
-  let administator = req.session.admin;
-  let productId = req.params.id;
-  let product = await adminHelper.getProductDetails(productId);
-  console.log(product);
-  res.render("admin/edit-product", { admin: true, layout: "adminlayout", product, administator });
-});
-
-router.post("/edit-product/:id", verifySignedIn, function (req, res) {
-  let productId = req.params.id;
-  adminHelper.updateProduct(productId, req.body).then(() => {
-    if (req.files) {
-      let image = req.files.Image;
-      if (image) {
-        image.mv("./public/images/product-images/" + productId + ".png");
-      }
-    }
-    res.redirect("/admin/all-products");
-  });
-});
-
-router.get("/delete-product/:id", verifySignedIn, function (req, res) {
-  let productId = req.params.id;
-  adminHelper.deleteProduct(productId).then((response) => {
-    fs.unlinkSync("./public/images/product-images/" + productId + ".png");
-    res.redirect("/admin/all-products");
-  });
-});
-
-router.get("/delete-all-products", verifySignedIn, function (req, res) {
-  adminHelper.deleteAllProducts().then(() => {
-    res.redirect("/admin/all-products");
-  });
 });
 
 router.get("/all-users", verifySignedIn, function (req, res) {

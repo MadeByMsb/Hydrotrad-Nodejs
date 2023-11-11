@@ -55,6 +55,8 @@ app.use("/admin/social", adminRouter);
 app.use("/admin/banner", adminRouter);
 app.use("/admin/about", adminRouter);
 app.use("/admin/sone", adminRouter);
+app.use("/admin/product", adminRouter);
+app.use("/admin/contact", adminRouter);
 
 
 // catch 404 and forward to error handler

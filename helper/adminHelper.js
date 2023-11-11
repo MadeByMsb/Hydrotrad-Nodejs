@@ -6,6 +6,98 @@ const objectId = require("mongodb").ObjectID;
 module.exports = {
 
 
+  ///////ADD contact/////////////////////                                         
+  addcontact: (contact, callback) => {
+    console.log(contact);
+    contact.Price = parseInt(contact.Price);
+    db.get()
+      .collection(collections.CONTACT_COLLECTION)
+      .insertOne(contact)
+      .then((data) => {
+        console.log(data);
+        callback(data.ops[0]._id);
+      });
+  },
+
+  ///////GET ALL contact/////////////////////                                            
+  getAllcontacts: () => {
+    return new Promise(async (resolve, reject) => {
+      let contacts = await db
+        .get()
+        .collection(collections.CONTACT_COLLECTION)
+        .find()
+        .toArray();
+      resolve(contacts);
+    });
+  },
+
+  ///////ADD contact DETAILS/////////////////////                                            
+  getcontactDetails: (contactId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.CONTACT_COLLECTION)
+        .findOne({
+          _id: objectId(contactId)
+        })
+        .then((response) => {
+          resolve(response);
+        });
+    });
+  },
+
+  ///////DELETE contact/////////////////////                                            
+  deletecontact: (contactId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.CONTACT_COLLECTION)
+        .removeOne({
+          _id: objectId(contactId)
+        })
+        .then((response) => {
+          console.log(response);
+          resolve(response);
+        });
+    });
+  },
+
+  ///////UPDATE contact/////////////////////                                            
+  updatecontact: (contactId, contactDetails) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.CONTACT_COLLECTION)
+        .updateOne(
+          {
+            _id: objectId(contactId)
+          },
+          {
+            $set: {
+              Phone: contactDetails.Phone,
+              Email: contactDetails.Email,
+              Location: contactDetails.Location,
+              maplink: contactDetails.maplink,
+            },
+          }
+        )
+        .then((response) => {
+          resolve();
+        });
+    });
+  },
+
+
+  ///////DELETE ALL contact/////////////////////                                            
+  deleteAllcontacts: () => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.CONTACT_COLLECTION)
+        .remove({})
+        .then(() => {
+          resolve();
+        });
+    });
+  },
+
+
   ///////ADD sectionone/////////////////////                                         
   addsone: (sone, callback) => {
     console.log(sone);
@@ -464,26 +556,12 @@ module.exports = {
     });
   },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  addProduct: (product, callback) => {
+  ///////ADD Products/////////////////////                                         
+  addproduct: (product, callback) => {
     console.log(product);
     product.Price = parseInt(product.Price);
     db.get()
-      .collection(collections.PRODUCTS_COLLECTION)
+      .collection(collections.PRODUCT_COLLECTION)
       .insertOne(product)
       .then((data) => {
         console.log(data);
@@ -491,16 +569,84 @@ module.exports = {
       });
   },
 
-  getAllProducts: () => {
+  ///////GET ALL Products/////////////////////                                            
+  getAllproducts: () => {
     return new Promise(async (resolve, reject) => {
       let products = await db
         .get()
-        .collection(collections.PRODUCTS_COLLECTION)
+        .collection(collections.PRODUCT_COLLECTION)
         .find()
         .toArray();
       resolve(products);
     });
   },
+
+  ///////ADD Products DETAILS/////////////////////                                            
+  getproductDetails: (productId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.PRODUCT_COLLECTION)
+        .findOne({
+          _id: objectId(productId)
+        })
+        .then((response) => {
+          resolve(response);
+        });
+    });
+  },
+
+  ///////DELETE Products/////////////////////                                            
+  deleteproduct: (productId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.PRODUCT_COLLECTION)
+        .removeOne({
+          _id: objectId(productId)
+        })
+        .then((response) => {
+          console.log(response);
+          resolve(response);
+        });
+    });
+  },
+
+  ///////UPDATE Products/////////////////////                                            
+  updateproduct: (productId, productDetails) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.PRODUCT_COLLECTION)
+        .updateOne(
+          {
+            _id: objectId(productId)
+          },
+          {
+            $set: {
+              title: productDetails.title,
+              category: productDetails.category,
+              desc: productDetails.desc,
+              btnlink: productDetails.btnlink,
+            },
+          }
+        )
+        .then((response) => {
+          resolve();
+        });
+    });
+  },
+
+
+  ///////DELETE ALL Products/////////////////////                                            
+  deleteAllproducts: () => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.PRODUCT_COLLECTION)
+        .remove({})
+        .then(() => {
+          resolve();
+        });
+    });
+  },
+
 
   doSignup: (adminData) => {
     return new Promise(async (resolve, reject) => {
@@ -544,60 +690,7 @@ module.exports = {
     });
   },
 
-  getProductDetails: (productId) => {
-    return new Promise((resolve, reject) => {
-      db.get()
-        .collection(collections.PRODUCTS_COLLECTION)
-        .findOne({ _id: objectId(productId) })
-        .then((response) => {
-          resolve(response);
-        });
-    });
-  },
 
-  deleteProduct: (productId) => {
-    return new Promise((resolve, reject) => {
-      db.get()
-        .collection(collections.PRODUCTS_COLLECTION)
-        .removeOne({ _id: objectId(productId) })
-        .then((response) => {
-          console.log(response);
-          resolve(response);
-        });
-    });
-  },
-
-  updateProduct: (productId, productDetails) => {
-    return new Promise((resolve, reject) => {
-      db.get()
-        .collection(collections.PRODUCTS_COLLECTION)
-        .updateOne(
-          { _id: objectId(productId) },
-          {
-            $set: {
-              Name: productDetails.Name,
-              Category: productDetails.Category,
-              Price: productDetails.Price,
-              Description: productDetails.Description,
-            },
-          }
-        )
-        .then((response) => {
-          resolve();
-        });
-    });
-  },
-
-  deleteAllProducts: () => {
-    return new Promise((resolve, reject) => {
-      db.get()
-        .collection(collections.PRODUCTS_COLLECTION)
-        .remove({})
-        .then(() => {
-          resolve();
-        });
-    });
-  },
 
   getAllUsers: () => {
     return new Promise(async (resolve, reject) => {

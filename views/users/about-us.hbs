@@ -195,55 +195,33 @@
 <!--==================================================-->
 <!-- Start Thrown About Area -->
 <!--==================================================-->
+{{#each abouts}}
 <div class="about-area inner-page">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-12">
 				<div class="about-thumb">
-					<img src="assets/img/img1.png" alt="">
+					<img src="/images/about-images/{{this._id}}.png" alt="">
 					<div class="about-shape bounce-animate">
 						<img src="assets/img/img2.png" alt="">
 					</div>
 				</div>
-				<div class="about-thumb">
-					<img src="assets/img/img1.png" alt="">
-					<div class="about-shape bounce-animate">
-						<img src="assets/img/img2.png" alt="">
-					</div>
-				</div>
+
 			</div>
 			<div class="col-lg-6 col-md-12">
 				<div class="section-title">
 					<div class="about-sub-title">
-						<h4>About Us</h4>
+						<h4>{{this.subtitle}}</h4>
 					</div>
 					<div class="about-main-title">
-						<h4>AFREEN BUILDING MATERIALS TRADING CO. L.L.C (ABMTC) </h4>
-						<h4 class="text-primary">ESTABLISHED IN 2006</h4>
+						<h2 class="font-bold">{{this.Mheading}}</h2>
 					</div>
 				</div>
 				<div class="about-content">
 					<div class="about-discribtion">
-						<p>Afreen Building Materials Trading Co. L.L.C (ABMTC) Established in 2006, headquartered in Abu
-							Dhabi, and branches in Dubai and Sharjah, U.A.E. — is one of the largest stockists of
-							Mechanical, Electrical, Plumbing, Civil Construction, and Oil Field Products. <br><br>
 
+						<p>{{this.desc}}</p>
 
-							A centralized distribution system, along with fully computerized operations ensures
-							stringent quality checks and superior standards are maintained for delivery times within the
-							schedules provided. ABMTC operates from a full-fledged showroom in Abu Dhabi, Mussafah -M/9
-							& M/14, with branches and extensive warehousing facilities. <br><br>
-
-							ABMTC is constantly striving to add quality products at affordable prices. ABMTC is striving
-							to ensure total customer satisfaction by providing dedicated service to all levels. We have
-							a team of highly qualified sales professionals who are fully trained to be of service on all
-							strategic business units. <br><br>
-
-							ABMTC has been associated with world-class Mechanical, Electrical Civil Construction, and
-							oil field Products. We believe our services have immensely contributed to the infrastructure
-							development requirements of the country for the past 16 years. Most of the products can be
-							immediately supplied from our ready stock at short notice.
-						</p>
 					</div>
 
 					<div class="row">
@@ -266,6 +244,7 @@
 		</div>
 	</div>
 </div>
+{{/each}}
 <!--==================================================-->
 <!-- End Thrown About Area -->
 <!--==================================================-->
@@ -532,10 +511,14 @@
 						</ul>
 					</div>
 					<div class="footer-widget-contct-menu">
-						<ul>
-							<li><a href="#">99999 999 99</a></li>
-							<li class="line"><a href="#">example@gmail.com</a></li>
-							<li><a href="#">address here</a></li>
+						<ul class="">
+							{{#each contacts}}
+							<li><i class="bi bi-geo-alt-fill"></i>{{this.Location}}</li>
+							<li><i class="bi bi-telephone-fill"></i>{{this.Phone}}</li>
+							<li><i class="bi bi-envelope"></i> {{this.Email}}</li>
+							<li><i class="bi bi-alarm-fill"></i> Week Days: 08.00 to 10.00
+							</li>
+							{{/each}}
 						</ul>
 					</div>
 				</div>
