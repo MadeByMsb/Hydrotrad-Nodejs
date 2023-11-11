@@ -93,10 +93,10 @@
     z-index: 1;
 }
 .thrown-topbar-area::before {
-    background: {{this.primarycolor}};
+    background: white;
 }
 .thrown-header-area::before {
-    background: {{this.primarycolor}};
+    background: white;
 }
 .mobile-menu-area {
     background: {{this.primarycolor}};
@@ -178,6 +178,21 @@ a.handbag:before {
 }
 .banner-section .owl-prev::before {
 background: {{this.primarycolor}};
+}
+.thrown-menu ul li a {
+    display: inline-block;
+    color: #141422;
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 38px 0;
+    text-decoration: none;
+    position: relative;
+    transition: .5s;
+}
+.thrown-menu ul li a:hover {
+    color: {{this.primarycolor}};
+   
 }
 	</style>
 {{/each}}

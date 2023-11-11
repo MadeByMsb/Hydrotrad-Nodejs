@@ -6,186 +6,463 @@ const objectId = require("mongodb").ObjectID;
 module.exports = {
 
 
+  ///////ADD sectionone/////////////////////                                         
+  addsone: (sone, callback) => {
+    console.log(sone);
+    sone.Price = parseInt(sone.Price);
+    db.get()
+      .collection(collections.SONE_COLLECTION)
+      .insertOne(sone)
+      .then((data) => {
+        console.log(data);
+        callback(data.ops[0]._id);
+      });
+  },
+
+  ///////GET ALL sectionone/////////////////////                                            
+  getAllsones: () => {
+    return new Promise(async (resolve, reject) => {
+      let sones = await db
+        .get()
+        .collection(collections.SONE_COLLECTION)
+        .find()
+        .toArray();
+      resolve(sones);
+    });
+  },
+
+  ///////ADD sectionone DETAILS/////////////////////                                            
+  getsoneDetails: (soneId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.SONE_COLLECTION)
+        .findOne({
+          _id: objectId(soneId)
+        })
+        .then((response) => {
+          resolve(response);
+        });
+    });
+  },
+
+  ///////DELETE sectionone/////////////////////                                            
+  deletesone: (soneId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.SONE_COLLECTION)
+        .removeOne({
+          _id: objectId(soneId)
+        })
+        .then((response) => {
+          console.log(response);
+          resolve(response);
+        });
+    });
+  },
+
+  ///////UPDATE sectionone/////////////////////                                            
+  updatesone: (soneId, soneDetails) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.SONE_COLLECTION)
+        .updateOne(
+          {
+            _id: objectId(soneId)
+          },
+          {
+            $set: {
+              Mheading: soneDetails.Mheading,
+              desc: soneDetails.desc,
+              btnlink: soneDetails.btnlink,
+            },
+          }
+        )
+        .then((response) => {
+          resolve();
+        });
+    });
+  },
+
+
+  ///////DELETE ALL sectionone/////////////////////                                            
+  deleteAllsones: () => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.SONE_COLLECTION)
+        .remove({})
+        .then(() => {
+          resolve();
+        });
+    });
+  },
+
+
+  ///////ADD About/////////////////////                                         
+  addabout: (about, callback) => {
+    console.log(about);
+    about.Price = parseInt(about.Price);
+    db.get()
+      .collection(collections.ABOUT_COLLECTION)
+      .insertOne(about)
+      .then((data) => {
+        console.log(data);
+        callback(data.ops[0]._id);
+      });
+  },
+
+  ///////GET ALL About/////////////////////                                            
+  getAllabouts: () => {
+    return new Promise(async (resolve, reject) => {
+      let abouts = await db
+        .get()
+        .collection(collections.ABOUT_COLLECTION)
+        .find()
+        .toArray();
+      resolve(abouts);
+    });
+  },
+
+  ///////ADD About DETAILS/////////////////////                                            
+  getaboutDetails: (aboutId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.ABOUT_COLLECTION)
+        .findOne({
+          _id: objectId(aboutId)
+        })
+        .then((response) => {
+          resolve(response);
+        });
+    });
+  },
+
+  ///////DELETE About/////////////////////                                            
+  deleteabout: (aboutId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.ABOUT_COLLECTION)
+        .removeOne({
+          _id: objectId(aboutId)
+        })
+        .then((response) => {
+          console.log(response);
+          resolve(response);
+        });
+    });
+  },
+
+  ///////UPDATE About/////////////////////                                            
+  updateabout: (aboutId, aboutDetails) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.ABOUT_COLLECTION)
+        .updateOne(
+          {
+            _id: objectId(aboutId)
+          },
+          {
+            $set: {
+              subtitle: aboutDetails.subtitle,
+              Mheading: aboutDetails.Mheading,
+              desc: aboutDetails.desc,
+            },
+          }
+        )
+        .then((response) => {
+          resolve();
+        });
+    });
+  },
+
+
+  ///////DELETE ALL About/////////////////////                                            
+  deleteAllabouts: () => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.ABOUT_COLLECTION)
+        .remove({})
+        .then(() => {
+          resolve();
+        });
+    });
+  },
+
+  ///////ADD Banner/////////////////////                                         
+  addbanner: (banner, callback) => {
+    console.log(banner);
+    banner.Price = parseInt(banner.Price);
+    db.get()
+      .collection(collections.BANNER_COLLECTION)
+      .insertOne(banner)
+      .then((data) => {
+        console.log(data);
+        callback(data.ops[0]._id);
+      });
+  },
+
+  ///////GET ALL Banner/////////////////////                                            
+  getAllbanners: () => {
+    return new Promise(async (resolve, reject) => {
+      let banners = await db
+        .get()
+        .collection(collections.BANNER_COLLECTION)
+        .find()
+        .toArray();
+      resolve(banners);
+    });
+  },
+
+  ///////ADD Banner DETAILS/////////////////////                                            
+  getbannerDetails: (bannerId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BANNER_COLLECTION)
+        .findOne({
+          _id: objectId(bannerId)
+        })
+        .then((response) => {
+          resolve(response);
+        });
+    });
+  },
+
+  ///////DELETE Banner/////////////////////                                            
+  deletebanner: (bannerId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BANNER_COLLECTION)
+        .removeOne({
+          _id: objectId(bannerId)
+        })
+        .then((response) => {
+          console.log(response);
+          resolve(response);
+        });
+    });
+  },
+
+  ///////UPDATE Banner/////////////////////                                            
+  updatebanner: (bannerId, bannerDetails) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BANNER_COLLECTION)
+        .updateOne(
+          {
+            _id: objectId(bannerId)
+          },
+          {
+            $set: {
+              subtitle: bannerDetails.subtitle,
+              Mheading: bannerDetails.Mheading,
+              desc: bannerDetails.desc,
+              btnlink: bannerDetails.btnlink,
+            },
+          }
+        )
+        .then((response) => {
+          resolve();
+        });
+    });
+  },
+
+
+  ///////DELETE ALL Banner/////////////////////                                            
+  deleteAllbanners: () => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BANNER_COLLECTION)
+        .remove({})
+        .then(() => {
+          resolve();
+        });
+    });
+  },
 
 
   ///////ADD Site/////////////////////                                         
   addsite: (site, callback) => {
     console.log(site);
-  db.get()
-    .collection(collections.SITE_COLLECTION)
-    .insertOne(site)
-    .then((data) => {
-      console.log(data);
-      callback(data.ops[0]._id);
-    });
+    db.get()
+      .collection(collections.SITE_COLLECTION)
+      .insertOne(site)
+      .then((data) => {
+        console.log(data);
+        callback(data.ops[0]._id);
+      });
   },
 
-///////GET ALL Site/////////////////////                                            
-   getAllsites: () => {
+  ///////GET ALL Site/////////////////////                                            
+  getAllsites: () => {
     return new Promise(async (resolve, reject) => {
       let sites = await db
-      .get()
-      .collection(collections.SITE_COLLECTION)
-      .find()
-      .toArray();
-  resolve(sites);
+        .get()
+        .collection(collections.SITE_COLLECTION)
+        .find()
+        .toArray();
+      resolve(sites);
     });
   },
 
-///////ADD Site DETAILS/////////////////////                                            
+  ///////ADD Site DETAILS/////////////////////                                            
   getsiteDetails: (siteId) => {
     return new Promise((resolve, reject) => {
       db.get()
         .collection(collections.SITE_COLLECTION)
-      .findOne({ _id: objectId(siteId)
-  })
-      .then((response) => {
-    resolve(response);
-  });
-  });
+        .findOne({
+          _id: objectId(siteId)
+        })
+        .then((response) => {
+          resolve(response);
+        });
+    });
   },
 
-///////DELETE Site/////////////////////                                            
+  ///////DELETE Site/////////////////////                                            
   deletesite: (siteId) => {
     return new Promise((resolve, reject) => {
       db.get()
         .collection(collections.SITE_COLLECTION)
-      .removeOne({ _id: objectId(siteId)
-  })
+        .removeOne({
+          _id: objectId(siteId)
+        })
         .then((response) => {
-    console.log(response);
-    resolve(response);
-  });
+          console.log(response);
+          resolve(response);
+        });
     });
   },
 
-///////UPDATE Site/////////////////////                                            
-   updatesite: (siteId, siteDetails) => {
+  ///////UPDATE Site/////////////////////                                            
+  updatesite: (siteId, siteDetails) => {
     return new Promise((resolve, reject) => {
       db.get()
         .collection(collections.SITE_COLLECTION)
-      .updateOne(
-        { _id: objectId(siteId)
-  },
-  {
-    $set: {
-      Sname: siteDetails.Sname,
-        Saddress: siteDetails.Saddress,
-          Sphone: siteDetails.Sphone,
-            Semail: siteDetails.Semail,
-            Slocation: siteDetails.Slocation,
-            primarycolor: siteDetails.primarycolor,
-            secondarycolor: siteDetails.secondarycolor,
-            btncolor: siteDetails.btncolor,
+        .updateOne(
+          {
+            _id: objectId(siteId)
+          },
+          {
+            $set: {
+              Sname: siteDetails.Sname,
+              Saddress: siteDetails.Saddress,
+              Sphone: siteDetails.Sphone,
+              Semail: siteDetails.Semail,
+              Slocation: siteDetails.Slocation,
+              primarycolor: siteDetails.primarycolor,
+              secondarycolor: siteDetails.secondarycolor,
+              btncolor: siteDetails.btncolor,
 
             },
           }
         )
         .then((response) => {
-              resolve();
-            });
+          resolve();
+        });
     });
   },
 
 
-///////DELETE ALL Site/////////////////////                                            
+  ///////DELETE ALL Site/////////////////////                                            
   deleteAllsites: () => {
     return new Promise((resolve, reject) => {
       db.get()
         .collection(collections.SITE_COLLECTION)
-      .remove({})
-      .then(() => {
-        resolve();
-      });
-  });
-  },
-  
-
-
-///////ADD Social/////////////////////                                         
-addsocial: (social, callback) => {
-  console.log(social);
-db.get()
-  .collection(collections.SOCIAL_COLLECTION)
-  .insertOne(social)
-  .then((data) => {
-    console.log(data);
-    callback(data.ops[0]._id);
-  });
-},
-
-///////GET ALL Social/////////////////////                                            
- getAllsocials: () => {
-  return new Promise(async (resolve, reject) => {
-    let socials = await db
-    .get()
-    .collection(collections.SOCIAL_COLLECTION)
-    .find()
-    .toArray();
-resolve(socials);
-  });
-},
-
-///////ADD Social DETAILS/////////////////////                                            
-getsocialDetails: (socialId) => {
-  return new Promise((resolve, reject) => {
-    db.get()
-      .collection(collections.SOCIAL_COLLECTION)
-    .findOne({ _id: objectId(socialId)
-})
-    .then((response) => {
-  resolve(response);
-});
-});
-},
-
-///////DELETE Social/////////////////////                                            
-deletesocial: (socialId) => {
-  return new Promise((resolve, reject) => {
-    db.get()
-      .collection(collections.SOCIAL_COLLECTION)
-    .removeOne({ _id: objectId(socialId)
-})
-      .then((response) => {
-  console.log(response);
-  resolve(response);
-});
-  });
-},
-
-///////UPDATE Social/////////////////////                                            
- updatesocial: (socialId, socialDetails) => {
-  return new Promise((resolve, reject) => {
-    db.get()
-      .collection(collections.SOCIAL_COLLECTION)
-    .updateOne(
-      { _id: objectId(socialId)
-},
-{
-  $set: {
-    name: socialDetails.name,
-      url: socialDetails.url,
-          },
-        }
-      )
-      .then((response) => {
-            resolve();
-          });
-  });
-},
-
-
-///////DELETE ALL Social/////////////////////                                            
-deleteAllsocials: () => {
-  return new Promise((resolve, reject) => {
-    db.get()
-      .collection(collections.SOCIAL_COLLECTION)
-    .remove({})
-    .then(() => {
-      resolve();
+        .remove({})
+        .then(() => {
+          resolve();
+        });
     });
-});
-},
+  },
+
+
+
+  ///////ADD Social/////////////////////                                         
+  addsocial: (social, callback) => {
+    console.log(social);
+    db.get()
+      .collection(collections.SOCIAL_COLLECTION)
+      .insertOne(social)
+      .then((data) => {
+        console.log(data);
+        callback(data.ops[0]._id);
+      });
+  },
+
+  ///////GET ALL Social/////////////////////                                            
+  getAllsocials: () => {
+    return new Promise(async (resolve, reject) => {
+      let socials = await db
+        .get()
+        .collection(collections.SOCIAL_COLLECTION)
+        .find()
+        .toArray();
+      resolve(socials);
+    });
+  },
+
+  ///////ADD Social DETAILS/////////////////////                                            
+  getsocialDetails: (socialId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.SOCIAL_COLLECTION)
+        .findOne({
+          _id: objectId(socialId)
+        })
+        .then((response) => {
+          resolve(response);
+        });
+    });
+  },
+
+  ///////DELETE Social/////////////////////                                            
+  deletesocial: (socialId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.SOCIAL_COLLECTION)
+        .removeOne({
+          _id: objectId(socialId)
+        })
+        .then((response) => {
+          console.log(response);
+          resolve(response);
+        });
+    });
+  },
+
+  ///////UPDATE Social/////////////////////                                            
+  updatesocial: (socialId, socialDetails) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.SOCIAL_COLLECTION)
+        .updateOne(
+          {
+            _id: objectId(socialId)
+          },
+          {
+            $set: {
+              name: socialDetails.name,
+              url: socialDetails.url,
+            },
+          }
+        )
+        .then((response) => {
+          resolve();
+        });
+    });
+  },
+
+
+  ///////DELETE ALL Social/////////////////////                                            
+  deleteAllsocials: () => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.SOCIAL_COLLECTION)
+        .remove({})
+        .then(() => {
+          resolve();
+        });
+    });
+  },
 
 
 
@@ -361,7 +638,7 @@ deleteAllsocials: () => {
     return new Promise(async (resolve, reject) => {
       db.get()
         .collection(collections.PRODUCTS_COLLECTION)
-        .createIndex({ Name : "text" }).then(async()=>{
+        .createIndex({ Name: "text" }).then(async () => {
           let result = await db
             .get()
             .collection(collections.PRODUCTS_COLLECTION)

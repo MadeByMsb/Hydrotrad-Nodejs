@@ -16,23 +16,226 @@ const verifySignedIn = (req, res, next) => {
 router.get("/", verifySignedIn, function (req, res, next) {
   let administator = req.session.admin;
   adminHelper.getAllProducts().then((products) => {
-    res.render("admin/home", { admin: true, layout:"adminlayout", products, administator });
+    res.render("admin/home", { admin: true, layout: "adminlayout", products, administator });
   });
 });
 
+
+///////ALL sone/////////////////////                                         
+router.get("/all-sones", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  adminHelper.getAllsones().then((sones) => {
+    res.render("admin/sone/all-sones", { admin: true, layout: "adminlayout", sones, administator });
+  });
+});
+
+///////ADD sectionone/////////////////////                                         
+router.get("/add-sone", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  res.render("admin/sone/add-sone", { admin: true, layout: "adminlayout", administator });
+});
+
+///////ADD sectionone/////////////////////                                         
+router.post("/add-sone", function (req, res) {
+  adminHelper.addsone(req.body, (id) => {
+    let image = req.files.Image;
+    image.mv("./public/images/sone-images/" + id + ".png", (err, done) => {
+      if (!err) {
+        res.redirect("/admin/sone/all-sones");
+      } else {
+        console.log(err);
+      }
+    });
+  });
+});
+
+///////EDIT sectionone/////////////////////                                         
+router.get("/edit-sone/:id", verifySignedIn, async function (req, res) {
+  let administator = req.session.admin;
+  let soneId = req.params.id;
+  let sone = await adminHelper.getsoneDetails(soneId);
+  console.log(sone);
+  res.render("admin/sone/edit-sone", { admin: true, layout: "adminlayout", sone, administator });
+});
+
+///////EDIT sectionone/////////////////////                                         
+router.post("/edit-sone/:id", verifySignedIn, function (req, res) {
+  let soneId = req.params.id;
+  adminHelper.updatesone(soneId, req.body).then(() => {
+    if (req.files) {
+      let image = req.files.Image;
+      if (image) {
+        image.mv("./public/images/sone-images/" + soneId + ".png");
+      }
+    }
+    res.redirect("/admin/sone/all-sones");
+  });
+});
+
+///////DELETE sectionone/////////////////////                                         
+router.get("/delete-sone/:id", verifySignedIn, function (req, res) {
+  let soneId = req.params.id;
+  adminHelper.deletesone(soneId).then((response) => {
+    fs.unlinkSync("./public/images/sone-images/" + soneId + ".png");
+    res.redirect("/admin/sone/all-sones");
+  });
+});
+
+///////DELETE ALL sectionone/////////////////////                                         
+router.get("/delete-all-sones", verifySignedIn, function (req, res) {
+  adminHelper.deleteAllsones().then(() => {
+    res.redirect("/admin/sone/all-sones");
+  });
+});
+
+
+///////ALL about/////////////////////                                         
+router.get("/all-abouts", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  adminHelper.getAllabouts().then((abouts) => {
+    res.render("admin/about/all-abouts", { admin: true, layout: "adminlayout", abouts, administator });
+  });
+});
+
+///////ADD About/////////////////////                                         
+router.get("/add-about", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  res.render("admin/about/add-about", { admin: true, layout: "adminlayout", administator });
+});
+
+///////ADD About/////////////////////                                         
+router.post("/add-about", function (req, res) {
+  adminHelper.addabout(req.body, (id) => {
+    let image = req.files.Image;
+    image.mv("./public/images/about-images/" + id + ".png", (err, done) => {
+      if (!err) {
+        res.redirect("/admin/about/all-abouts");
+      } else {
+        console.log(err);
+      }
+    });
+  });
+});
+
+///////EDIT About/////////////////////                                         
+router.get("/edit-about/:id", verifySignedIn, async function (req, res) {
+  let administator = req.session.admin;
+  let aboutId = req.params.id;
+  let about = await adminHelper.getaboutDetails(aboutId);
+  console.log(about);
+  res.render("admin/about/edit-about", { admin: true, layout: "adminlayout", about, administator });
+});
+
+///////EDIT About/////////////////////                                         
+router.post("/edit-about/:id", verifySignedIn, function (req, res) {
+  let aboutId = req.params.id;
+  adminHelper.updateabout(aboutId, req.body).then(() => {
+    if (req.files) {
+      let image = req.files.Image;
+      if (image) {
+        image.mv("./public/images/about-images/" + aboutId + ".png");
+      }
+    }
+    res.redirect("/admin/about/all-abouts");
+  });
+});
+
+///////DELETE About/////////////////////                                         
+router.get("/delete-about/:id", verifySignedIn, function (req, res) {
+  let aboutId = req.params.id;
+  adminHelper.deleteabout(aboutId).then((response) => {
+    fs.unlinkSync("./public/images/about-images/" + aboutId + ".png");
+    res.redirect("/admin/about/all-abouts");
+  });
+});
+
+///////DELETE ALL About/////////////////////                                         
+router.get("/delete-all-abouts", verifySignedIn, function (req, res) {
+  adminHelper.deleteAllabouts().then(() => {
+    res.redirect("/admin/about/all-abouts");
+  });
+});
+
+
+///////ALL banner/////////////////////                                         
+router.get("/all-banners", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  adminHelper.getAllbanners().then((banners) => {
+    res.render("admin/banner/all-banners", { admin: true, layout: "adminlayout", banners, administator });
+  });
+});
+
+///////ADD Banner/////////////////////                                         
+router.get("/add-banner", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  res.render("admin/banner/add-banner", { admin: true, layout: "adminlayout", administator });
+});
+
+///////ADD Banner/////////////////////                                         
+router.post("/add-banner", function (req, res) {
+  adminHelper.addbanner(req.body, (id) => {
+    let image = req.files.Image;
+    image.mv("./public/images/banner-images/" + id + ".png", (err, done) => {
+      if (!err) {
+        res.redirect("/admin/banner/all-banners");
+      } else {
+        console.log(err);
+      }
+    });
+  });
+});
+
+///////EDIT Banner/////////////////////                                         
+router.get("/edit-banner/:id", verifySignedIn, async function (req, res) {
+  let administator = req.session.admin;
+  let bannerId = req.params.id;
+  let banner = await adminHelper.getbannerDetails(bannerId);
+  console.log(banner);
+  res.render("admin/banner/edit-banner", { admin: true, layout: "adminlayout", banner, administator });
+});
+
+///////EDIT Banner/////////////////////                                         
+router.post("/edit-banner/:id", verifySignedIn, function (req, res) {
+  let bannerId = req.params.id;
+  adminHelper.updatebanner(bannerId, req.body).then(() => {
+    if (req.files) {
+      let image = req.files.Image;
+      if (image) {
+        image.mv("./public/images/banner-images/" + bannerId + ".png");
+      }
+    }
+    res.redirect("/admin/banner/all-banners");
+  });
+});
+
+///////DELETE Banner/////////////////////                                         
+router.get("/delete-banner/:id", verifySignedIn, function (req, res) {
+  let bannerId = req.params.id;
+  adminHelper.deletebanner(bannerId).then((response) => {
+    fs.unlinkSync("./public/images/banner-images/" + bannerId + ".png");
+    res.redirect("/admin/banner/all-banners");
+  });
+});
+
+///////DELETE ALL Banner/////////////////////                                         
+router.get("/delete-all-banners", verifySignedIn, function (req, res) {
+  adminHelper.deleteAllbanners().then(() => {
+    res.redirect("/admin/banner/all-banners");
+  });
+});
 
 ///////ALL social/////////////////////                                         
 router.get("/all-socials", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
   adminHelper.getAllsocials().then((socials) => {
-    res.render("admin/social/all-socials", { admin: true, layout:"innerlayout", socials, administator });
+    res.render("admin/social/all-socials", { admin: true, layout: "innerlayout", socials, administator });
   });
 });
 
 ///////ADD Social/////////////////////                                         
 router.get("/add-social", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
-  res.render("admin/social/add-social", { admin: true, layout:"innerlayout", administator });
+  res.render("admin/social/add-social", { admin: true, layout: "innerlayout", administator });
 });
 
 ///////ADD Social/////////////////////                                         
@@ -55,7 +258,7 @@ router.get("/edit-social/:id", verifySignedIn, async function (req, res) {
   let socialId = req.params.id;
   let social = await adminHelper.getsocialDetails(socialId);
   console.log(social);
-  res.render("admin/social/edit-social", { admin: true, layout:"innerlayout", social, administator });
+  res.render("admin/social/edit-social", { admin: true, layout: "innerlayout", social, administator });
 });
 
 ///////EDIT Social/////////////////////                                         
@@ -92,14 +295,14 @@ router.get("/delete-all-socials", verifySignedIn, function (req, res) {
 router.get("/all-sites", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
   adminHelper.getAllsites().then((sites) => {
-    res.render("admin/site/all-sites", { admin: true, layout:"innerlayout", sites, administator });
+    res.render("admin/site/all-sites", { admin: true, layout: "innerlayout", sites, administator });
   });
 });
 
 ///////ADD Site-Settings/////////////////////                                         
 router.get("/add-site", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
-  res.render("admin/site/add-site", { admin: true, layout:"innerlayout", administator });
+  res.render("admin/site/add-site", { admin: true, layout: "innerlayout", administator });
 });
 
 ///////ADD Site-Settings/////////////////////                                         
@@ -122,7 +325,7 @@ router.get("/edit-site/:id", verifySignedIn, async function (req, res) {
   let siteId = req.params.id;
   let site = await adminHelper.getsiteDetails(siteId);
   console.log(site);
-  res.render("admin/site/edit-site", { admin: true, layout:"innerlayout", site, administator });
+  res.render("admin/site/edit-site", { admin: true, layout: "innerlayout", site, administator });
 });
 
 ///////EDIT Site-Settings/////////////////////                                         
@@ -163,7 +366,7 @@ router.get("/delete-all-sites", verifySignedIn, function (req, res) {
 router.get("/all-products", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
   adminHelper.getAllProducts().then((products) => {
-    res.render("admin/all-products", { admin: true, layout:"adminlayout", products, administator });
+    res.render("admin/all-products", { admin: true, layout: "adminlayout", products, administator });
   });
 });
 
@@ -172,7 +375,7 @@ router.get("/signup", function (req, res) {
     res.redirect("/admin");
   } else {
     res.render("admin/signup", {
-      admin: true, layout:"adminlayout",
+      admin: true, layout: "adminlayout",
       signUpErr: req.session.signUpErr,
     });
   }
@@ -197,7 +400,7 @@ router.get("/signin", function (req, res) {
     res.redirect("/admin");
   } else {
     res.render("admin/signin", {
-      admin: true, layout:"adminlayout",
+      admin: true, layout: "adminlayout",
       signInErr: req.session.signInErr,
     });
     req.session.signInErr = null;
@@ -225,7 +428,7 @@ router.get("/signout", function (req, res) {
 
 router.get("/add-product", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
-  res.render("admin/add-product", { admin: true, layout:"adminlayout", administator });
+  res.render("admin/add-product", { admin: true, layout: "adminlayout", administator });
 });
 
 router.post("/add-product", function (req, res) {
@@ -246,7 +449,7 @@ router.get("/edit-product/:id", verifySignedIn, async function (req, res) {
   let productId = req.params.id;
   let product = await adminHelper.getProductDetails(productId);
   console.log(product);
-  res.render("admin/edit-product", { admin: true, layout:"adminlayout", product, administator });
+  res.render("admin/edit-product", { admin: true, layout: "adminlayout", product, administator });
 });
 
 router.post("/edit-product/:id", verifySignedIn, function (req, res) {
@@ -279,7 +482,7 @@ router.get("/delete-all-products", verifySignedIn, function (req, res) {
 router.get("/all-users", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
   adminHelper.getAllUsers().then((users) => {
-    res.render("admin/all-users", { admin: true, layout:"adminlayout", administator, users });
+    res.render("admin/all-users", { admin: true, layout: "adminlayout", administator, users });
   });
 });
 
@@ -300,7 +503,7 @@ router.get("/remove-all-users", verifySignedIn, function (req, res) {
 router.post("/search", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
   adminHelper.searchProduct(req.body).then((response) => {
-    res.render("admin/search-result", { admin: true, layout:"adminlayout", administator, response });
+    res.render("admin/search-result", { admin: true, layout: "adminlayout", administator, response });
   });
 });
 

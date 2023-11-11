@@ -17,16 +17,38 @@ router.get("/", async function (req, res, next) {
   let user = req.session.user;
   sites = await adminHelper.getAllsites();
   socials = await adminHelper.getAllsocials();
-    res.render("users/home", { admin: false, sites, socials, user });
+  banners = await adminHelper.getAllbanners();
+  abouts = await adminHelper.getAllabouts();
+  res.render("users/home", { admin: false, sites, socials, user, banners, abouts });
 });
 
-router.get("/signup", function (req, res) {
-  if (req.session.signedIn) {
-    res.redirect("/");
-  } else {
-    res.render("users/signup", { admin: false });
-  }
-});
+router.get("/about-us", async function (req, res, next) {
+  sites = await adminHelper.getAllsites();
+  socials = await adminHelper.getAllsocials();
+  res.render("users/about-us", { admin: false, sites, socials, });
+}),
+
+  router.get("/contact-us", async function (req, res, next) {
+    sites = await adminHelper.getAllsites();
+    socials = await adminHelper.getAllsocials();
+    res.render("users/contact-us", { admin: false, sites, socials, });
+  }),
+
+  router.get("/products", async function (req, res, next) {
+    sites = await adminHelper.getAllsites();
+    socials = await adminHelper.getAllsocials();
+    res.render("users/products", { admin: false, sites, socials, });
+  }),
+
+
+
+  router.get("/signup", function (req, res) {
+    if (req.session.signedIn) {
+      res.redirect("/");
+    } else {
+      res.render("users/signup", { admin: false });
+    }
+  });
 
 router.post("/signup", function (req, res) {
   userHelper.doSignup(req.body).then((response) => {

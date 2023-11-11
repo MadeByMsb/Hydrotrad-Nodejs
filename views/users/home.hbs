@@ -1,471 +1,479 @@
-	<!--==================================================-->
-	<!-- Start Thrown Slider Area -->
-	<!--==================================================-->
-	<section class="banner-section">
-		<div class="banner-carousel owl-carousel">
-			<div class="slide-item one">
-				<div class="image-layer" style="background-image: url('assets/img/bg2.png');"></div>
-				<div class="container">
-					<div class="slider-content">
-						<div class="slider-sub-title">
-							<h4><span>NEW</span> See new model materials</h4>
-						</div>
-						<div class="slider-main-title">
-														{{#each sites}}
-							<h1>Welcome To <br>
-								<font color="{{this.primarycolor}}">Hydrotrad</font> Building
-							</h1>
-							{{/each}}
-							<h1>Materials Trading L.L.C</h1>
-						</div>
-						<div class="slider-discripton">
-							<p>Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-								aut fugit sed quia.Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-								aspernatur aut odit aut fugit sed quia.</p>
-						</div>
-						<div class="thrown-btn slider">
-							<a class="header-button" href="contact-us.html">Get A Quout <span></span></a>
-						</div>
-					</div>
-					<div class="slider-shape">
-						<img src="assets/img/border.png" alt="">
-					</div>
-					<div class="slider-shape2 bounce-animate man">
-						<img src="assets/img/man.png" alt="">
-					</div>
+<style>
+	.slider-sub-title h4 {
+		color: #1A1A1A;
+		font-size: 14px;
+		color: white;
+		font-weight: 700;
+		line-height: normal;
+		background: #c0c0c026;
+		display: inline-block;
+		padding: 12px 73px 13px 8px;
+		border-radius: 40px;
+		margin-bottom: 25px;
+	}
+</style>
 
+<!--==================================================-->
+<!-- Start Thrown Slider Area -->
+<!--==================================================-->
+<section class="banner-section">
+	<div class="banner-carousel owl-carousel">
+		{{#each banners}}
+		<div class="slide-item one">
+			<div class="image-layer" style="background-image: url('/images/banner-images/{{this._id}}.png');"></div>
+			<div class="container">
+				<div class="slider-content">
+					<div class="slider-sub-title">
+						<h4 class="text-center">
+							<center>{{this.subtitle}}</center>
+						</h4>
+					</div>
+					<div class="slider-main-title">
+						<div class="container">
+							<h1>{{this.Mheading}}</h1>
+						</div>
+					</div>
+					<div class="slider-discripton">
+						<p>{{this.desc}}</p>
+					</div>
+					<div class="thrown-btn slider">
+						<a class="header-button" href="{{this.btnlink}}">Get A Quout <span></span></a>
+					</div>
 				</div>
-			</div>
-			<div class="slide-item two">
-				<div class="image-layer" style="background-image: url('assets/img/bg3.png');"></div>
-				<div class="container">
-					<div class="slider-content two">
-						<center>
+				<div class="slider-shape">
+					<img src="assets/img/border.png" alt="">
+				</div>
+				<div class="slider-shape2 bounce-animate man">
+					<img src="assets/img/man.png" alt="">
+				</div>
 
-							<!-- <div class="slider-sub-title style-two text-center">
+			</div>
+		</div>
+		{{/each}}
+		{{!-- <div class="slide-item two">
+			<div class="image-layer" style="background-image: url('assets/img/bg3.png');"></div>
+			<div class="container">
+				<div class="slider-content two">
+					<center>
+
+						<!-- <div class="slider-sub-title style-two text-center">
 								<h4>Welcome to Master of Materials</h4>
 							</div> -->
 
-							<div class="slider-main-title text-center">
-								<h1>Welcome To <br>
-									<font color="#EA5B1B">Hydrotrad</font> Building
-								</h1>
-								<h1>Materials Trading L.L.C</h1>
-							</div>
+						<div class="slider-main-title text-center">
+							<h1>Welcome To <br>
+								<font color="#EA5B1B">Hydrotrad</font> Building
+							</h1>
+							<h1>Materials Trading L.L.C</h1>
+						</div>
 
-							<div class="thrown-btn slider2 tex">
-								<a class="header-button" href="#">Read More<span></span></a>
-							</div>
-						</center>
+						<div class="thrown-btn slider2 tex">
+							<a class="header-button" href="#">Read More<span></span></a>
+						</div>
+					</center>
 
+				</div>
+			</div>
+		</div> --}}
+	</div>
+</section>
+<!--==================================================-->
+<!-- End Thrown Slider Area -->
+<!--==================================================-->
+<style>
+	.about-main-title h2 {
+		color: #010212;
+		font-size: 45px;
+		font-weight: 600;
+		line-height: 56px;
+		margin-top: 0;
+	}
+
+	.contact-us-area {
+		background-color: #ea5b1b;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: 56px 0 70px;
+	}
+</style>
+<!--==================================================-->
+<!-- Start Thrown About Area -->
+<!--==================================================-->
+{{#each abouts}}
+<div class="about-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12">
+				<div class="about-thumb">
+					<img src="/images/about-images/{{this._id}}.png" alt="">
+					<div class="about-shape bounce-animate">
+						<img src="assets/img/img2.png" style="    margin-left: 145px;" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-12">
+				<div class="section-title">
+					<div class="about-sub-title">
+						<h4>{{this.subtitle}}</h4>
+					</div>
+					<div class="about-main-title">
+						<h2>{{this.Mheading}}</h2>
+					</div>
+				</div>
+				<div class="about-content">
+					<div class="about-discribtion">
+						<p>{{this.desc}}</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/each}}
+<!--==================================================-->
+<!-- End Thrown About Area -->
+<!--==================================================-->
+
+
+<!--==================================================-->
+<!-- Start Thrown Contact Us Area -->
+<!--==================================================-->
+<div class="contact-area">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-7 col-md-12">
+				<div class="section-title contact">
+					<div class="section-main-title contact">
+						<h2>Lorem ipsum dolor, </h2>
+						<h2>consectetur adipiscing</h2>
+					</div>
+					<div class="contact-discription">
+						<p>ABMTC, is strived to be one of the most dedicated and committed supplier in the industry
+							by upholding the values of business ethics. We adhere and adopt stringent measures to
+							achieve the quality and workers health and safety to the international standards.
+						</p>
+					</div>
+					<div class="thrown-btn contact">
+						<a class="header-button" href="contact-us.html">Contact Us <span
+								style="top: 197.658px; left: 152.499px;"></span></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-5 col-md-6">
+				<div class="contact-thumb">
+					<img src="assets/img/man2.png" width="469px;" alt="">
+					<div class="contact-shape bounce-animate">
+						<img src="assets/img/shape1.png" alt="">
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	<!--==================================================-->
-	<!-- End Thrown Slider Area -->
-	<!--==================================================-->
-	<style>
-		.about-main-title h2 {
-			color: #010212;
-			font-size: 45px;
-			font-weight: 600;
-			line-height: 56px;
-			margin-top: 0;
-		}
+	</div>
+</div>
+<!--==================================================-->
+<!-- End Thrown Contact Us Area -->
+<!--==================================================-->
 
-		.contact-us-area {
-			background-color: #ea5b1b;
-			background-size: cover;
-			background-repeat: no-repeat;
-			padding: 56px 0 70px;
-		}
-	</style>
-	<!--==================================================-->
-	<!-- Start Thrown About Area -->
-	<!--==================================================-->
-	<div class="about-area">
+
+<style>
+	.contact-us-area {
+		background-color: #ea5b1b;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: 56px 0 70px;
+		width: 1189px;
+		border-radius: 20px;
+		margin-top: 70px;
+	}
+
+	.contact-us-area {
+		background: url("/assets/img/bg5.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: 56px 0 70px;
+	}
+
+	.choose-area {
+		position: relative;
+		margin-top: -2px;
+		background: url("assets/img/bg6.png");
+		background-size: contain;
+		z-index: 1;
+		padding: 115px 0 78px;
+	}
+
+	.choose-area::after {
+		position: absolute;
+		content: "";
+		width: 50%;
+		height: 100%;
+		background: url("assets/img/bg7.png");
+		right: 0;
+		z-index: -1;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		top: 0;
+	}
+
+	.choose-icon {
+		float: left;
+		margin-right: 23px;
+		background: #fff0;
+		width: 90px;
+		height: 90px;
+		text-align: center;
+		line-height: 90px;
+		border-radius: 50%;
+		transition: .5s;
+	}
+</style>
+
+
+<!--==================================================-->
+<!-- Start Thrown Contact Us Area -->
+<!--==================================================-->
+<center>
+	<div class="contact-us-area mb-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<div class="about-thumb">
-						<img src="assets/img/img1.png" alt="">
-						<div class="about-shape bounce-animate">
-							<img src="assets/img/img2.png" style="    margin-left: 145px;" alt="">
+					<div class="contact-us-items">
+						<div class="contact-us-content">
+							<h4>Support Center 24/7</h4>
+							<h2>Feel Free To Contact Us For
+								Additional Info</h2>
+						</div>
+						<div class="thrown-btn contact-us">
+							<a class="header-button" href="contact-us.html">Contact Us <span></span></a>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-12">
-					<div class="section-title">
-						<div class="about-sub-title">
-							<h4>About Us</h4>
+				<div class="col-lg-6 col-md-6">
+					<div class="contact-us-items two">
+						<div class="contact-us-content">
+							<h4>Here We Are</h4>
+							<h2>Feel Free To Contact Us For
+								Additional Info</h2>
 						</div>
-						<div class="about-main-title">
-							<h2>Hydrotrad building materials trading co. L.L.C (abmtc) established in 2006</h2>
-						</div>
-					</div>
-					<div class="about-content">
-						<div class="about-discribtion">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex eacommodo
-							</p>
-						</div>
-						<div class="about-title">
-							<h4>We Design & Build Powerful Materials</h4>
-						</div>
-						<div class="about-discribtion">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-								reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-							</p>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--==================================================-->
-	<!-- End Thrown About Area -->
-	<!--==================================================-->
-
-
-	<!--==================================================-->
-	<!-- Start Thrown Contact Us Area -->
-	<!--==================================================-->
-	<div class="contact-area">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-7 col-md-12">
-					<div class="section-title contact">
-						<div class="section-main-title contact">
-							<h2>Lorem ipsum dolor, </h2>
-							<h2>consectetur adipiscing</h2>
-						</div>
-						<div class="contact-discription">
-							<p>ABMTC, is strived to be one of the most dedicated and committed supplier in the industry
-								by upholding the values of business ethics. We adhere and adopt stringent measures to
-								achieve the quality and workers health and safety to the international standards.
-							</p>
-						</div>
-						<div class="thrown-btn contact">
-							<a class="header-button" href="contact-us.html">Contact Us <span
-									style="top: 197.658px; left: 152.499px;"></span></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-5 col-md-6">
-					<div class="contact-thumb">
-						<img src="assets/img/man2.png" width="469px;" alt="">
-						<div class="contact-shape bounce-animate">
-							<img src="assets/img/shape1.png" alt="">
+						<div class="thrown-btn contact-us2">
+							<a class="header-button" href="contact-us.html">Get Started <span></span></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!-- End Thrown Contact Us Area -->
-	<!--==================================================-->
+</center>
+<!--==================================================-->
+<!-- End Thrown Contact Us Area -->
+<!--==================================================-->
 
 
-	<style>
-		.contact-us-area {
-			background-color: #ea5b1b;
-			background-size: cover;
-			background-repeat: no-repeat;
-			padding: 56px 0 70px;
-			width: 1189px;
-			border-radius: 20px;
-			margin-top: 70px;
-		}
+<style>
+	/* Style for the container */
+	.section-container {
+		display: flex;
+		align-items: center;
+		margin-top: -28px;
 
-		.contact-us-area {
-			background: url("/assets/img/bg5.jpg");
-			background-size: cover;
-			background-repeat: no-repeat;
-			padding: 56px 0 70px;
-		}
+	}
 
-		.choose-area {
-			position: relative;
-			margin-top: -2px;
-			background: url("assets/img/bg6.png");
-			background-size: contain;
-			z-index: 1;
-			padding: 115px 0 78px;
-		}
+	/* Style for the left part (image) */
+	.left-part {
+		flex: 1;
+		padding: 10px;
+	}
 
+	/* Style for the right part (title) */
+	.right-part {
+		flex: 1;
+		padding: 10px;
+	}
+
+	/* Style for the image */
+	.section-image {
+		max-width: 100%;
+		height: auto;
+	}
+
+	/* Style for the title */
+	.section-title1 {
+		margin-left: -230px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.contact-us-area {
+		width: 85%;
+	}
+
+	@media only screen and (min-width: 320px) and (max-width: 479px) {
 		.choose-area::after {
-			position: absolute;
-			content: "";
-			width: 50%;
-			height: 100%;
-			background: url("assets/img/bg7.png");
-			right: 0;
-			z-index: -1;
-			background-size: cover;
-			background-position: center center;
-			background-repeat: no-repeat;
-			top: 0;
+			display: none;
 		}
 
-		.choose-icon {
-			float: left;
-			margin-right: 23px;
-			background: #fff0;
-			width: 90px;
-			height: 90px;
-			text-align: center;
-			line-height: 90px;
-			border-radius: 50%;
-			transition: .5s;
+		.section-title1 {
+			margin-left: -133px;
+			font-size: 20px;
+			font-weight: bold;
 		}
-	</style>
+	}
 
+	.img2 {
+		margin-top: 90px;
+		width: 399px;
+	}
 
-	<!--==================================================-->
-	<!-- Start Thrown Contact Us Area -->
-	<!--==================================================-->
-	<center>
-		<div class="contact-us-area mb-5">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 col-md-12">
-						<div class="contact-us-items">
-							<div class="contact-us-content">
-								<h4>Support Center 24/7</h4>
-								<h2>Feel Free To Contact Us For
-									Additional Info</h2>
-							</div>
-							<div class="thrown-btn contact-us">
-								<a class="header-button" href="contact-us.html">Contact Us <span></span></a>
-							</div>
+	@media only screen and (min-width: 320px) and (max-width: 479px) {
+		.slider-main-title h1 {
+			font-size: 40px;
+			line-height: 46px;
+		}
+
+		.img2 {
+			margin-top: 90px;
+			width: 100%;
+		}
+
+	}
+</style>
+
+<!--==================================================-->
+<!-- Start Thrown Choose Area -->
+<!--==================================================-->
+<div class="choose-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12" style="margin-bottom: 120px;">
+				<div class="choose-content">
+					<div class="section-title">
+						<div class="section-sub-title choose">
+							<h4>We Provide Best Solution</h4>
+						</div>
+						<div class="section-main-title choose">
+							<h2>Lorem ipsum dolor sit amet, consectetur</h2>
 						</div>
 					</div>
-					<div class="col-lg-6 col-md-6">
-						<div class="contact-us-items two">
-							<div class="contact-us-content">
-								<h4>Here We Are</h4>
-								<h2>Feel Free To Contact Us For
-									Additional Info</h2>
-							</div>
-							<div class="thrown-btn contact-us2">
-								<a class="header-button" href="contact-us.html">Get Started <span></span></a>
-							</div>
+					<div class="choose-discription">
+						<p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+							aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+							aliquip ex ea commodo consequat.</p>
+					</div>
+
+					<div class="section-container">
+						<div class="left-part">
+							<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
+						</div>
+						<div class="right-part">
+							<h6 class="section-title1 text-white">Electrical & HVAC</h6>
 						</div>
 					</div>
+					<br>
+					<div class="section-container">
+						<div class="left-part">
+							<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
+						</div>
+						<div class="right-part">
+							<h6 class="section-title1 text-white">Pipes & Fitting</h6>
+						</div>
+					</div>
+					<br>
+
+					<div class="section-container">
+						<div class="left-part">
+							<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
+						</div>
+						<div class="right-part">
+							<h6 class="section-title1 text-white">Valves & Accessories</h6>
+						</div>
+					</div>
+					<br>
+
+					<div class="section-container">
+						<div class="left-part">
+							<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
+						</div>
+						<div class="right-part">
+							<h6 class="section-title1 text-white">Mixers & Sanitary Accessories</h6>
+						</div>
+					</div>
+					<br>
+
+					<div class="section-container">
+						<div class="left-part">
+							<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
+						</div>
+						<div class="right-part">
+							<h6 class="section-title1 text-white">Hand Tools & Equipment’s</h6>
+						</div>
+					</div>
+					<br>
+
+					<div class="section-container">
+						<div class="left-part">
+							<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
+						</div>
+						<div class="right-part">
+							<h6 class="section-title1 text-white">Hardware’s & Safety Equipment’s</h6>
+						</div>
+					</div>
+					<br><br>
+
+
+
 				</div>
 			</div>
-		</div>
-	</center>
-	<!--==================================================-->
-	<!-- End Thrown Contact Us Area -->
-	<!--==================================================-->
 
 
-	<style>
-        /* Style for the container */
-        .section-container {
-            display: flex;
-            align-items: center;
-			margin-top: -28px;
 
-        }
-
-        /* Style for the left part (image) */
-        .left-part {
-            flex: 1;
-            padding: 10px;
-        }
-
-        /* Style for the right part (title) */
-        .right-part {
-            flex: 1;
-            padding: 10px;
-        }
-
-        /* Style for the image */
-        .section-image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Style for the title */
-        .section-title1 {
-			margin-left: -230px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-		.contact-us-area{
-	width: 85%;
-}
-@media only screen and (min-width: 320px) and (max-width: 479px){
-.choose-area::after {
-	display: none;
-}
-.section-title1 {
-    margin-left: -133px;
-    font-size: 20px;
-    font-weight: bold;
-}
-}
-.img2{
-		margin-top: 90px;
-    width: 399px;
-	}	
-@media only screen and (min-width: 320px) and (max-width: 479px){
-.slider-main-title h1 {
-    font-size: 40px;
-    line-height: 46px;
-}
-.img2 {
-    margin-top: 90px;
-    width: 100%;
-}
-
-}
-    </style>
-
-	<!--==================================================-->
-	<!-- Start Thrown Choose Area -->
-	<!--==================================================-->
-	<div class="choose-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-12" style="margin-bottom: 120px;">
-					<div class="choose-content">
-						<div class="section-title">
-							<div class="section-sub-title choose">
-								<h4>We Provide Best Solution</h4>
-							</div>
-							<div class="section-main-title choose">
-								<h2>Lorem ipsum dolor sit amet, consectetur</h2>
-							</div>
-						</div>
-						<div class="choose-discription">
-							<p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-								aliquip ex ea commodo consequat.</p>
-						</div>
-
-						<div class="section-container">
-							<div class="left-part">
-								<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
-							</div>
-							<div class="right-part">
-								<h6 class="section-title1 text-white">Electrical & HVAC</h6>
-							</div>
-						</div>
-						<br>
-						<div class="section-container">
-							<div class="left-part">
-								<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
-							</div>
-							<div class="right-part">
-								<h6 class="section-title1 text-white">Pipes & Fitting</h6>
-							</div>
-						</div>
-						<br>
-
-						<div class="section-container">
-							<div class="left-part">
-								<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
-							</div>
-							<div class="right-part">
-								<h6 class="section-title1 text-white">Valves & Accessories</h6>
-							</div>
-						</div>
-						<br>
-
-						<div class="section-container">
-							<div class="left-part">
-								<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
-							</div>
-							<div class="right-part">
-								<h6 class="section-title1 text-white">Mixers & Sanitary Accessories</h6>
-							</div>
-						</div>
-						<br>
-
-						<div class="section-container">
-							<div class="left-part">
-								<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
-							</div>
-							<div class="right-part">
-								<h6 class="section-title1 text-white">Hand Tools & Equipment’s</h6>
-							</div>
-						</div>
-						<br>
-
-						<div class="section-container">
-							<div class="left-part">
-								<img class="section-image" src="assets/img/icon1.png" alt="Your Image">
-							</div>
-							<div class="right-part">
-								<h6 class="section-title1 text-white">Hardware’s & Safety Equipment’s</h6>
-							</div>
-						</div>
-						<br><br>
-
-						
-						
-					</div>
-				</div>
-			
-				
-
-				<div class="col-lg-6 col-md-12">
-					<!-- <div class="single-video style-two">
+			<div class="col-lg-6 col-md-12">
+				<!-- <div class="single-video style-two">
 						<div class="video-icon style-two">
 							<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
 								href="https://youtu.be/BS4TUd7FJSg"><i class="bi bi-play"></i></a>
 						</div>
 					</div> -->
-					<div class="choose-contact">
-						<div class="row">
-							<div class="col-lg-4 col-md-12">
-								<div class="subscribe-title">
-									<h4>Subscribe Our Newslatter</h4>
-								</div>
+				<div class="choose-contact">
+					<div class="row">
+						<div class="col-lg-4 col-md-12">
+							<div class="subscribe-title">
+								<h4>Subscribe Our Newslatter</h4>
 							</div>
-							<div class="col-lg-8 col-md-12">
-								<form action="https://formspree.io/f/myyleorq" method="post" id="#">
-									<div class="row">
-										<div class="col-lg-6 col-md-6 col-sm-6 col-6">
-											<div class="form-box">
-												<input type="text" name="email" placeholder="Email Address">
-											</div>
-										</div>
-										<div class="col-lg-6 col-md-6 col-sm-6 col-6">
-											<div class="form-box-button choose">
-												<button type="Submit">Subscribe <i
-														class="bi bi-arrow-right"></i></button>
-											</div>
+						</div>
+						<div class="col-lg-8 col-md-12">
+							<form action="https://formspree.io/f/myyleorq" method="post" id="#">
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-6">
+										<div class="form-box">
+											<input type="text" name="email" placeholder="Email Address">
 										</div>
 									</div>
-								</form>
-							</div>
+									<div class="col-lg-6 col-md-6 col-sm-6 col-6">
+										<div class="form-box-button choose">
+											<button type="Submit">Subscribe <i class="bi bi-arrow-right"></i></button>
+										</div>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!-- End Thrown Choose Area -->
-	<!--==================================================-->
+</div>
+<!--==================================================-->
+<!-- End Thrown Choose Area -->
+<!--==================================================-->
 
 
 
-	<!--==================================================-->
-	<!-- Start Thrown Service Area -->
-	<!--==================================================-->
-	<!-- <div class="service-area">
+<!--==================================================-->
+<!-- Start Thrown Service Area -->
+<!--==================================================-->
+<!-- <div class="service-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -634,104 +642,104 @@
 			</div>
 		</div>
 	</div> -->
-	<!--==================================================-->
-	<!-- End Thrown Service Area -->
-	<!--==================================================-->
+<!--==================================================-->
+<!-- End Thrown Service Area -->
+<!--==================================================-->
 
-	<!--==================================================-->
-	<!-- Start Thrown Project Area -->
-	<!--==================================================-->
-	<div class="project-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="section-title text-center">
-						<div class="section-sub-title">
-							<h4>About Our Work</h4>
+<!--==================================================-->
+<!-- Start Thrown Project Area -->
+<!--==================================================-->
+<div class="project-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-title text-center">
+					<div class="section-sub-title">
+						<h4>About Our Work</h4>
+					</div>
+					<div class="section-main-title">
+						<h2>We Are Passionate About Our</h2>
+						<h2>Clients And Our Work.</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Photo Grid -->
+		<div class="row">
+			<div class="column">
+				<div class="project-thumb">
+					<img src="assets/img/p1.png" alt="" style="width:100%">
+					<div class="portfolio-content">
+						<div class="protfolio-title">
+							<h3><a href="project-details.html">Valves And Accessories</a></h3>
+							<a href="" class="btn btn-primary btn-sm mt-3">View Product</a>
 						</div>
-						<div class="section-main-title">
-							<h2>We Are Passionate About Our</h2>
-							<h2>Clients And Our Work.</h2>
+					</div>
+				</div>
+				<div class="project-thumb">
+					<img src="assets/img/p4.png" alt="" style="width:100%">
+					<div class="portfolio-content">
+						<div class="protfolio-title">
+							<h3><a href="project-details.html">Mixers And Sanitary Accessories</a></h3>
+							<a href="" class="btn btn-primary btn-sm mt-2">View Product</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Photo Grid -->
-			<div class="row">
-				<div class="column">
-					<div class="project-thumb">
-						<img src="assets/img/p1.png" alt="" style="width:100%">
-						<div class="portfolio-content">
-							<div class="protfolio-title">
-								<h3><a href="project-details.html">Valves And Accessories</a></h3>
-								<a href="" class="btn btn-primary btn-sm mt-3">View Product</a>
-							</div>
-						</div>
-					</div>
-					<div class="project-thumb">
-						<img src="assets/img/p4.png" alt="" style="width:100%">
-						<div class="portfolio-content">
-							<div class="protfolio-title">
-								<h3><a href="project-details.html">Mixers And Sanitary Accessories</a></h3>
-								<a href="" class="btn btn-primary btn-sm mt-2">View Product</a>
-							</div>
+			<div class="column">
+				<div class="project-thumb">
+					<img src="assets/img/p2.png" alt="" style="width:100%">
+					<div class="portfolio-content">
+						<div class="protfolio-title">
+							<h3><a href="project-details.html">Pipes And
+									Fittings</a></h3>
+							<a href="" class="btn btn-primary btn-sm mt-3">View Product</a>
 						</div>
 					</div>
 				</div>
-				<div class="column">
-					<div class="project-thumb">
-						<img src="assets/img/p2.png" alt="" style="width:100%">
-						<div class="portfolio-content">
-							<div class="protfolio-title">
-								<h3><a href="project-details.html">Pipes And
-									Fittings</a></h3>
-								<a href="" class="btn btn-primary btn-sm mt-3">View Product</a>
-							</div>
-						</div>
-					</div>
-					<div class="project-thumb">
-						<img src="assets/img/p3.png" alt="" style="width:100%">
-						<div class="portfolio-content">
-							<div class="protfolio-title">
-								<h3><a href="project-details.html">Hardware’s And
+				<div class="project-thumb">
+					<img src="assets/img/p3.png" alt="" style="width:100%">
+					<div class="portfolio-content">
+						<div class="protfolio-title">
+							<h3><a href="project-details.html">Hardware’s And
 									Safety Equipment’s</a></h3>
-								<a href="" class="btn btn-primary btn-sm mt-3">View Product</a>
-							</div>
+							<a href="" class="btn btn-primary btn-sm mt-3">View Product</a>
 						</div>
 					</div>
 				</div>
-				<div class="column">
-					<div class="project-thumb">
-						<img src="assets/img/p3.png" alt="" style="width:100%">
-						<div class="portfolio-content">
-							<div class="protfolio-title">
-								<h3><a href="project-details.html">Pipes And
+			</div>
+			<div class="column">
+				<div class="project-thumb">
+					<img src="assets/img/p3.png" alt="" style="width:100%">
+					<div class="portfolio-content">
+						<div class="protfolio-title">
+							<h3><a href="project-details.html">Pipes And
 									Fittings</a></h3>
-								<a href="" class="btn btn-primary btn-sm mt-3">View Product</a>
-							</div>
+							<a href="" class="btn btn-primary btn-sm mt-3">View Product</a>
 						</div>
 					</div>
-					<div class="project-thumb">
-						<img src="assets/img/p2.png" alt="" style="width:100%">
-						<div class="portfolio-content">
-							<div class="protfolio-title">
-								<h3><a href="project-details.html">Valves And Accessories</a></h3>
-								<a href="" class="btn btn-primary btn-sm mt-3">View Product</a>
-							</div>
+				</div>
+				<div class="project-thumb">
+					<img src="assets/img/p2.png" alt="" style="width:100%">
+					<div class="portfolio-content">
+						<div class="protfolio-title">
+							<h3><a href="project-details.html">Valves And Accessories</a></h3>
+							<a href="" class="btn btn-primary btn-sm mt-3">View Product</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!-- End Thrown Project Area -->
-	<!--==================================================-->
+</div>
+<!--==================================================-->
+<!-- End Thrown Project Area -->
+<!--==================================================-->
 
-	<!--==================================================-->
-	<!-- Start Thrown Sucsess Area -->
-	<!--==================================================-->
-	<!-- <div class="sucsess-area">
+<!--==================================================-->
+<!-- Start Thrown Sucsess Area -->
+<!--==================================================-->
+<!-- <div class="sucsess-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
@@ -785,14 +793,14 @@
 		</div>
 	</div> -->
 
-	<!--==================================================-->
-	<!-- End Thrown Sucsess Area -->
-	<!--==================================================-->
+<!--==================================================-->
+<!-- End Thrown Sucsess Area -->
+<!--==================================================-->
 
-	<!--==================================================-->
-	<!-- Start Thrown Team Area -->
-	<!--==================================================-->
-	<!-- <div class="team-area">
+<!--==================================================-->
+<!-- Start Thrown Team Area -->
+<!--==================================================-->
+<!-- <div class="team-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -895,78 +903,83 @@
 			</div>
 		</div>
 	</div> -->
-	<!--==================================================-->
-	<!-- End Thrown Team Area -->
-	<!--==================================================-->
+<!--==================================================-->
+<!-- End Thrown Team Area -->
+<!--==================================================-->
 <style>
-	.bg1{
+	.bg1 {
 		display: block;
-    cursor: pointer;
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 18px;
-    padding: 12px 31px 12px;
-    text-decoration: none;
-    margin-bottom: 11px;
-    border: 1px solid rgba(221, 221, 221, 0.45);
-    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.10);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+		cursor: pointer;
+		color: #ffffff;
+		font-weight: 500;
+		font-size: 18px;
+		padding: 12px 31px 12px;
+		text-decoration: none;
+		margin-bottom: 11px;
+		border: 1px solid rgba(221, 221, 221, 0.45);
+		box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.10);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
-	.bg2{
+
+	.bg2 {
 		display: block;
-    cursor: pointer;
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 18px;
-    padding: 15px 31px 12px;
-	background-color: #00000086;
-    text-decoration: none;
-    margin-bottom: 11px;
-    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.10);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+		cursor: pointer;
+		color: #ffffff;
+		font-weight: 500;
+		font-size: 18px;
+		padding: 15px 31px 12px;
+		background-color: #00000086;
+		text-decoration: none;
+		margin-bottom: 11px;
+		box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.10);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
-	
 </style>
-	<!--==================================================-->
-	<!-- Start Thrown Faq Area -->
-	<!--==================================================-->
-	<div class="faq-area">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-6 col-md-12">
-					<div class="single-video">
-						<div class="video-icon">
-						 <img class="img2" src="assets/img/img3.png">
-						</div>
+<!--==================================================-->
+<!-- Start Thrown Faq Area -->
+<!--==================================================-->
+<div class="faq-area">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-6 col-md-12">
+				<div class="single-video">
+					<div class="video-icon">
+						<img class="img2" src="assets/img/img3.png">
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-12">
-					<div class="tab_container">
-						<div id="tab1" class="tab_content">
-							<div class="bg1">
-								<h5 class="text-white">Our Mission</h5>
-							</div>
-							<div class="bg2">
-								<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							</div>
+			</div>
+			<div class="col-lg-6 col-md-12">
+				<div class="tab_container">
+					<div id="tab1" class="tab_content">
+						<div class="bg1">
+							<h5 class="text-white">Our Mission</h5>
+						</div>
+						<div class="bg2">
+							<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+								aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+								pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+								deserunt mollit anim id est laborum.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!-- End Thrown Faq Area -->
-	<!--==================================================-->
+</div>
+<!--==================================================-->
+<!-- End Thrown Faq Area -->
+<!--==================================================-->
 
-	<!--==================================================-->
-	<!-- Start Thrown Sales Report Area -->
-	<!--==================================================-->
-	<!-- <div class="sales-report-area">
+<!--==================================================-->
+<!-- Start Thrown Sales Report Area -->
+<!--==================================================-->
+<!-- <div class="sales-report-area">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-7 col-md-12">
@@ -1034,73 +1047,72 @@
 			</div>
 		</div>
 	</div> -->
-	<!--==================================================-->
-	<!-- End Thrown Sales Report Area -->
-	<!--==================================================-->
+<!--==================================================-->
+<!-- End Thrown Sales Report Area -->
+<!--==================================================-->
 
-	<!--==================================================-->
-	<!-- Start Thrown counter Area -->
-	<!--==================================================-->
-	<div class="counter-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-4">
-					<!-- start counter single box -->
-					<div class="counter-single-box">
-						<div class="counter-numbar">
-							<h4 class="counter">10</h4>
-							<span>K+</span>
-						</div>
-						<div class="counter-content">
-							<h5>Experienced designers</h5>
-							<p>Our company has 100 expert</p>
-						</div>
+<!--==================================================-->
+<!-- Start Thrown counter Area -->
+<!--==================================================-->
+<div class="counter-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-4">
+				<!-- start counter single box -->
+				<div class="counter-single-box">
+					<div class="counter-numbar">
+						<h4 class="counter">10</h4>
+						<span>K+</span>
 					</div>
-					<!-- End counter single box -->
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<!-- start counter single box -->
-					<div class="counter-single-box">
-						<div class="counter-numbar">
-							<h4 class="counter">10</h4>
-							<span>K+</span>
-						</div>
-						<div class="counter-content">
-							<h5>SATISFIED CUSTOMERS</h5>
-							<p>Our company satisfied customer</p>
-						</div>
+					<div class="counter-content">
+						<h5>Experienced designers</h5>
+						<p>Our company has 100 expert</p>
 					</div>
-					<!-- End counter single box -->
 				</div>
-				<div class="col-lg-4 col-md-4">
-					<!-- start counter single box -->
-					<div class="counter-single-box">
-						<div class="counter-numbar">
-							<h4 class="counter">120</h4>
-							<span>+</span>
-						</div>
-						<div class="counter-content">
-							<h5>COMPLETED CASSES</h5>
-							<p>We have done 1200 Cassses</p>
-						</div>
-					</div>
-					<!-- End counter single box -->
-				</div>
+				<!-- End counter single box -->
 			</div>
-			<div class="counter-shape bounce-animate">
-				<img src="assets/img/ele.png" width="561px"
-				alt="">
+			<div class="col-lg-4 col-md-4">
+				<!-- start counter single box -->
+				<div class="counter-single-box">
+					<div class="counter-numbar">
+						<h4 class="counter">10</h4>
+						<span>K+</span>
+					</div>
+					<div class="counter-content">
+						<h5>SATISFIED CUSTOMERS</h5>
+						<p>Our company satisfied customer</p>
+					</div>
+				</div>
+				<!-- End counter single box -->
+			</div>
+			<div class="col-lg-4 col-md-4">
+				<!-- start counter single box -->
+				<div class="counter-single-box">
+					<div class="counter-numbar">
+						<h4 class="counter">120</h4>
+						<span>+</span>
+					</div>
+					<div class="counter-content">
+						<h5>COMPLETED CASSES</h5>
+						<p>We have done 1200 Cassses</p>
+					</div>
+				</div>
+				<!-- End counter single box -->
 			</div>
 		</div>
+		<div class="counter-shape bounce-animate">
+			<img src="assets/img/ele.png" width="561px" alt="">
+		</div>
 	</div>
-	<!--==================================================-->
-	<!-- End Thrown counter Area -->
-	<!--==================================================-->
+</div>
+<!--==================================================-->
+<!-- End Thrown counter Area -->
+<!--==================================================-->
 
-	<!--==================================================-->
-	<!-- Start Thrown Testimonial Area -->
-	<!--==================================================-->
-	<!-- <div class="testimonial-area">
+<!--==================================================-->
+<!-- Start Thrown Testimonial Area -->
+<!--==================================================-->
+<!-- <div class="testimonial-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -1289,14 +1301,14 @@
 			</div>
 		</div>
 	</div> -->
-	<!--==================================================-->
-	<!-- End Thrown Testimonial Area -->
-	<!--==================================================-->
+<!--==================================================-->
+<!-- End Thrown Testimonial Area -->
+<!--==================================================-->
 
-	<!--==================================================-->
-	<!-- Start Thrown Blog Area -->
-	<!--==================================================-->
-	<!-- <div class="blog-area">
+<!--==================================================-->
+<!-- Start Thrown Blog Area -->
+<!--==================================================-->
+<!-- <div class="blog-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -1401,286 +1413,292 @@
 			</div>
 		</div>
 	</div> -->
-	<!--==================================================-->
-	<!-- End Thrown Blog Area -->
-	<!--==================================================-->
+<!--==================================================-->
+<!-- End Thrown Blog Area -->
+<!--==================================================-->
 
-	<div class="contact-area-three">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-7 col-md-12">
-					<div class="section-title">
-						<div class="section-sub-title contact-thrree">
-							<h4>Contact With Us</h4>
-						</div>
-						<div class="section-main-title contact-thrree">
-							<h2>Let’s Work Together?</h2>
-						</div>
+<div class="contact-area-three">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 col-md-12">
+				<div class="section-title">
+					<div class="section-sub-title contact-thrree">
+						<h4>Contact With Us</h4>
 					</div>
-					<div class="contact-three-discription">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-					</div>
-					<div class="contact-list">
-						<span><i class="bi bi-chevron-double-right"></i> Refreshing to get such a personal touch</span>
-						<span> <i class="bi bi-chevron-double-right"></i>Velit esse cillum dolore eu</span>
-					</div>
-					<div class="row">
-						<div class="col-lg-12 col-md-6">
-							<div class="contact-single-box">
-								<div class="contact-icon">
-									<i class="bi bi-telephone-plus"></i>
-								</div>
-								<div class="contact-content">
-									<h5>Have Any Question?</h5>
-									<h3>+ 014x4531 9504</h3>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12 col-md-6">
-							<div class="contact-single-box">
-								<div class="contact-icon">
-									<i class="bi bi-envelope"></i>
-								</div>
-								<div class="contact-content">
-									<h5>Send Email</h5>
-									<h3>example@gmail.com</h3>
-								</div>
-							</div>
-						</div>
+					<div class="section-main-title contact-thrree">
+						<h2>Let’s Work Together?</h2>
 					</div>
 				</div>
-				<div class="col-lg-5 col-md-12">
-					<div class="contact-box">
-						<div class="contact-title">
-							<h4>Contact Us</h4>
+				<div class="contact-three-discription">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+						labore et dolore.</p>
+				</div>
+				<div class="contact-list">
+					<span><i class="bi bi-chevron-double-right"></i> Refreshing to get such a personal touch</span>
+					<span> <i class="bi bi-chevron-double-right"></i>Velit esse cillum dolore eu</span>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-6">
+						<div class="contact-single-box">
+							<div class="contact-icon">
+								<i class="bi bi-telephone-plus"></i>
+							</div>
+							<div class="contact-content">
+								<h5>Have Any Question?</h5>
+								<h3>+ 014x4531 9504</h3>
+							</div>
 						</div>
-						<form action="https://formspree.io/f/myyleorq" method="post" id="it-form">
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="form-box">
-										<input type="text" name="name" placeholder="Your Name">
-									</div>
-								</div>
-								<div class="col-lg-12">
-									<div class="form-box">
-										<input type="text" name="email" placeholder="Your Email">
-									</div>
-								</div>
-								<div class="col-lg-12">
-									<div class="form-box">
-										<textarea name="message" placeholder="Message here .."></textarea>
-									</div>
-								</div>
-								<div class="col-lg-12">
-									<div class="form-box-button contact">
-										<button type="Submit">Read More</button>
-									</div>
-								</div>
-							</div>
-						</form>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!--==================================================-->
-	<!-- Start Thrown Sidebar Area -->
-	<!--==================================================-->
-	<div class="sidebar-group info-group">
-		<div class="sidebar-widget">
-			<div class="sidebar-widget-container">
-				<div class="widget-heading">
-					<a href="#" class="close-side-widget">
-						<i class="bi bi-x-lg"></i>
-					</a>
-				</div>
-				<div class="sidebar-textwidget">
-					<div class="sidebar-info-contents">
-						<div class="content-inner">
-							<div class="sidebar-logo">
-								<a href="index.html"><img src="assets/img/logo1.png" alt="logo"></a>
+					<div class="col-lg-12 col-md-6">
+						<div class="contact-single-box">
+							<div class="contact-icon">
+								<i class="bi bi-envelope"></i>
 							</div>
-							<div class="sidebar-widget-menu">
-								<ul>
-									<li><a href="index.html" class="text-white" style="text-decoration: none;">Home</a></li>
-									<li><a href="about.html" class="text-white" style="text-decoration: none;">About</a></li>
-									<li><a href="career.html" class="text-white" style="text-decoration: none;">Career</a></li>
-									<li><a href="#">Service <i class="fas fa-chevron-down"></i></a>
-										<div class="sub-menu">
-											<ul>
-												<li><a href="service.html">Service</a></li>
-												<li><a href="service-details.html">Service Details</a></li>
-											</ul>
-										</div>
-									</li>
-									<li><a href="career.html" class="text-white" style="text-decoration: none;">Our Products</a></li>
-									<li><a href="contact-us.html" class="text-white" style="text-decoration: none;">Contact</a></li>
-								</ul>
+							<div class="contact-content">
+								<h5>Send Email</h5>
+								<h3>example@gmail.com</h3>
 							</div>
-							<div class="contact-info">
-								<h2>Contact Info</h2>
-								<ul class="list-style-one">
-									<li><i class="bi bi-geo-alt-fill"></i>Address Here</li>
-									<li><i class="bi bi-telephone-fill"></i>99999999999</li>
-									<li><i class="bi bi-envelope"></i> info@example.com</li>
-									<li><i class="bi bi-alarm-fill"></i> Week Days: 08.00 to 10.00
-									</li>
-								</ul>
-							</div>
-							<ul class="social-box">
-								<li class="facebook"><a href="#" class="fab fa-facebook-f"></a></li>
-								<li class="twitter"><a href="#" class="fab fa-instagram"></a></li>
-								<li class="linkedin"><a href="#" class="fab fa-twitter"></a></li>
-								<li class="instagram"><a href="#" class="fab fa-pinterest-p"></a></li>
-								<li class="youtube"><a href="#" class="fab fa-linkedin-in"></a></li>
-							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="col-lg-5 col-md-12">
+				<div class="contact-box">
+					<div class="contact-title">
+						<h4>Contact Us</h4>
+					</div>
+					<form action="https://formspree.io/f/myyleorq" method="post" id="it-form">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="form-box">
+									<input type="text" name="name" placeholder="Your Name">
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="form-box">
+									<input type="text" name="email" placeholder="Your Email">
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="form-box">
+									<textarea name="message" placeholder="Message here .."></textarea>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="form-box-button contact">
+									<button type="Submit">Read More</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!-- End Thrown Sidebar Area -->
-	<!--==================================================-->
-<style>
-	.img3{
-		width: 180px;
-    margin-top: -17px;
-	}
-</style>
-
+</div>
 
 <!--==================================================-->
-	<!-- Start Thrown Footer Area -->
-	<!--==================================================-->
-	<div class="footer-area">
-		<div class="container">
-			<div class="row gx-6">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-wiget">
-						<div class="footer-wiget-log">
-							{{#each sites}}
-							<a href="/"><img class="img3" src="/images/site-images/{{this._id}}.png" alt=""></a>
-							{{/each}}
-						</div>
-						<div class="footer-wiget-text">
-							<h4>Say Hello!</h4>
-						</div>
-						<div class="footer-shape-title">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-						</div>
-						
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-wiget">
-						<div class="footer-wiget-title">
-							<h4>Links</h4>
-						</div>
-						<div class="footer-wiget-menu">
-							<ul>
-								<li><a href="#"> Home</a></li>
-								<li><a href="#"> About Us</a></li>
-								<li><a href="#"> Our Service</a></li>
-								<li><a href="#"> Career</a></li>
-								<li><a href="#"> Contact</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-wiget">
-						<div class="footer-wiget-title">
-							<h4>Other Link</h4>
-						</div>
-						<div class="footer-wiget-menu">
-							<ul>
-								<li><a href="#"> Faq</a></li>
-								<li><a href="#"> Tearm of user</a></li>
-								<li><a href="#"> Disclaimer</a></li>
-								<li><a href="#"> Privacy Policy</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 pr-0">
-					<div class="foter-box">
-						<div class="footer-wiget-icon">
-							<ul>
-									{{#each socials}}
-							<li><a href="{{this.url}}"><i class="bi bi-{{this.iname}}"></i></a></li>
-	                        {{/each}}
-							</ul>
-						</div>
-						<div class="footer-widget-contct-menu">
-							<ul>
-								{{#each sites}}
-								<li><a href="#">{{this.Sphone}}</a></li>
-								<li class="line"><a href="#">{{this.Semail}}</a></li>
-								<li><a href="#">{{this.Saddress}}</a></li>
-								<li><a href="#">{{this.Slocation}}</a></li>
-								{{/each}}
-							</ul>
-						</div>
-					</div>
-				</div>
+<!-- Start Thrown Sidebar Area -->
+<!--==================================================-->
+<div class="sidebar-group info-group">
+	<div class="sidebar-widget">
+		<div class="sidebar-widget-container">
+			<div class="widget-heading">
+				<a href="#" class="close-side-widget">
+					<i class="bi bi-x-lg"></i>
+				</a>
 			</div>
-			<div class="row align-items-center mt-100">
-				<div class="col-lg-6 col-md-12">
-					<div class="copyright-text">
-						<p>Copyright © <a href="#">Hydro</a> All Rights Reserved.</p>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-12">
-					<div class="footer-condition">
-						<ul>
-							<li><a href="#">Terms of use</a></li>
-							<li><a href="#">Privacy Policy</a></li>
+			<div class="sidebar-textwidget">
+				<div class="sidebar-info-contents">
+					<div class="content-inner">
+						<div class="sidebar-logo">
+							<a href="index.html"><img src="assets/img/logo1.png" alt="logo"></a>
+						</div>
+						<div class="sidebar-widget-menu">
+							<ul>
+								<li><a href="index.html" class="text-white" style="text-decoration: none;">Home</a></li>
+								<li><a href="about.html" class="text-white" style="text-decoration: none;">About</a>
+								</li>
+								<li><a href="career.html" class="text-white" style="text-decoration: none;">Career</a>
+								</li>
+								<li><a href="#">Service <i class="fas fa-chevron-down"></i></a>
+									<div class="sub-menu">
+										<ul>
+											<li><a href="service.html">Service</a></li>
+											<li><a href="service-details.html">Service Details</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="career.html" class="text-white" style="text-decoration: none;">Our
+										Products</a></li>
+								<li><a href="contact-us.html" class="text-white"
+										style="text-decoration: none;">Contact</a></li>
+							</ul>
+						</div>
+						<div class="contact-info">
+							<h2>Contact Info</h2>
+							<ul class="list-style-one">
+								<li><i class="bi bi-geo-alt-fill"></i>Address Here</li>
+								<li><i class="bi bi-telephone-fill"></i>99999999999</li>
+								<li><i class="bi bi-envelope"></i> info@example.com</li>
+								<li><i class="bi bi-alarm-fill"></i> Week Days: 08.00 to 10.00
+								</li>
+							</ul>
+						</div>
+						<ul class="social-box">
+							<li class="facebook"><a href="#" class="fab fa-facebook-f"></a></li>
+							<li class="twitter"><a href="#" class="fab fa-instagram"></a></li>
+							<li class="linkedin"><a href="#" class="fab fa-twitter"></a></li>
+							<li class="instagram"><a href="#" class="fab fa-pinterest-p"></a></li>
+							<li class="youtube"><a href="#" class="fab fa-linkedin-in"></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!-- End Thrown Footer Area -->
-	<!--==================================================-->
+</div>
+<!--==================================================-->
+<!-- End Thrown Sidebar Area -->
+<!--==================================================-->
+<style>
+	.img3 {
+		width: 180px;
+		margin-top: -17px;
+	}
+</style>
 
-	<!--==================================================-->
-	<!-- Start Search Popup Area -->
-	<!--==================================================-->
-	<div class="search-popup">
-		<button class="close-search style-two"><span class="flaticon-multiply"><i
-					class="far fa-times-circle"></i></span></button>
-		<button class="close-search"><i class="fas fa-arrow-up"></i></button>
-		<form method="post" action="#">
-			<div class="form-group">
-				<input type="search" name="search-field" value="" placeholder="Search Here" required="">
-				<button type="submit"><i class="fa fa-search"></i></button>
+
+<!--==================================================-->
+<!-- Start Thrown Footer Area -->
+<!--==================================================-->
+<div class="footer-area">
+	<div class="container">
+		<div class="row gx-6">
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-wiget">
+					<div class="footer-wiget-log">
+						{{#each sites}}
+						<a href="/"><img class="img3" src="/images/site-images/{{this._id}}.png" alt=""></a>
+						{{/each}}
+					</div>
+					<div class="footer-wiget-text">
+						<h4>Say Hello!</h4>
+					</div>
+					<div class="footer-shape-title">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore</p>
+					</div>
+
+				</div>
 			</div>
-		</form>
-	</div>
-	<!--==================================================-->
-	<!-- End Search Popup Area -->
-	<!--==================================================-->
-
-	<!--==================================================-->
-	<!-- Start scrollup section Area -->
-	<!--==================================================-->
-	<!-- scrollup section -->
-	<div class="scroll-area">
-		<div class="top-wrap">
-			<div class="go-top-btn-wraper">
-				<div class="go-top go-top-button">
-					<i class="fas fa-arrow-up"></i>
-					<i class="fas fa-arrow-up"></i>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-wiget">
+					<div class="footer-wiget-title">
+						<h4>Links</h4>
+					</div>
+					<div class="footer-wiget-menu">
+						<ul>
+							<li><a href="#"> Home</a></li>
+							<li><a href="#"> About Us</a></li>
+							<li><a href="#"> Our Service</a></li>
+							<li><a href="#"> Career</a></li>
+							<li><a href="#"> Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-wiget">
+					<div class="footer-wiget-title">
+						<h4>Other Link</h4>
+					</div>
+					<div class="footer-wiget-menu">
+						<ul>
+							<li><a href="#"> Faq</a></li>
+							<li><a href="#"> Tearm of user</a></li>
+							<li><a href="#"> Disclaimer</a></li>
+							<li><a href="#"> Privacy Policy</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 pr-0">
+				<div class="foter-box">
+					<div class="footer-wiget-icon">
+						<ul>
+							{{#each socials}}
+							<li><a href="{{this.url}}"><i class="bi bi-{{this.iname}}"></i></a></li>
+							{{/each}}
+						</ul>
+					</div>
+					<div class="footer-widget-contct-menu">
+						<ul>
+							{{#each sites}}
+							<li><a href="#">{{this.Sphone}}</a></li>
+							<li class="line"><a href="#">{{this.Semail}}</a></li>
+							<li><a href="#">{{this.Saddress}}</a></li>
+							<li><a href="#">{{this.Slocation}}</a></li>
+							{{/each}}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row align-items-center mt-100">
+			<div class="col-lg-6 col-md-12">
+				<div class="copyright-text">
+					<p>Copyright © <a href="#">Hydro</a> All Rights Reserved.</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-12">
+				<div class="footer-condition">
+					<ul>
+						<li><a href="#">Terms of use</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
+<!--==================================================-->
+<!-- End Thrown Footer Area -->
+<!--==================================================-->
 
-	<!--==================================================-->
-	<!-- End scrollup section Area -->
-	<!--==================================================-->
+<!--==================================================-->
+<!-- Start Search Popup Area -->
+<!--==================================================-->
+<div class="search-popup">
+	<button class="close-search style-two"><span class="flaticon-multiply"><i
+				class="far fa-times-circle"></i></span></button>
+	<button class="close-search"><i class="fas fa-arrow-up"></i></button>
+	<form method="post" action="#">
+		<div class="form-group">
+			<input type="search" name="search-field" value="" placeholder="Search Here" required="">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</div>
+	</form>
+</div>
+<!--==================================================-->
+<!-- End Search Popup Area -->
+<!--==================================================-->
+
+<!--==================================================-->
+<!-- Start scrollup section Area -->
+<!--==================================================-->
+<!-- scrollup section -->
+<div class="scroll-area">
+	<div class="top-wrap">
+		<div class="go-top-btn-wraper">
+			<div class="go-top go-top-button">
+				<i class="fas fa-arrow-up"></i>
+				<i class="fas fa-arrow-up"></i>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--==================================================-->
+<!-- End scrollup section Area -->
+<!--==================================================-->
