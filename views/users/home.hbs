@@ -11,6 +11,14 @@
 		border-radius: 40px;
 		margin-bottom: 25px;
 	}
+
+	@media only screen and (min-width: 480px) and (max-width: 574px) {
+		.slider-main-title h1 {
+			font-size: 40px;
+			line-height: 55px;
+			font-weight: 800;
+		}
+	}
 </style>
 
 <!--==================================================-->
@@ -139,30 +147,28 @@
 <!--==================================================-->
 <!-- Start Thrown Contact Us Area -->
 <!--==================================================-->
+{{#each sones}}
 <div class="contact-area">
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-lg-7 col-md-12">
 				<div class="section-title contact">
 					<div class="section-main-title contact">
-						<h2>Lorem ipsum dolor, </h2>
-						<h2>consectetur adipiscing</h2>
+						<h2 class="mt-5">{{this.Mheading}} </h2>
 					</div>
 					<div class="contact-discription">
-						<p>ABMTC, is strived to be one of the most dedicated and committed supplier in the industry
-							by upholding the values of business ethics. We adhere and adopt stringent measures to
-							achieve the quality and workers health and safety to the international standards.
+						<p>{{this.desc}}
 						</p>
 					</div>
-					<div class="thrown-btn contact">
-						<a class="header-button" href="contact-us.html">Contact Us <span
+					<div class="thrown-btn contact mb-4">
+						<a class="header-button" href="{{this.btnlink}}">Contact Us <span
 								style="top: 197.658px; left: 152.499px;"></span></a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-5 col-md-6">
 				<div class="contact-thumb">
-					<img src="assets/img/man2.png" width="469px;" alt="">
+					<img src="assets/img/man2.png" width="480px;" alt="">
 					<div class="contact-shape bounce-animate">
 						<img src="assets/img/shape1.png" alt="">
 					</div>
@@ -171,6 +177,7 @@
 		</div>
 	</div>
 </div>
+{{/each}}
 <!--==================================================-->
 <!-- End Thrown Contact Us Area -->
 <!--==================================================-->
@@ -350,10 +357,11 @@
 				<div class="choose-content">
 					<div class="section-title">
 						<div class="section-sub-title choose">
-							<h4>We Provide Best Solution</h4>
+							<h4>What We Offer
+							</h4>
 						</div>
 						<div class="section-main-title choose">
-							<h2>Lorem ipsum dolor sit amet, consectetur</h2>
+							<h2>We Provide Best Solution</h2>
 						</div>
 					</div>
 					<div class="choose-discription">
@@ -656,11 +664,10 @@
 			<div class="col-lg-12">
 				<div class="section-title text-center">
 					<div class="section-sub-title">
-						<h4>About Our Work</h4>
+						<h4>Products</h4>
 					</div>
 					<div class="section-main-title">
-						<h2>We Are Passionate About Our</h2>
-						<h2>Clients And Our Work.</h2>
+						<h2>Our Products</h2>
 					</div>
 				</div>
 			</div>
@@ -731,6 +738,7 @@
 				</div>
 			</div>
 		</div>
+		<a href="/products" class="btn btn-primary w-25">View More Products</a>
 	</div>
 </div>
 <!--==================================================-->
@@ -1429,8 +1437,8 @@
 					</div>
 				</div>
 				<div class="contact-three-discription">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore.</p>
+					<p>Most of the products can be immediately supplied from our ready stock at short notice.
+					</p>
 				</div>
 				<div class="contact-list">
 					<span><i class="bi bi-chevron-double-right"></i> Refreshing to get such a personal touch</span>
@@ -1564,7 +1572,7 @@
 <!--==================================================-->
 <style>
 	.img3 {
-		width: 180px;
+		width: 130px;
 		margin-top: -17px;
 	}
 </style>
@@ -1584,11 +1592,11 @@
 						{{/each}}
 					</div>
 					<div class="footer-wiget-text">
-						<h4>Say Hello!</h4>
+						<h4>Hydro Sanitary Ware Trading LLC</h4>
 					</div>
 					<div class="footer-shape-title">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore</p>
+						<p>We believe our services have immensely contributed to the infrastructure development
+							requirements of the country for the past 16 years.</p>
 					</div>
 
 				</div>
@@ -1681,15 +1689,4 @@
 		</div>
 	</form>
 </div>
-<!--==================================================-->
-<!-- End Search Popup Area -->
-<!--==================================================-->
-
-<!--==================================================-->
-<!-- Start scrollup section Area -->
-<!--==================================================-->
-<!-- scrollup section -->
-
-<!--==================================================-->
-<!-- End scrollup section Area -->
 <!--==================================================-->

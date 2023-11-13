@@ -1,85 +1,96 @@
+<style>
+	@media (min-width: 1200px) and (max-width: 1600px) {
+		.thrown-menu {
+			text-align: end;
+			margin-right: -2px;
+			margin-top: -61px;
+		}
+	}
+</style>
+<!--==================================================-->
+<!-- End Thrown Header Area -->
+<!--==================================================-->
 
-	<!--==================================================-->
-	<!-- End Thrown Header Area -->
-	<!--==================================================-->
-
-	<!--==================================================-->
-	<!-- Start Thrown Bratcome Area -->
-	<!--==================================================-->
-	<div class="breatcome-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 col-md-12">
-					<div class="breatcome-content">
-						<div class="breatcome-title">
-							<h1>Our Products</h1>
-						</div>
-						<div class="bratcome-text">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li>Products</li>
-							</ul>
-						</div>
+<!--==================================================-->
+<!-- Start Thrown Bratcome Area -->
+<!--==================================================-->
+<div class="breatcome-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<div class="breatcome-content">
+					<div class="breatcome-title">
+						<h1>Our Products</h1>
+					</div>
+					<div class="bratcome-text">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>Products</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!-- End Thrown Bratcome Area -->
-	<!--==================================================-->
+</div>
+<!--==================================================-->
+<!-- End Thrown Bratcome Area -->
+<!--==================================================-->
 
 <style>
-	.card{
+	.card {
 		border-radius: 20px;
-    padding: 0px;
-    padding-top: 30px;
-	background-color: #fff;
-	box-shadow: 0 8px 8px rgba(0, 0, 0, 0.037);
+		padding: 0px;
+		padding-top: 30px;
+		background-color: #fff;
+		box-shadow: 0 8px 8px rgba(0, 0, 0, 0.037);
 
-	transition: transform 0.2s, box-shadow 0.2s;
+		transition: transform 0.2s, box-shadow 0.2s;
 	}
-	.card:hover {
-            transform: scale(1.01);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-		.work-process-content h4 a {
-    padding: 35px 0 20px;
-    color: var(--black, #18191D);
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 36px;
-    text-decoration: none;
-    transition: .5s;
-}
-.work-process-content {
-    margin-top: 20px;
-}
-.imgg2{
-  padding: 0px;
-  margin-bottom: 20px;
-}
 
+	.card:hover {
+		transform: scale(1.01);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.work-process-content h4 a {
+		padding: 35px 0 20px;
+		color: var(--black, #18191D);
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 36px;
+		text-decoration: none;
+		transition: .5s;
+	}
+
+	.work-process-content {
+		margin-top: 20px;
+	}
+
+	.imgg2 {
+		padding: 0px;
+		margin-bottom: 20px;
+	}
 </style>
-  <div class="work-process-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="section-title text-center">
-						<div class="section-sub-title">
-							<h4>Products</h4>
-						</div>
-						<div class="section-main-title work">
-							<h2>Check Out Our Products </h2>
-						</div>
+<div class="work-process-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-title text-center">
+					<div class="section-sub-title">
+						<h4>Products</h4>
+					</div>
+					<div class="section-main-title work">
+						<h2>Check Out Our Products </h2>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				
-{{#each products}}
-				<div class="col-lg-4 col-md-6">
-					<div class="card">
+		</div>
+		<div class="row">
+
+			{{#each products}}
+			<div class="col-lg-4 col-md-6">
+				<div class="card">
 					<div class="work-process-single-box">
 						<div class="work-process-thumb">
 							<img class="imgg2" src="/images/product-images/{{this._id}}.png" alt="">
@@ -91,218 +102,147 @@
 							</div>
 							<div class="work-process-content">
 								<h4><a href="project-details.html">{{this.title}}</a></h4><br>
-                <a href="{{this.btnlink}}" class="btn btn-dark mt-2 w-75 mb-3">View Product</a>
+								<a href="{{this.btnlink}}" class="btn btn-dark mt-2 w-75 mb-3">View Product</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				</div>
-{{/each}}
-
 			</div>
+			{{/each}}
+
 		</div>
 	</div>
+</div>
 
 
 
-	
 
-  <style>
+
+<style>
 	.breatcome-area {
-    background: url('/assets/img/bg9.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    padding: 154px 0;
-}
-	.img3{
-		width: 180px;
-    margin-top: -17px;
+		background: url('/assets/img/bg9.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		padding: 154px 0;
+	}
+
+	.img3 {
+		width: 130px;
+		margin-top: -17px;
 	}
 </style>
 
 
-	<!--==================================================-->
-	<!-- Start Thrown Footer Area -->
-	<!--==================================================-->
-	<div class="footer-area">
-    
-		<div class="container">
-			<div class="row gx-6">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-wiget">
-						<div class="footer-wiget-log">
-							<a href="index.html"><img class="img3" src="assets/img/logo3.png" alt=""></a>
-						</div>
-						<div class="footer-wiget-text">
-							<h4>Say Hello!</h4>
-						</div>
-						<div class="footer-shape-title">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-						</div>
-						
+<!--==================================================-->
+<!-- Start Thrown Footer Area -->
+<!--==================================================-->
+<div class="footer-area">
+	<div class="container">
+		<div class="row gx-6">
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-wiget">
+					<div class="footer-wiget-log">
+						{{#each sites}}
+						<a href="/"><img class="img3" src="/images/site-images/{{this._id}}.png" alt=""></a>
+						{{/each}}
 					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-wiget">
-						<div class="footer-wiget-title">
-							<h4>Links</h4>
-						</div>
-						<div class="footer-wiget-menu">
-							<ul>
-								<li><a href="#"> Home</a></li>
-								<li><a href="#"> About Us</a></li>
-								<li><a href="#"> Our Service</a></li>
-								<li><a href="#"> Career</a></li>
-								<li><a href="#"> Contact</a></li>
-							</ul>
-						</div>
+					<div class="footer-wiget-text">
+						<h4>Hydro Sanitary Ware Trading LLC</h4>
 					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-wiget">
-						<div class="footer-wiget-title">
-							<h4>Other Link</h4>
-						</div>
-						<div class="footer-wiget-menu">
-							<ul>
-								<li><a href="#"> Faq</a></li>
-								<li><a href="#"> Tearm of user</a></li>
-								<li><a href="#"> Disclaimer</a></li>
-								<li><a href="#"> Privacy Policy</a></li>
-							</ul>
-						</div>
+					<div class="footer-shape-title">
+						<p>We believe our services have immensely contributed to the infrastructure development
+							requirements of the country for the past 16 years.</p>
 					</div>
+
 				</div>
-				<div class="col-lg-3 col-md-6 pr-0">
-					<div class="foter-box">
-						<div class="footer-wiget-icon">
-							<ul>
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-							</ul>
-						</div>
-						<div class="footer-widget-contct-menu">
-							<ul class="">
-								{{#each contacts}}
-								<li><i class="bi bi-geo-alt-fill"></i>{{this.Location}}</li>
-								<li><i class="bi bi-telephone-fill"></i>{{this.Phone}}</li>
-								<li><i class="bi bi-envelope"></i> {{this.Email}}</li>
-								<li><i class="bi bi-alarm-fill"></i> Week Days: 08.00 to 10.00
-								</li>
-								{{/each}}
-							</ul>
-						</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-wiget">
+					<div class="footer-wiget-title">
+						<h4>Links</h4>
+					</div>
+					<div class="footer-wiget-menu">
+						<ul>
+							<li><a href="#"> Home</a></li>
+							<li><a href="#"> About Us</a></li>
+							<li><a href="#"> Our Service</a></li>
+							<li><a href="#"> Career</a></li>
+							<li><a href="#"> Contact</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="row align-items-center mt-100">
-				<div class="col-lg-6 col-md-12">
-					<div class="copyright-text">
-						<p>Copyright © <a href="#">Hydro</a> All Rights Reserved.</p>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-wiget">
+					<div class="footer-wiget-title">
+						<h4>Other Link</h4>
+					</div>
+					<div class="footer-wiget-menu">
+						<ul>
+							<li><a href="#"> Faq</a></li>
+							<li><a href="#"> Tearm of user</a></li>
+							<li><a href="#"> Disclaimer</a></li>
+							<li><a href="#"> Privacy Policy</a></li>
+						</ul>
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-12">
-					<div class="footer-condition">
+			</div>
+			<div class="col-lg-3 col-md-6 pr-0">
+				<div class="foter-box">
+					<div class="footer-wiget-icon">
 						<ul>
-							<li><a href="#">Terms of use</a></li>
-							<li><a href="#">Privacy Policy</a></li>
+							{{#each socials}}
+							<li><a href="{{this.url}}"><i class="bi bi-{{this.iname}}"></i></a></li>
+							{{/each}}
+						</ul>
+					</div>
+					<div class="footer-widget-contct-menu">
+						<ul>
+							{{#each sites}}
+							<li><a href="#">{{this.Sphone}}</a></li>
+							<li class="line"><a href="#">{{this.Semail}}</a></li>
+							<li><a href="#">{{this.Saddress}}</a></li>
+							<li><a href="#">{{this.Slocation}}</a></li>
+							{{/each}}
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!--==================================================-->
-	<!-- End Thrown Footer Area -->
-	<!--==================================================-->
-
-	<!--==================================================-->
-	<!-- Start Search Popup Area -->
-	<!--==================================================-->
-	<div class="search-popup">
-		<button class="close-search style-two"><span class="flaticon-multiply"><i
-					class="far fa-times-circle"></i></span></button>
-		<button class="close-search"><i class="fas fa-arrow-up"></i></button>
-		<form method="post" action="#">
-			<div class="form-group">
-				<input type="search" name="search-field" value="" placeholder="Search Here" required="">
-				<button type="submit"><i class="fa fa-search"></i></button>
+		<div class="row align-items-center mt-100">
+			<div class="col-lg-6 col-md-12">
+				<div class="copyright-text">
+					<p>Copyright © <a href="#">Hydro</a> All Rights Reserved.</p>
+				</div>
 			</div>
-		</form>
-	</div>
-	<!--==================================================-->
-	<!-- End Search Popup Area -->
-	<!--==================================================-->
-
-	<!--==================================================-->
-	<!-- Start scrollup section Area -->
-	<!--==================================================-->
-	<!-- scrollup section -->
-	<div class="scroll-area">
-		<div class="top-wrap">
-			<div class="go-top-btn-wraper">
-				<div class="go-top go-top-button">
-					<i class="fas fa-arrow-up"></i>
-					<i class="fas fa-arrow-up"></i>
+			<div class="col-lg-6 col-md-12">
+				<div class="footer-condition">
+					<ul>
+						<li><a href="#">Terms of use</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
+<!--==================================================-->
+<!-- End Thrown Footer Area -->
+<!--==================================================-->
 
-	<!--==================================================-->
-	<!-- End scrollup section Area -->
-	<!--==================================================-->
-
-
-	<!-- jquery js -->
-	<script src="assets/js/vendor/jquery-3.6.2.min.js"></script>
-
-	<script src="assets/js/popper.min.js"></script>
-
-	<!-- bootstrap js -->
-	<script src="assets/js/bootstrap.min.js"></script>
-
-	<!-- carousel js -->
-	<script src="assets/js/owl.carousel.min.js"></script>
-
-	<!-- counterup js -->
-	<script src="assets/js/jquery.counterup.min.js"></script>
-
-	<!-- waypoints js -->
-	<script src="assets/js/waypoints.min.js"></script>
-
-	<!-- wow js -->
-	<script src="assets/js/wow.min.js"></script>
-
-	<!-- imagesloaded js -->
-	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-
-	<!-- venobox js -->
-	<script src="venobox/venobox.js"></script>
-
-	<!--  animated-text js -->
-	<script src="assets/js/animated-text.js"></script>
-
-	<!-- venobox min js -->
-	<script src="venobox/venobox.min.js"></script>
-
-	<!-- isotope js -->
-	<script src="assets/js/isotope.pkgd.min.js"></script>
-
-	<!-- jquery meanmenu js -->
-	<script src="assets/js/jquery.meanmenu.js"></script>
-
-	<!-- jquery scrollup js -->
-	<script src="assets/js/jquery.scrollUp.js"></script>
-
-	<script src="assets/js/jquery.barfiller.js"></script>
-	<!-- jquery js -->
-
-	<!-- theme js -->
-	<script src="assets/js/theme.js"></script>
-
-</body>
-
-</html>
+<!--==================================================-->
+<!-- Start Search Popup Area -->
+<!--==================================================-->
+<div class="search-popup">
+	<button class="close-search style-two"><span class="flaticon-multiply"><i
+				class="far fa-times-circle"></i></span></button>
+	<button class="close-search"><i class="fas fa-arrow-up"></i></button>
+	<form method="post" action="#">
+		<div class="form-group">
+			<input type="search" name="search-field" value="" placeholder="Search Here" required="">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</div>
+	</form>
+</div>
+<!--==================================================-->

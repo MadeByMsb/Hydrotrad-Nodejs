@@ -441,14 +441,17 @@
 
 
 
-
-
+<!--==================================================-->
+<!-- End Thrown Sidebar Area -->
+<!--==================================================-->
 <style>
 	.img3 {
-		width: 180px;
+		width: 130px;
 		margin-top: -17px;
 	}
 </style>
+
+
 <!--==================================================-->
 <!-- Start Thrown Footer Area -->
 <!--==================================================-->
@@ -458,14 +461,16 @@
 			<div class="col-lg-3 col-md-6">
 				<div class="footer-wiget">
 					<div class="footer-wiget-log">
-						<a href="index.html"><img class="img3" src="assets/img/logo3.png" alt=""></a>
+						{{#each sites}}
+						<a href="/"><img class="img3" src="/images/site-images/{{this._id}}.png" alt=""></a>
+						{{/each}}
 					</div>
 					<div class="footer-wiget-text">
-						<h4>Say Hello!</h4>
+						<h4>Hydro Sanitary Ware Trading LLC</h4>
 					</div>
 					<div class="footer-shape-title">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore</p>
+						<p>We believe our services have immensely contributed to the infrastructure development
+							requirements of the country for the past 16 years.</p>
 					</div>
 
 				</div>
@@ -505,19 +510,18 @@
 				<div class="foter-box">
 					<div class="footer-wiget-icon">
 						<ul>
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							{{#each socials}}
+							<li><a href="{{this.url}}"><i class="bi bi-{{this.iname}}"></i></a></li>
+							{{/each}}
 						</ul>
 					</div>
 					<div class="footer-widget-contct-menu">
-						<ul class="">
-							{{#each contacts}}
-							<li><i class="bi bi-geo-alt-fill"></i>{{this.Location}}</li>
-							<li><i class="bi bi-telephone-fill"></i>{{this.Phone}}</li>
-							<li><i class="bi bi-envelope"></i> {{this.Email}}</li>
-							<li><i class="bi bi-alarm-fill"></i> Week Days: 08.00 to 10.00
-							</li>
+						<ul>
+							{{#each sites}}
+							<li><a href="#">{{this.Sphone}}</a></li>
+							<li class="line"><a href="#">{{this.Semail}}</a></li>
+							<li><a href="#">{{this.Saddress}}</a></li>
+							<li><a href="#">{{this.Slocation}}</a></li>
 							{{/each}}
 						</ul>
 					</div>
@@ -559,25 +563,4 @@
 		</div>
 	</form>
 </div>
-<!--==================================================-->
-<!-- End Search Popup Area -->
-<!--==================================================-->
-
-<!--==================================================-->
-<!-- Start scrollup section Area -->
-<!--==================================================-->
-<!-- scrollup section -->
-<div class="scroll-area">
-	<div class="top-wrap">
-		<div class="go-top-btn-wraper">
-			<div class="go-top go-top-button">
-				<i class="fas fa-arrow-up"></i>
-				<i class="fas fa-arrow-up"></i>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!--==================================================-->
-<!-- End scrollup section Area -->
 <!--==================================================-->

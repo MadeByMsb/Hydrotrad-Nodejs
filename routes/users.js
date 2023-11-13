@@ -21,7 +21,8 @@ router.get("/", async function (req, res, next) {
   abouts = await adminHelper.getAllabouts();
   products = await adminHelper.getAllproducts();
   contacts = await adminHelper.getAllcontacts();
-  res.render("users/home", { admin: false, sites, socials, user, banners, abouts, products, contacts });
+  sones = await adminHelper.getAllsones();
+  res.render("users/home", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones });
 });
 
 router.get("/about-us", async function (req, res, next) {
