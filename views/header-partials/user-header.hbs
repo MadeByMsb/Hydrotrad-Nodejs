@@ -4,14 +4,14 @@
 			<div class="col-lg-2"></div>
 			<div class="col-lg-6">
 				<div class="topbar-info">
-					{{#each sites}}
-					<span><i class="bi bi-geo-alt-fill"></i>{{this.Saddress}}</span>
+					{{#each contacts}}
+					<span class="text-dark"><i class="bi bi-geo-alt-fill"></i>{{this.Location}}</span>
 					{{/each}}
 				</div>
 			</div>
 			<div class="col-lg-4">
 				<div class="topbar-social-item">
-					<h4>FOLLOW US</h4>
+					<h4 class="text-dark">FOLLOW US</h4>
 					<ul>
 						{{#each socials}}
 						<li><a href="{{this.url}}"><i class="bi bi-{{this.iname}}"></i></a></li>
@@ -80,7 +80,7 @@
 						</ul>
 					</div>
 					<div class="thrown-btn">
-						<a class="header-button" href="/contact-us">Get A Quout <span></span></a>
+						<a class="header-button" href="/contact-us">Get A Quote <span></span></a>
 					</div>
 				</div>
 			</div>
@@ -96,9 +96,7 @@
 <div class="mobile-menu-area " id="navbar">
 	<div class="mobile-menu">
 		<div class="mobile-logo">
-			<center>
-				<a href="index.html"><img src="assets/img/logo4.png" width="100px" alt=""></a>
-			</center>
+			<a href="index.html"><img src="assets/img/logo4.png" width="55px" alt=""></a>
 		</div>
 		<div class="side-menu-info">
 			<div class="sidebar-menu">
@@ -127,3 +125,72 @@
 		</div>
 	</div>
 </div> --}}
+
+
+<!--==================================================-->
+<!-- Start Thrown Sidebar Area -->
+<!--==================================================-->
+<div class="sidebar-group info-group">
+	<div class="sidebar-widget">
+		<div class="sidebar-widget-container">
+			<div class="widget-heading">
+				<a href="#" class="close-side-widget">
+					<i class="bi bi-x-lg"></i>
+				</a>
+			</div>
+			<div class="sidebar-textwidget">
+				<div class="sidebar-info-contents">
+					<div class="content-inner">
+						<div class="sidebar-logo">
+							<a href="index.html"><img src="assets/img/logo1.png" alt="logo"></a>
+						</div>
+						<div class="sidebar-widget-menu">
+							<ul>
+								<li><a href="/" class="text-white" style="text-decoration: none;">Home</a></li>
+								<li><a href="/about-us" class="text-white" style="text-decoration: none;">About</a>
+								</li>
+								<li><a href="#!" class="text-white" style="text-decoration: none;">Career</a>
+								</li>
+								{{!-- <li><a href="#">Service <i class="fas fa-chevron-down"></i></a>
+									<div class="sub-menu">
+										<ul>
+											<li><a href="service.html">Service</a></li>
+											<li><a href="service-details.html">Service Details</a></li>
+										</ul>
+									</div>
+								</li> --}}
+								<li><a href="/products" class="text-white" style="text-decoration: none;">Our
+										Products</a></li>
+								<li><a href="/contact-us" class="text-white" style="text-decoration: none;">Contact</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="contact-info">
+							<h2>Contact Info</h2>
+							<ul class="list-style-one">
+								{{#each contacts}}
+								<li><i class="bi bi-geo-alt-fill"></i>{{this.Location}}</li>
+								<li><i class="bi bi-telephone-fill"></i>Mob - (+971)56 522 1980</li>
+								<li><i class="bi bi-envelope"></i> {{this.Email}}</li>
+								<li><i class="bi bi-alarm-fill"></i> Week Days: 08.00 to 10.00
+								</li>
+								{{/each}}
+							</ul>
+						</div>
+						<ul class="social-box">
+							<li class="facebook"><a href="#" class="fab fa-facebook-f"></a></li>
+							<li class="twitter"><a href="#" class="fab fa-instagram"></a></li>
+							<li class="linkedin"><a href="#" class="fab fa-twitter"></a></li>
+							<li class="instagram"><a href="#" class="fab fa-pinterest-p"></a></li>
+							<li class="youtube"><a href="#" class="fab fa-linkedin-in"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--==================================================-->
+<!-- End Thrown Sidebar Area -->
+<!--==================================================-->

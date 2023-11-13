@@ -482,11 +482,11 @@
 					</div>
 					<div class="footer-wiget-menu">
 						<ul>
-							<li><a href="#"> Home</a></li>
-							<li><a href="#"> About Us</a></li>
+							<li><a href="/"> Home</a></li>
+							<li><a href="/about-us"> About Us</a></li>
 							<li><a href="#"> Our Service</a></li>
-							<li><a href="#"> Career</a></li>
-							<li><a href="#"> Contact</a></li>
+							<li><a href="/products"> Products</a></li>
+							<li><a href="/contact-us"> Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -517,11 +517,10 @@
 					</div>
 					<div class="footer-widget-contct-menu">
 						<ul>
-							{{#each sites}}
-							<li><a href="#">{{this.Sphone}}</a></li>
-							<li class="line"><a href="#">{{this.Semail}}</a></li>
-							<li><a href="#">{{this.Saddress}}</a></li>
-							<li><a href="#">{{this.Slocation}}</a></li>
+							{{#each contacts}}
+							<li><a href="#">{{this.Phone}}</a></li>
+							<li class="line"><a href="#">{{this.Email}}</a></li>
+							<li><a href="#">{{this.Location}}</a></li>
 							{{/each}}
 						</ul>
 					</div>

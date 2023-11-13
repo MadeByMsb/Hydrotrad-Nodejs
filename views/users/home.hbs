@@ -45,7 +45,7 @@
 						<p>{{this.desc}}</p>
 					</div>
 					<div class="thrown-btn slider">
-						<a class="header-button" href="{{this.btnlink}}">Get A Quout <span></span></a>
+						<a class="header-button" href="{{this.btnlink}}">Get A Quote <span></span></a>
 					</div>
 				</div>
 				<div class="slider-shape">
@@ -1504,72 +1504,7 @@
 	</div>
 </div>
 
-<!--==================================================-->
-<!-- Start Thrown Sidebar Area -->
-<!--==================================================-->
-<div class="sidebar-group info-group">
-	<div class="sidebar-widget">
-		<div class="sidebar-widget-container">
-			<div class="widget-heading">
-				<a href="#" class="close-side-widget">
-					<i class="bi bi-x-lg"></i>
-				</a>
-			</div>
-			<div class="sidebar-textwidget">
-				<div class="sidebar-info-contents">
-					<div class="content-inner">
-						<div class="sidebar-logo">
-							<a href="index.html"><img src="assets/img/logo1.png" alt="logo"></a>
-						</div>
-						<div class="sidebar-widget-menu">
-							<ul>
-								<li><a href="index.html" class="text-white" style="text-decoration: none;">Home</a></li>
-								<li><a href="about.html" class="text-white" style="text-decoration: none;">About</a>
-								</li>
-								<li><a href="career.html" class="text-white" style="text-decoration: none;">Career</a>
-								</li>
-								<li><a href="#">Service <i class="fas fa-chevron-down"></i></a>
-									<div class="sub-menu">
-										<ul>
-											<li><a href="service.html">Service</a></li>
-											<li><a href="service-details.html">Service Details</a></li>
-										</ul>
-									</div>
-								</li>
-								<li><a href="career.html" class="text-white" style="text-decoration: none;">Our
-										Products</a></li>
-								<li><a href="contact-us.html" class="text-white"
-										style="text-decoration: none;">Contact</a></li>
-							</ul>
-						</div>
-						<div class="contact-info">
-							<h2>Contact Info</h2>
-							<ul class="list-style-one">
-								{{#each contacts}}
-								<li><i class="bi bi-geo-alt-fill"></i>{{this.Location}}</li>
-								<li><i class="bi bi-telephone-fill"></i>{{this.Phone}}</li>
-								<li><i class="bi bi-envelope"></i> {{this.Email}}</li>
-								<li><i class="bi bi-alarm-fill"></i> Week Days: 08.00 to 10.00
-								</li>
-								{{/each}}
-							</ul>
-						</div>
-						<ul class="social-box">
-							<li class="facebook"><a href="#" class="fab fa-facebook-f"></a></li>
-							<li class="twitter"><a href="#" class="fab fa-instagram"></a></li>
-							<li class="linkedin"><a href="#" class="fab fa-twitter"></a></li>
-							<li class="instagram"><a href="#" class="fab fa-pinterest-p"></a></li>
-							<li class="youtube"><a href="#" class="fab fa-linkedin-in"></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!--==================================================-->
-<!-- End Thrown Sidebar Area -->
-<!--==================================================-->
+
 <style>
 	.img3 {
 		width: 130px;
@@ -1608,11 +1543,11 @@
 					</div>
 					<div class="footer-wiget-menu">
 						<ul>
-							<li><a href="#"> Home</a></li>
-							<li><a href="#"> About Us</a></li>
+							<li><a href="/"> Home</a></li>
+							<li><a href="/about-us"> About Us</a></li>
 							<li><a href="#"> Our Service</a></li>
-							<li><a href="#"> Career</a></li>
-							<li><a href="#"> Contact</a></li>
+							<li><a href="/products"> Products</a></li>
+							<li><a href="/contact-us"> Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -1643,11 +1578,10 @@
 					</div>
 					<div class="footer-widget-contct-menu">
 						<ul>
-							{{#each sites}}
-							<li><a href="#">{{this.Sphone}}</a></li>
-							<li class="line"><a href="#">{{this.Semail}}</a></li>
-							<li><a href="#">{{this.Saddress}}</a></li>
-							<li><a href="#">{{this.Slocation}}</a></li>
+							{{#each contacts}}
+							<li><a href="#">{{this.Phone}}</a></li>
+							<li class="line"><a href="#">{{this.Email}}</a></li>
+							<li><a href="#">{{this.Location}}</a></li>
 							{{/each}}
 						</ul>
 					</div>
