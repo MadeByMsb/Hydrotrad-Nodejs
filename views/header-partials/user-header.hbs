@@ -24,7 +24,15 @@
 	</div>
 </div>
 
-
+<style>
+	@media (min-width: 1200px) and (max-width: 1600px) {
+		.thrown-menu {
+			text-align: end;
+			margin-right: -2px;
+			margin-top: -30px;
+		}
+	}
+</style>
 <div class="thrown-header-area" id="sticky-header">
 	<div class="container">
 		<div class="row align-items-center">
@@ -32,27 +40,34 @@
 				<center>
 					<div class="header-logo">
 						{{#each sites}}
-						<a href="index.html"><img src="/images/site-images/{{this._id}}.png" width="180px" alt=""></a>
+						<a href="index.html"><img src="/images/site-images/{{this._id}}.png" width="110px" alt=""></a>
 						{{/each}}
 					</div>
 				</center>
 			</div>
 			<div class="col-lg-6 col-md-6">
-				<div class="thrown-menu">
-					<ul>
-						<li><a href="/">Home</a></li>
-						<li><a href="/about-us">About</a></li>
-						<!-- <li><a href="/career">Career</a></li> -->
-						<!-- <li><a href="#">Service <i class="fas fa-chevron-down"></i></a>
-							<div class="sub-menu">
-								<ul>
-									<li><a href="/service">Service</a></li>
-								</ul>
-							</div>
-						</li> -->
-						<li><a href="/products">Our Products</a></li>
-						<li><a href="/contact-us">Contact</a></li>
-					</ul>
+				<div class="card  shadow" style="
+  height: 46px;
+  width: 626px;
+  border-radius:50px;
+  ">
+					<div class="thrown-menu">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/about-us">About</a></li>
+							<li><a href="/career">Career</a></li>
+							<li><a href="#">Service <i class="fas fa-chevron-down"></i></a>
+								<div class="sub-menu">
+									<ul>
+										<li><a href="/service">Service</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="/products">Our Products</a></li>
+
+							<li><a href="/contact-us">Contact</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6">
@@ -78,10 +93,12 @@
 	</div>
 </div>
 <!-- Thrown Mobile Menu Area -->
-<div class="mobile-menu-area sticky-menu" id="navbar">
+<div class="mobile-menu-area " id="navbar">
 	<div class="mobile-menu">
 		<div class="mobile-logo">
-			<a href="index.html"><img src="assets/img/logo1.png" width="120px" alt=""></a>
+			<center>
+				<a href="index.html"><img src="assets/img/logo4.png" width="100px" alt=""></a>
+			</center>
 		</div>
 		<div class="side-menu-info">
 			<div class="sidebar-menu">
@@ -93,3 +110,20 @@
 <!--==================================================-->
 <!-- End Thrown Header Area -->
 <!--==================================================-->
+
+
+<a href="https://wa.me/971565221980" class="float" target="_blank">
+	<i class="bi bi-whatsapp my-float"></i>
+</a>
+
+
+{{!-- <div class="scroll-area">
+	<div class="top-wrap">
+		<div class="go-top-btn-wraper">
+			<div class="go-top go-top-button">
+				<i class="fas fa-arrow-up"></i>
+				<i class="fas fa-arrow-up"></i>
+			</div>
+		</div>
+	</div>
+</div> --}}

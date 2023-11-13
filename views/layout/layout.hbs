@@ -46,6 +46,8 @@
 
 	<!-- modernizr js -->
 	<script src="/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+
+
 </head>
 	<!-- loder -->
 	<div class="loader_bg">
@@ -193,6 +195,54 @@ background: {{this.primarycolor}};
 .thrown-menu ul li a:hover {
     color: {{this.primarycolor}};
    
+}
+.thrown-topbar-area {
+    background: #000;
+	color:black;
+    padding: 17px 0;
+    position: relative;
+}
+.mobile-menu-area {
+    background: #ffffff;
+}
+.mobile-menu-area.sticky-menu {
+    left: 0;
+    margin: auto;
+    top: 0;
+    right: 0;
+    width: 100%;
+    position: unset !important;
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.07);
+    -webkit-animation: 300ms running fadeInDown;
+    animation: 500ms running fadeInUp;
+    -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+    transition: 0.5s !important;
+    background: #fff!important;
+    z-index: 9999 !important;
+    animation-name: slideInDown;
+    padding: 20px;
+}
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+.bi-whatsapp::before {
+    content: "\f618";
+    margin-top: 14px;
+}
+
+.my-float{
+	margin-top:16px;
 }
 	</style>
 {{/each}}
