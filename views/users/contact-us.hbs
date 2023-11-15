@@ -192,7 +192,61 @@
 <!--==================================================-->
 <!-- End Thrown Bratcome Area -->
 <!--==================================================-->
+<style>
+	.contact-content span {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 26px;
+		display: block;
+		text-align: left;
+		/* Center the text */
+	}
 
+	.contact-content {
+		text-align: center;
+		/* Justify the text to the start (left) */
+	}
+
+	.contect1 {
+		margin-left: 87px;
+	}
+
+	.contect2 {
+		margin-left: 67px;
+	}
+
+	.contect3 {
+		margin-left: 67px;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.contact-content span {
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 26px;
+			display: block;
+			text-align: center;
+			/* Center the text */
+		}
+
+		.contact-content {
+			text-align: center;
+			/* Justify the text to the start (left) */
+		}
+
+		.contect1 {
+			margin-left: 0;
+		}
+
+		.contect2 {
+			margin-left: 0;
+		}
+
+		.contect3 {
+			margin-left: 0;
+		}
+	}
+</style>
 <!--==================================================-->
 <!-- Start Thrown Pricing Area -->
 <!--==================================================-->
@@ -207,10 +261,12 @@
 					</div>
 					<div class="contact-content">
 						<h4>Phone Number</h4>
-						<span>{{this.Phone}}</span>
-						<span>Tele - (+971)25548562</span>
-						<span>Fax - (+971)25548563</span>
-						<span>Mob - (+971)56 522 1980</span>
+						<div class="contect1">
+							{{!-- <span>{{this.Phone}}</span> --}}
+							<span>Tele - (+971)25548562</span>
+							<span>Fax - (+971)25548563</span>
+							<span>Mob - (+971)56 522 1980</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -219,13 +275,15 @@
 					<div class="contact-inner-icon">
 						<i class="bi bi-envelope-open"></i>
 					</div>
-					<div class="contact-content">
+					<div class="contact-content text-center">
 						<h4>E-mail</h4>
-						<span>info@hydrosanitary.com</span>
-						<span>sales@hydrosanitary.com</span>
-						<span>accounts@hydrosanitary.com</span>
-						<span>sales1@hydrosanitary.com</span>
-						<span>sales2@hydrosanitary.com</span>
+						<div class="contect2">
+							<span>info@hydrosanitary.com</span>
+							<span>sales@hydrosanitary.com</span>
+							<span>accounts@hydrosanitary.com</span>
+							<span>sales1@hydrosanitary.com</span>
+							<span>sales2@hydrosanitary.com</span>
+						</div>
 
 					</div>
 				</div>
@@ -237,7 +295,9 @@
 					</div>
 					<div class="contact-content">
 						<h4>Address</h4>
-						<span>{{this.Location}}</span>
+						<div class="contect2">
+							<span>{{this.Location}}</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -319,136 +379,128 @@
 	</div>
 </div>
 <!--==================================================-->
-<!-- End Thrown Map Area -->
+<!-- End Thrown Sidebar Area -->
 <!--==================================================-->
+<style>
+	.img3 {
+		width: 130px;
+		margin-top: -17px;
+	}
+</style>
+
 
 <!--==================================================-->
-<!-- Start Thrown Sidebar Area -->
+<!-- Start Thrown Footer Area -->
 <!--==================================================-->
-< <!--==================================================-->
-	<!-- End Thrown Sidebar Area -->
-	<!--==================================================-->
-	<!--==================================================-->
-	<!-- End Thrown Sidebar Area -->
-	<!--==================================================-->
-	<style>
-		.img3 {
-			width: 130px;
-			margin-top: -17px;
-		}
-	</style>
-
-
-	<!--==================================================-->
-	<!-- Start Thrown Footer Area -->
-	<!--==================================================-->
-	<div class="footer-area">
-		<div class="container">
-			<div class="row gx-6">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-wiget">
-						<div class="footer-wiget-log">
-							{{#each sites}}
-							<a href="/"><img class="img3" src="/images/site-images/{{this._id}}.png" alt=""></a>
-							{{/each}}
-						</div>
-						<div class="footer-wiget-text">
-							<h4>Hydro Sanitary Ware Trading LLC</h4>
-						</div>
-						<div class="footer-shape-title">
-							<p>We believe our services have immensely contributed to the infrastructure development
-								requirements of the country for the past 16 years.</p>
-						</div>
-
+<div class="footer-area">
+	<div class="container">
+		<div class="row gx-7">
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-wiget">
+					<div class="footer-wiget-log">
+						{{#each sites}}
+						<a href="/"><img class="img3" src="/images/site-images/{{this._id}}.png" alt=""></a>
+						{{/each}}
 					</div>
+					<div class="footer-wiget-text">
+						<h4>Hydro Sanitary Ware Trading LLC</h4>
+					</div>
+					<div class="footer-shape-title">
+						<p>We believe our services have immensely contributed to the infrastructure development
+							requirements of the country for the past 16 years.</p>
+					</div>
+
 				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-wiget">
-						<div class="footer-wiget-title">
-							<h4>Links</h4>
-						</div>
-						<div class="footer-wiget-menu">
-							<ul>
-								<li><a href="/"> Home</a></li>
-								<li><a href="/about-us"> About Us</a></li>
-								<li><a href="#"> Our Service</a></li>
-								<li><a href="/products"> Products</a></li>
-								<li><a href="/contact-us"> Contact</a></li>
-							</ul>
-						</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-wiget">
+					<div class="footer-wiget-title">
+						<h4>Links</h4>
 					</div>
-				</div>
-				{{!-- <div class="col-lg-3 col-md-6">
-					<div class="footer-wiget">
-						<div class="footer-wiget-title">
-							<h4>Other Link</h4>
-						</div>
-						<div class="footer-wiget-menu">
-							<ul>
-								<li><a href="#"> Faq</a></li>
-								<li><a href="#"> Tearm of user</a></li>
-								<li><a href="#"> Disclaimer</a></li>
-								<li><a href="#"> Privacy Policy</a></li>
-							</ul>
-						</div>
-					</div>
-				</div> --}}
-				<div class="col-lg-3 col-md-6 pr-0">
-					<div class="foter-box">
-						<div class="footer-wiget-icon">
-							<ul>
-								{{#each socials}}
-								<li><a href="{{this.url}}"><i class="bi bi-{{this.iname}}"></i></a></li>
-								{{/each}}
-							</ul>
-						</div>
-						<div class="footer-widget-contct-menu">
-							<ul>
-								<ul>
-									{{#each contacts}}
-									<li><a href="#">{{this.Phone}}</a></li>
-									<li class="line"><a href="#">{{this.Email}}</a></li>
-									<li><a href="#">{{this.Location}}</a></li>
-									{{/each}}
-								</ul>
-							</ul>
-						</div>
+					<div class="footer-wiget-menu">
+						<ul>
+							<li><a href="/"> Home</a></li>
+							<li><a href="/about-us"> About Us</a></li>
+							{{!-- <li><a href="#">Careers</a></li> --}}
+							<li><a href="#">Gallery</a></li>
+							<li><a href="/products"> Products</a></li>
+							<li><a href="/contact-us"> Contact</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="row align-items-center mt-100">
-				<div class="col-lg-6 col-md-12">
-					<div class="copyright-text">
-						<p>Copyright © <a href="#">Hydro</a> All Rights Reserved.</p>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-wiget">
+					<div class="footer-wiget-title">
+						<h4>Our Product Links</h4>
+					</div>
+					<div class="footer-wiget-menu">
+						<ul>
+							<li><a href="#"> MEP Works</a></li>
+							<li><a href="#"> Pipes & Fittings</a></li>
+							<li><a href="#"> Valves & Accessories</a></li>
+							<li><a href="#"> Mixers & Sanitary Accessories</a></li>
+							<li><a href="#"> Hand Tools & Equipment’s</a></li>
+							<li><a href="#"> Hardware’s & Safety Equipment’s</a></li>
+
+						</ul>
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-12">
-					<div class="footer-condition">
+			</div>
+			<div class="col-lg-3 col-md-6 pr-0">
+				<div class="foter-box">
+					<div class="footer-wiget-icon">
 						<ul>
-							<li><a href="#">Terms of use</a></li>
-							<li><a href="#">Privacy Policy</a></li>
+							{{#each socials}}
+							<li><a href="{{this.url}}"><i class="bi bi-{{this.iname}}"></i></a></li>
+							{{/each}}
+						</ul>
+					</div>
+					<div class="footer-widget-contct-menu">
+						<ul>
+							{{#each contacts}}
+							<li><a href="#">{{this.Phone}}</a></li>
+							<li class="line"><a href="#">Info@hydrosanitary.com</a></li>
+							<li><a href="#">{{this.Location}}</a></li>
+							{{/each}}
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!--==================================================-->
-	<!-- End Thrown Footer Area -->
-	<!--==================================================-->
-
-	<!--==================================================-->
-	<!-- Start Search Popup Area -->
-	<!--==================================================-->
-	<div class="search-popup">
-		<button class="close-search style-two"><span class="flaticon-multiply"><i
-					class="far fa-times-circle"></i></span></button>
-		<button class="close-search"><i class="fas fa-arrow-up"></i></button>
-		<form method="post" action="#">
-			<div class="form-group">
-				<input type="search" name="search-field" value="" placeholder="Search Here" required="">
-				<button type="submit"><i class="fa fa-search"></i></button>
+		<div class="row align-items-center mt-100">
+			<div class="col-lg-6 col-md-12">
+				<div class="copyright-text">
+					<p>Copyright © <a href="#">Hydro</a> All Rights Reserved.</p>
+				</div>
 			</div>
-		</form>
+			<div class="col-lg-6 col-md-12">
+				<div class="footer-condition">
+					<ul>
+						<li><a href="#">Terms of use</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
-	<!--==================================================-->
+</div>
+<!--==================================================-->
+<!-- End Thrown Footer Area -->
+<!--==================================================-->
+
+<!--==================================================-->
+<!-- Start Search Popup Area -->
+<!--==================================================-->
+<div class="search-popup">
+	<button class="close-search style-two"><span class="flaticon-multiply"><i
+				class="far fa-times-circle"></i></span></button>
+	<button class="close-search"><i class="fas fa-arrow-up"></i></button>
+	<form method="post" action="#">
+		<div class="form-group">
+			<input type="search" name="search-field" value="" placeholder="Search Here" required="">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</div>
+	</form>
+</div>
+<!--==================================================-->

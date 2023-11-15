@@ -48,6 +48,15 @@ router.get("/about-us", async function (req, res, next) {
     res.render("users/products", { admin: false, sites, socials, products, contacts });
   }),
 
+  router.get("/service", async function (req, res, next) {
+    sites = await adminHelper.getAllsites();
+    socials = await adminHelper.getAllsocials();
+    products = await adminHelper.getAllproducts();
+    contacts = await adminHelper.getAllcontacts();
+    res.render("users/service", { admin: false, sites, socials, products, contacts });
+  }),
+
+
 
 
   router.get("/signup", function (req, res) {

@@ -201,9 +201,9 @@
 		<div class="row">
 			<div class="col-lg-6 col-md-12">
 				<div class="about-thumb">
-					<img src="/images/about-images/{{this._id}}.png" alt="">
+					<img src="assets/img/ab1.jpg" alt="">
 					<div class="about-shape bounce-animate">
-						<img src="assets/img/img2.png" alt="">
+						{{!-- <img src="assets/img/img2.png" alt=""> --}}
 					</div>
 				</div>
 
@@ -217,6 +217,21 @@
 						<h2 class="font-bold">{{this.Mheading}}</h2>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12">
+						<!--start about single box -->
+						<div class="about-single-box">
+							<div class="about-icon">
+								<h1 class="text-primary">16</h1>
+							</div>
+							<div class="about-text mt-0">
+								<h4>Years of Experience</h4>
+							</div>
+						</div>
+						<!--end about single box -->
+					</div>
+				</div>
+				<br>
 				<div class="about-content">
 					<div class="about-discribtion">
 
@@ -224,21 +239,7 @@
 
 					</div>
 
-					<div class="row">
-						<div class="col-lg-12 col-md-12">
-							<!--start about single box -->
-							<div class="about-single-box">
-								<div class="about-icon">
-									<h1 class="text-primary">16</h1>
-								</div>
-								<div class="about-text mt-0">
-									<h4>Years of Experience</h4>
-								</div>
-							</div>
-							<!--end about single box -->
-						</div>
 
-					</div>
 				</div>
 			</div>
 		</div>
@@ -251,7 +252,6 @@
 
 
 
-<!------------------------------------------------>
 <style>
 	.imgg2 {
 		width: 150%;
@@ -270,7 +270,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-6 col-md-6">
-				<img src="assets/img/bg7.png" style="margin-left: -12px;" alt="Cover Image" class="imgg2">
+				<img src="assets/img/ab2.png" style="margin-left: -12px;" alt="Cover Image" class="imgg2">
 			</div>
 			<div class="col-lg-6 col-md-12" style="background-color: #0a58ca;">
 				<div class="container">
@@ -284,9 +284,11 @@
 							</div>
 						</div>
 						<div class="choose-discription">
-							<p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-								aliquip ex ea commodo consequat.</p>
+							<p>HBMT is strived to be one of the most dedicated and committed suppliers in the industry
+								by upholding the values of business ethics. We adhere and adopt stringent measures to
+								achieve the quality and workers' health and safety to the international standards.
+
+								.</p>
 						</div>
 
 						<div class="section-container">
@@ -346,9 +348,9 @@
 							</div>
 						</div>
 						<div class="choose-discription">
-							<p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-								aliquip ex ea commodo consequat.</p>
+							<p>We aim for an above-average level of satisfaction to our customers in providing quality
+								products and timely delivery and proper execution of jobs with a responsible approach.
+							</p>
 						</div>
 
 						<div class="section-container">
@@ -366,7 +368,7 @@
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6">
-				<img src="assets/img/bg7.png" style="margin-left: -12px;" alt="Cover Image" class="imgg2">
+				<img src="assets/img/ab3.png" style="margin-left: -12px;" alt="Cover Image" class="imgg2">
 			</div>
 
 		</div>
@@ -379,7 +381,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-6 col-md-6">
-				<img src="assets/img/bg7.png" style="margin-left: -12px;" alt="Cover Image" class="imgg2">
+				<img src="assets/img/ab4.png" style="margin-left: -12px;" alt="Cover Image" class="imgg2">
 			</div>
 			<div class="col-lg-6 col-md-12" style="background-color: #0a58ca;">
 				<div class="container">
@@ -393,9 +395,10 @@
 							</div>
 						</div>
 						<div class="choose-discription">
-							<p>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-								aliquip ex ea commodo consequat.</p>
+							<p>The experienced and well-trained commercial team performs business development, marketing
+								& sales activities. The core of this team is a blend of personnel with experience &
+								knowledge from the engineering, construction, manufacturing & piping design services
+								industries.</p>
 						</div>
 
 						<div class="section-container">
@@ -457,7 +460,7 @@
 <!--==================================================-->
 <div class="footer-area">
 	<div class="container">
-		<div class="row gx-6">
+		<div class="row gx-7">
 			<div class="col-lg-3 col-md-6">
 				<div class="footer-wiget">
 					<div class="footer-wiget-log">
@@ -484,28 +487,32 @@
 						<ul>
 							<li><a href="/"> Home</a></li>
 							<li><a href="/about-us"> About Us</a></li>
-							<li><a href="#"> Our Service</a></li>
+							{{!-- <li><a href="#">Careers</a></li> --}}
+							<li><a href="#">Gallery</a></li>
 							<li><a href="/products"> Products</a></li>
 							<li><a href="/contact-us"> Contact</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			{{!-- <div class="col-lg-3 col-md-6">
+			<div class="col-lg-3 col-md-6">
 				<div class="footer-wiget">
 					<div class="footer-wiget-title">
-						<h4>Other Link</h4>
+						<h4>Our Product Links</h4>
 					</div>
 					<div class="footer-wiget-menu">
 						<ul>
-							<li><a href="#"> Faq</a></li>
-							<li><a href="#"> Tearm of user</a></li>
-							<li><a href="#"> Disclaimer</a></li>
-							<li><a href="#"> Privacy Policy</a></li>
+							<li><a href="#"> MEP Works</a></li>
+							<li><a href="#"> Pipes & Fittings</a></li>
+							<li><a href="#"> Valves & Accessories</a></li>
+							<li><a href="#"> Mixers & Sanitary Accessories</a></li>
+							<li><a href="#"> Hand Tools & Equipment’s</a></li>
+							<li><a href="#"> Hardware’s & Safety Equipment’s</a></li>
+
 						</ul>
 					</div>
 				</div>
-			</div> --}}
+			</div>
 			<div class="col-lg-3 col-md-6 pr-0">
 				<div class="foter-box">
 					<div class="footer-wiget-icon">
@@ -519,7 +526,7 @@
 						<ul>
 							{{#each contacts}}
 							<li><a href="#">{{this.Phone}}</a></li>
-							<li class="line"><a href="#">{{this.Email}}</a></li>
+							<li class="line"><a href="#">Info@hydrosanitary.com</a></li>
 							<li><a href="#">{{this.Location}}</a></li>
 							{{/each}}
 						</ul>
