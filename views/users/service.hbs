@@ -321,7 +321,7 @@
                     </div>
                     <div class="footer-shape-title">
                         <p>We believe our services have immensely contributed to the infrastructure development
-                            requirements of the country for the past 16 years.</p>
+                            requirements of the country for the past 07 years.</p>
                     </div>
 
                 </div>
@@ -336,7 +336,7 @@
                             <li><a href="/"> Home</a></li>
                             <li><a href="/about-us"> About Us</a></li>
                             {{!-- <li><a href="#">Careers</a></li> --}}
-                            <li><a href="#">Gallery</a></li>
+                            {{!-- <li><a href="#">Gallery</a></li> --}}
                             <li><a href="/products"> Products</a></li>
                             <li><a href="/contact-us"> Contact</a></li>
                         </ul>
@@ -350,13 +350,9 @@
                     </div>
                     <div class="footer-wiget-menu">
                         <ul>
-                            <li><a href="/products"> MEP Works</a></li>
-                            <li><a href="/products"> Pipes & Fittings</a></li>
-                            <li><a href="/products"> Valves & Accessories</a></li>
-                            <li><a href="/products"> Mixers & Sanitary Accessories</a></li>
-                            <li><a href="/products"> Hand Tools & Equipment’s</a></li>
-                            <li><a href="/products"> Hardware’s & Safety Equipment’s</a></li>
-
+                            {{#each categories}}
+                            <li><a href="{{this.dl}}"> {{this.name}}</a></li>
+                            {{/each}}
                         </ul>
                     </div>
                 </div>

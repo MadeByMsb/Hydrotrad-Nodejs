@@ -4,9 +4,9 @@
   <div class="page-wrapper">
     <div class="container">
       <br>
-      <h2>Manage Products</h2>
+      <h2>Manage Categories</h2>
       <br>
-      <a href="/admin/product/add-product" class="btn btn-primary mb-3">+ Add Products</a>
+      <a href="/admin/category/add-category" class="btn btn-primary mb-3">+ Add Category</a>
 
 
       <div class="card">
@@ -17,34 +17,25 @@
                 <tr>
                   <th>No.</th>
                   <th>Name</th>
-                  <th>Category</th>
-                  <th>Description</th>
-                  <th>Size</th>
-                  <th>Model No</th>
-                  <th>Material</th>
-                  <th>img</th>
+                  <th>Image</th>
+                  <th>Destination Link</th>
                   <th>Edit</th>
                   <th>Delete</th>
 
                 </tr>
               </thead>
               <tbody>
-                {{#each products}}
+                {{#each categories}}
                 <tr>
                   <td>{{incremented @index}}</td>
                   <td>{{this.name}}</td>
-                  <td>{{this.category}}</td>
-                  <td>{{this.desc}}</td>
-                  <td>{{this.size}}</td>
-                  <td>{{this.model}}</td>
-                  <td>{{this.material}}</td>
-
-                  <td> <a href="/images/product-images/{{this._id}}.png">
-                      <img src="/images/product-images/{{this._id}}.png" name="Image" class="image-fluid"
+                  <td> <a href="/images/category-images/{{this._id}}.png">
+                      <img src="/images/category-images/{{this._id}}.png" name="Image" class="image-fluid"
                         width="40%"></a></td>
-                  <td><a href="/admin/product/edit-product/{{this._id}}" class="btn btn-dark mb-3"><i
+                  <td>{{this.dl}}</td>
+                  <td><a href="/admin/category/edit-category/{{this._id}}" class="btn btn-dark mb-3"><i
                         class="bi bi-pencil-square" aria-hidden="true"></i></a></td>
-                  <td><a href="/admin/product/delete-product/{{this._id}}" class="btn btn-danger"
+                  <td><a href="/admin/category/delete-category/{{this._id}}" class="btn btn-danger"
                       onclick="return confirm('Are You Sure to Delete ?')"><i class="fa fa-trash"
                         aria-hidden="true"></i></a></td>
 

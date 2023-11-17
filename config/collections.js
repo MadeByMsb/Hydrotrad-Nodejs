@@ -9,5 +9,7 @@ module.exports = {
     ABOUT_COLLECTION: "about",
     SONE_COLLECTION: "sone",
     CONTACT_COLLECTION: "contact",
+    CATEGORY_COLLECTION: "category",
+
 
 }

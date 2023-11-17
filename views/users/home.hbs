@@ -19,6 +19,12 @@
 			font-weight: 800;
 		}
 	}
+
+	@media (min-width: 1200px) and (max-width: 1600px) {
+		.about-thumb {
+			top: 32px;
+		}
+	}
 </style>
 
 <!--==================================================-->
@@ -31,11 +37,11 @@
 			<div class="image-layer" style="background-image: url('/images/banner-images/{{this._id}}.png');"></div>
 			<div class="container">
 				<div class="slider-content">
-					<div class="slider-sub-title">
+					{{!-- <div class="slider-sub-title">
 						<h4 class="text-center">
 							<center>{{this.subtitle}}</center>
 						</h4>
-					</div>
+					</div> --}}
 					<div class="slider-main-title">
 						<div class="container">
 							<h1>{{this.Mheading}}</h1>
@@ -111,6 +117,19 @@
 <div class="about-area">
 	<div class="container">
 		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-title text-center">
+					<div class="section-sub-title">
+						<h4>{{this.subtitle}}</h4>
+					</div>
+					<div class="section-main-title">
+						<h2>{{this.Mheading}}</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
 			<div class="col-lg-6 col-md-12">
 				<div class="about-thumb">
 					<img src="/images/about-images/{{this._id}}.png" alt="">
@@ -120,14 +139,7 @@
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-12">
-				<div class="section-title">
-					<div class="about-sub-title">
-						<h4>{{this.subtitle}}</h4>
-					</div>
-					<div class="about-main-title">
-						<h2>{{this.Mheading}}</h2>
-					</div>
-				</div>
+
 				<div class="about-content">
 					<div class="about-discribtion">
 						<p>{{this.desc}}</p>
@@ -241,7 +253,7 @@
 <!--==================================================-->
 <!-- Start Thrown Contact Us Area -->
 <!--==================================================-->
-<center>
+{{!-- <center>
 	<div class="contact-us-area mb-5">
 		<div class="container">
 			<div class="row">
@@ -272,7 +284,7 @@
 			</div>
 		</div>
 	</div>
-</center>
+</center> --}}
 <!--==================================================-->
 <!-- End Thrown Contact Us Area -->
 <!--==================================================-->
@@ -365,7 +377,8 @@
 						</div>
 					</div>
 					<div class="choose-discription">
-						<p>HTSC is striving to ensure total customer satisfaction by providing dedicated service to all
+						<p>Hydro Sanitary Ware Trading LLC is striving to ensure total customer satisfaction by
+							providing dedicated service to all
 							levels.
 
 							.</p>
@@ -448,7 +461,7 @@
 					<div class="row">
 						<div class="col-lg-4 col-md-12">
 							<div class="subscribe-title">
-								<h4>Subscribe Our Newslatter</h4>
+								<h4>Subscribe Our Newsletter</h4>
 							</div>
 						</div>
 						<div class="col-lg-8 col-md-12">
@@ -968,7 +981,8 @@
 							<h5 class="text-white">Our Mission</h5>
 						</div>
 						<div class="bg2">
-							<p class="text-white">HTSC, is strived to be one of the most dedicated and committed
+							<p class="text-white">Hydro Sanitary Ware Trading LLC , is strived to be one of the most
+								dedicated and committed
 								suppliers in the industry by upholding the values of business ethics. We adhere and
 								adopt stringent measures to achieve quality and workers. workers' health and safety to
 								the international standards..</p>
@@ -1423,6 +1437,13 @@
 <!--==================================================-->
 <!-- End Thrown Blog Area -->
 <!--==================================================-->
+<style>
+	@media only screen and (min-width: 320px) and (max-width: 479px) {
+		.contact-single-box {
+			margin-bottom: 4px;
+		}
+	}
+</style>
 
 <div class="contact-area-three">
 	<div class="container">
@@ -1440,30 +1461,30 @@
 					<p>Most of the products can be immediately supplied from our ready stock at short notice.
 					</p>
 				</div>
-				<div class="contact-list">
+				{{!-- <div class="contact-list">
 					<span><i class="bi bi-chevron-double-right"></i> Refreshing to get such a personal touch</span>
 					<span> <i class="bi bi-chevron-double-right"></i>Velit esse cillum dolore eu</span>
-				</div>
+				</div> --}}
 				<div class="row">
 					<div class="col-lg-12 col-md-6">
-						<div class="contact-single-box">
-							<div class="contact-icon">
-								<i class="bi bi-telephone-plus"></i>
-							</div>
-							<div class="contact-content">
-								<h5>Have Any Question?</h5>
-								<h3>Mob - (+971)56 522 1980</h3>
+						<div class="card p-3 shadow mb-2">
+							<div class="contact-single-box">
+								<i class="bi bi-telephone-plus" style="font-size: 2em; color:#007bc7;"></i>
+								<div class="contact-content">
+									<h5>Have Any Question?</h5>
+									<h3>(+971)56 522 1980</h3>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-12 col-md-6">
-						<div class="contact-single-box">
-							<div class="contact-icon">
-								<i class="bi bi-envelope"></i>
-							</div>
-							<div class="contact-content">
-								<h5>Send Email</h5>
-								<h3>info@hydrosanitary.com</h3>
+						<div class="card p-3 shadow mb-2">
+							<div class="contact-single-box">
+								<i class="bi bi-envelope" style="font-size: 2em; color:#007bc7;"></i>
+								<div class="contact-content">
+									<h5>Send Email</h5>
+									<h3>info@hydrosanitary.com</h3>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -1534,7 +1555,7 @@
 					</div>
 					<div class="footer-shape-title">
 						<p>We believe our services have immensely contributed to the infrastructure development
-							requirements of the country for the past 16 years.</p>
+							requirements of the country for the past 07 years.</p>
 					</div>
 
 				</div>
@@ -1549,7 +1570,7 @@
 							<li><a href="/"> Home</a></li>
 							<li><a href="/about-us"> About Us</a></li>
 							{{!-- <li><a href="#">Careers</a></li> --}}
-							<li><a href="#">Gallery</a></li>
+							{{!-- <li><a href="#">Gallery</a></li> --}}
 							<li><a href="/products"> Products</a></li>
 							<li><a href="/contact-us"> Contact</a></li>
 						</ul>
@@ -1563,13 +1584,9 @@
 					</div>
 					<div class="footer-wiget-menu">
 						<ul>
-							<li><a href="/products"> MEP Works</a></li>
-							<li><a href="/products"> Pipes & Fittings</a></li>
-							<li><a href="/products"> Valves & Accessories</a></li>
-							<li><a href="/products"> Mixers & Sanitary Accessories</a></li>
-							<li><a href="/products"> Hand Tools & Equipment’s</a></li>
-							<li><a href="/products"> Hardware’s & Safety Equipment’s</a></li>
-
+							{{#each categories}}
+							<li><a href="{{this.dl}}"> {{this.name}}</a></li>
+							{{/each}}
 						</ul>
 					</div>
 				</div>

@@ -88,12 +88,12 @@
 		</div>
 		<div class="row">
 
-			{{#each products}}
+			{{#each categories}}
 			<div class="col-lg-4 col-md-6">
-				<div class="card">
+				<div class="card mb-4">
 					<div class="work-process-single-box">
 						<div class="work-process-thumb">
-							<img class="imgg2" src="/images/product-images/{{this._id}}.png" alt="">
+							<img class="imgg2" src="/images/category-images/{{this._id}}.png" alt="">
 							<div class="work-process-shape rotateme">
 								<img src="assets/img/shape2.png" alt="">
 							</div>
@@ -101,9 +101,9 @@
 								<h4>{{incremented @index}}</h4>
 							</div>
 							<div class="work-process-content">
-								<h4><a href="#!">{{this.title}}</a></h4><br>
-								{{!-- <a href="{{this.btnlink}}" class="btn btn-dark mt-2 w-75 mb-3">View Product</a>
-								--}}
+								<h4><a href="#!">{{this.name}}</a></h4><br>
+								<a href="{{this.dl}}" class="btn btn-dark mt-2 w-75 mb-3">View Product</a>
+
 							</div>
 						</div>
 					</div>
@@ -127,7 +127,8 @@
 		background-position: center center;
 		padding: 154px 0;
 	}
-
+</style>
+<style>
 	.img3 {
 		width: 130px;
 		margin-top: -17px;
@@ -153,7 +154,7 @@
 					</div>
 					<div class="footer-shape-title">
 						<p>We believe our services have immensely contributed to the infrastructure development
-							requirements of the country for the past 16 years.</p>
+							requirements of the country for the past 07 years.</p>
 					</div>
 
 				</div>
@@ -168,7 +169,7 @@
 							<li><a href="/"> Home</a></li>
 							<li><a href="/about-us"> About Us</a></li>
 							{{!-- <li><a href="#">Careers</a></li> --}}
-							<li><a href="#">Gallery</a></li>
+							{{!-- <li><a href="#">Gallery</a></li> --}}
 							<li><a href="/products"> Products</a></li>
 							<li><a href="/contact-us"> Contact</a></li>
 						</ul>
@@ -182,13 +183,9 @@
 					</div>
 					<div class="footer-wiget-menu">
 						<ul>
-							<li><a href="/products"> MEP Works</a></li>
-							<li><a href="/products"> Pipes & Fittings</a></li>
-							<li><a href="/products"> Valves & Accessories</a></li>
-							<li><a href="/products"> Mixers & Sanitary Accessories</a></li>
-							<li><a href="/products"> Hand Tools & Equipment’s</a></li>
-							<li><a href="/products"> Hardware’s & Safety Equipment’s</a></li>
-
+							{{#each categories}}
+							<li><a href="{{this.dl}}"> {{this.name}}</a></li>
+							{{/each}}
 						</ul>
 					</div>
 				</div>

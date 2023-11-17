@@ -12,6 +12,89 @@ const verifySignedIn = (req, res, next) => {
   }
 };
 
+
+/* GET home page. */
+router.get("/valves-accessories", async function (req, res, next) {
+  let user = req.session.user;
+  sites = await adminHelper.getAllsites();
+  socials = await adminHelper.getAllsocials();
+  banners = await adminHelper.getAllbanners();
+  abouts = await adminHelper.getAllabouts();
+  products = await adminHelper.getAllproducts();
+  contacts = await adminHelper.getAllcontacts();
+  sones = await adminHelper.getAllsones();
+  categories = await adminHelper.getAllcategories();
+  res.render("users/valves-accessories", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+});
+
+router.get("/mixers-sanitary-accessories", async function (req, res, next) {
+  let user = req.session.user;
+  sites = await adminHelper.getAllsites();
+  socials = await adminHelper.getAllsocials();
+  banners = await adminHelper.getAllbanners();
+  abouts = await adminHelper.getAllabouts();
+  products = await adminHelper.getAllproducts();
+  contacts = await adminHelper.getAllcontacts();
+  sones = await adminHelper.getAllsones();
+  categories = await adminHelper.getAllcategories();
+  res.render("users/mixers-sanitary-accessories", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+});
+
+router.get("/hand-tools-equipments", async function (req, res, next) {
+  let user = req.session.user;
+  sites = await adminHelper.getAllsites();
+  socials = await adminHelper.getAllsocials();
+  banners = await adminHelper.getAllbanners();
+  abouts = await adminHelper.getAllabouts();
+  products = await adminHelper.getAllproducts();
+  contacts = await adminHelper.getAllcontacts();
+  sones = await adminHelper.getAllsones();
+  categories = await adminHelper.getAllcategories();
+  res.render("users/hand-tools-equipments", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+});
+
+router.get("/hardwares-safety-equipments", async function (req, res, next) {
+  let user = req.session.user;
+  sites = await adminHelper.getAllsites();
+  socials = await adminHelper.getAllsocials();
+  banners = await adminHelper.getAllbanners();
+  abouts = await adminHelper.getAllabouts();
+  products = await adminHelper.getAllproducts();
+  contacts = await adminHelper.getAllcontacts();
+  sones = await adminHelper.getAllsones();
+  categories = await adminHelper.getAllcategories();
+  res.render("users/hardwares-safety-equipments", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+});
+
+router.get("/pipes-fittings", async function (req, res, next) {
+  let user = req.session.user;
+  sites = await adminHelper.getAllsites();
+  socials = await adminHelper.getAllsocials();
+  banners = await adminHelper.getAllbanners();
+  abouts = await adminHelper.getAllabouts();
+  products = await adminHelper.getAllproducts();
+  contacts = await adminHelper.getAllcontacts();
+  sones = await adminHelper.getAllsones();
+  categories = await adminHelper.getAllcategories();
+  res.render("users/pipes-fittings", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+});
+
+
+router.get("/career", async function (req, res, next) {
+  let user = req.session.user;
+  sites = await adminHelper.getAllsites();
+  socials = await adminHelper.getAllsocials();
+  banners = await adminHelper.getAllbanners();
+  abouts = await adminHelper.getAllabouts();
+  products = await adminHelper.getAllproducts();
+  contacts = await adminHelper.getAllcontacts();
+  sones = await adminHelper.getAllsones();
+  categories = await adminHelper.getAllcategories();
+  res.render("users/career", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+});
+
+
+
 /* GET home page. */
 router.get("/", async function (req, res, next) {
   let user = req.session.user;
@@ -22,7 +105,9 @@ router.get("/", async function (req, res, next) {
   products = await adminHelper.getAllproducts();
   contacts = await adminHelper.getAllcontacts();
   sones = await adminHelper.getAllsones();
-  res.render("users/home", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones });
+  categories = await adminHelper.getAllcategories();
+
+  res.render("users/home", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
 });
 
 router.get("/about-us", async function (req, res, next) {
@@ -30,14 +115,16 @@ router.get("/about-us", async function (req, res, next) {
   socials = await adminHelper.getAllsocials();
   abouts = await adminHelper.getAllabouts();
   contacts = await adminHelper.getAllcontacts();
-  res.render("users/about-us", { admin: false, sites, socials, abouts, contacts });
+  categories = await adminHelper.getAllcategories();
+  res.render("users/about-us", { admin: false, sites, socials, abouts, contacts, categories });
 }),
 
   router.get("/contact-us", async function (req, res, next) {
     sites = await adminHelper.getAllsites();
     socials = await adminHelper.getAllsocials();
     contacts = await adminHelper.getAllcontacts();
-    res.render("users/contact-us", { admin: false, sites, socials, contacts });
+    categories = await adminHelper.getAllcategories();
+    res.render("users/contact-us", { admin: false, sites, socials, contacts, categories });
   }),
 
   router.get("/products", async function (req, res, next) {
@@ -45,7 +132,8 @@ router.get("/about-us", async function (req, res, next) {
     socials = await adminHelper.getAllsocials();
     products = await adminHelper.getAllproducts();
     contacts = await adminHelper.getAllcontacts();
-    res.render("users/products", { admin: false, sites, socials, products, contacts });
+    categories = await adminHelper.getAllcategories();
+    res.render("users/products", { admin: false, sites, socials, products, contacts, categories });
   }),
 
   router.get("/service", async function (req, res, next) {
@@ -53,7 +141,8 @@ router.get("/about-us", async function (req, res, next) {
     socials = await adminHelper.getAllsocials();
     products = await adminHelper.getAllproducts();
     contacts = await adminHelper.getAllcontacts();
-    res.render("users/service", { admin: false, sites, socials, products, contacts });
+    categories = await adminHelper.getAllcategories();
+    res.render("users/service", { admin: false, sites, socials, products, contacts, categories });
   }),
 
 
