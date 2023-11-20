@@ -36,13 +36,7 @@
 
 
 <style>
-	@media (min-width: 1200px) and (max-width: 1600px) {
-		.thrown-menu {
-			text-align: end;
-			margin-right: 7px;
-			margin-top: -28px;
-		}
-	}
+
 </style>
 <div class="thrown-header-area" id="sticky-header">
 	<div class="container">
@@ -51,42 +45,37 @@
 				<center>
 					<div class="header-logo">
 						{{#each sites}}
-						<a href="index.html"><img src="/images/site-images/{{this._id}}.png" width="130px" alt=""></a>
+						<a href="/"><img src="/images/site-images/{{this._id}}.png" width="100px" alt=""></a>
 						{{/each}}
 					</div>
 				</center>
 			</div>
 			<div class="col-lg-6 col-md-6">
-				<div class="card  shadow" style="
-  height: 46px;
-  width: 626px;
-  border-radius:50px;
-  ">
-					<div class="thrown-menu">
-						<ul>
-							<li><a href="/">Home</a></li>
-							<li><a href="/about-us">About</a></li>
-							<li><a href="/career">Career</a></li>
-							<li><a href="#">Service <i class="fas fa-chevron-down"></i></a>
-								<div class="sub-menu">
-									<ul>
-										<li><a href="/service">Pumps and MEP Works</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="/products">Our Products <i class="fas fa-chevron-down"></i></a>
-								<div class="sub-menu">
-									<ul>
-										{{#each categories}}
-										<li><a href="{{this.dl}}">{{this.name}}</a></li>
-										{{/each}}
-									</ul>
-								</div>
-							</li>
 
-							<li><a href="/contact-us">Contact</a></li>
-						</ul>
-					</div>
+				<div class="thrown-menu">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/about-us">About</a></li>
+						<li><a href="/career">Career</a></li>
+						<li><a href="#">Service <i class="fas fa-chevron-down"></i></a>
+							<div class="sub-menu">
+								<ul>
+									<li><a href="/service">Pumps and MEP Works</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="/products">Our Products <i class="fas fa-chevron-down"></i></a>
+							<div class="sub-menu">
+								<ul>
+									{{#each categories}}
+									<li><a href="{{this.dl}}">{{this.name}}</a></li>
+									{{/each}}
+								</ul>
+							</div>
+						</li>
+
+						<li><a href="/contact-us">Contact</a></li>
+					</ul>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6">
@@ -115,7 +104,7 @@
 <div class="mobile-menu-area " id="navbar">
 	<div class="mobile-menu">
 		<div class="mobile-logo">
-			<a href="index.html"><img src="assets/img/logo4.png" width="75px" alt=""></a>
+			<a href="/"><img src="assets/img/logo4.png" width="75px" alt=""></a>
 		</div>
 		<div class="side-menu-info">
 			<div class="sidebar-menu">
@@ -161,7 +150,7 @@
 				<div class="sidebar-info-contents">
 					<div class="content-inner">
 						<div class="sidebar-logo">
-							<a href="index.html"><img src="assets/img/logo1.png" alt="logo"></a>
+							<a href="/"><img src="assets/img/logo1.png" alt="logo"></a>
 						</div>
 						<div class="sidebar-widget-menu">
 							<ul>
