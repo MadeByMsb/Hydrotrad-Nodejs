@@ -16,20 +16,36 @@
           <form action="/admin/product/edit-product/{{product._id}}" enctype="multipart/form-data" method="POST">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Sub Heading</label>
-              <input type="text" name="title" value="{{product.title}}" class="form-control">
+              <input type="text" name="name" value="{{product.name}}" class="form-control">
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Main Heading</label>
-              <input type="text" name="category" value="{{product.category}}" class="form-control">
+              <label for="exampleInputEmail1" class="form-label">Category</label>
+              <select class="form-select" name="category" value="{{product.category}}"
+                aria-label="Default select example">
+                <option value="{{product.category}}" selected>{{product.category}}</option>
+                {{#each categories}}
+                <option value="{{this.name}}">{{this.name}}</option>
+                {{/each}}
+              </select>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Description</label>
               <input type="text" name="desc" value="{{product.desc}}" class="form-control">
             </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Button Link</label>
-              <input type="text" name="btnlink" value="{{product.btnlink}}" class="form-control">
+            {{!-- <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Size</label>
+              <input type="text" name="size" value="{{product.size}}" class="form-control">
             </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Model No</label>
+              <input type="text" name="model" value="{{product.model}}" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Material</label>
+              <input type="text" name="material" value="{{product.material}}" class="form-control">
+            </div> --}}
 
             <div class="mb-3">
               <label for="" class="">Img</label><br>

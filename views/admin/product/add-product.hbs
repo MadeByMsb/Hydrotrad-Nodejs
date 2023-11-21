@@ -16,19 +16,19 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Category</label>
-              <select class="form-select" name="category" aria-label="Default select example">
-                <option selected>Select Category</option>
+              <select class="form-select" name="category" aria-label="Default select example" required>
+                <option value="" selected>Select Category</option>
                 {{#each categories}}
                 <option value="{{this.name}}">{{this.name}}</option>
                 {{/each}}
               </select>
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Description</label>
+              <label for="exampleInputEmail1" class="form-label">Description (Optional)</label>
               <input type="text" name="desc" class="form-control">
             </div>
             <hr>
-            <div class="mb-3">
+            {{!-- <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Size</label>
               <input type="text" name="size" class="form-control">
             </div>
@@ -41,7 +41,7 @@
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Material</label>
               <input type="text" name="material" class="form-control">
-            </div>
+            </div> --}}
 
 
             <div class="mb-4">

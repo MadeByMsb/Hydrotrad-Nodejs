@@ -714,10 +714,13 @@ module.exports = {
           },
           {
             $set: {
-              title: productDetails.title,
+              name: productDetails.name,
               category: productDetails.category,
               desc: productDetails.desc,
-              btnlink: productDetails.btnlink,
+              // size: productDetails.size,
+              // model: productDetails.model,
+              // material: productDetails.material,
+
             },
           }
         )
