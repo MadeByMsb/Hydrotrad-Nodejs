@@ -14,12 +14,10 @@ const verifySignedIn = (req, res, next) => {
 
 
 /* GET home page. */
-router.get("/prd-view/:dl/:name", async function (req, res, next) {
+router.get("/prd-view/:name", async function (req, res, next) {
   let user = req.session.user;
   let cat=req.params.name;
-  let dl=req.params.dl;
-  console.log(cat,"fffff")
-  await userHelper.getProductsByCategory(dl).then(async (products)=>{
+  await userHelper.getProductsByCategory(cat).then(async (products)=>{
      sites = await adminHelper.getAllsites();
      socials = await adminHelper.getAllsocials();
      banners = await adminHelper.getAllbanners();
