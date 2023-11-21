@@ -14,17 +14,22 @@ const verifySignedIn = (req, res, next) => {
 
 
 /* GET home page. */
-router.get("/valves-accessories", async function (req, res, next) {
+router.get("/prd-view/:dl/:name", async function (req, res, next) {
   let user = req.session.user;
-  sites = await adminHelper.getAllsites();
-  socials = await adminHelper.getAllsocials();
-  banners = await adminHelper.getAllbanners();
-  abouts = await adminHelper.getAllabouts();
-  products = await adminHelper.getAllproducts();
-  contacts = await adminHelper.getAllcontacts();
-  sones = await adminHelper.getAllsones();
-  categories = await adminHelper.getAllcategories();
-  res.render("users/valves-accessories", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+  let cat=req.params.name;
+  let dl=req.params.dl;
+  console.log(cat,"fffff")
+  await userHelper.getProductsByCategory(dl).then(async (products)=>{
+     sites = await adminHelper.getAllsites();
+     socials = await adminHelper.getAllsocials();
+     banners = await adminHelper.getAllbanners();
+     abouts = await adminHelper.getAllabouts();
+    contacts = await adminHelper.getAllcontacts();
+     sones = await adminHelper.getAllsones();
+    categories = await adminHelper.getAllcategories();
+    res.render("users/prd-view", { admin: false, sites,cat,abouts, contacts, sones,categories,socials, user,banners, products});
+
+  })
 });
 
 router.get("/mixers-sanitary-accessories", async function (req, res, next) {
