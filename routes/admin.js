@@ -32,7 +32,8 @@ router.get("/all-categories", verifySignedIn, function (req, res) {
 ///////ADD Category/////////////////////                                         
 router.get("/add-category", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
-  res.render("admin/category/add-category", { admin: true, layout: "adminlayout", administator });
+
+  res.render("admin/category/add-category", { admin: true, layout: "adminlayout", administator, });
 });
 
 ///////ADD Category/////////////////////                                         
@@ -493,9 +494,11 @@ router.get("/all-products", verifySignedIn, function (req, res) {
 });
 
 ///////ADD Products/////////////////////                                         
-router.get("/add-product", verifySignedIn, function (req, res) {
+router.get("/add-product", verifySignedIn, async function (req, res) {
   let administator = req.session.admin;
-  res.render("admin/product/add-product", { admin: true, layout: "adminlayout", administator });
+  let categoryId = req.params.id;
+  let categories = await adminHelper.getAllcategories(categoryId);
+  res.render("admin/product/add-product", { admin: true, layout: "adminlayout", administator, categories });
 });
 
 ///////ADD Products/////////////////////                                         

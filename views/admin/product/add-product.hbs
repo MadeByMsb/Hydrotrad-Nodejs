@@ -16,7 +16,12 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Category</label>
-              <input type="text" name="category" class="form-control">
+              <select class="form-select" name="category" aria-label="Default select example">
+                <option selected>Select Category</option>
+                {{#each categories}}
+                <option value="{{this.name}}">{{this.name}}</option>
+                {{/each}}
+              </select>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Description</label>
