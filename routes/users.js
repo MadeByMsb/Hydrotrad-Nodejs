@@ -37,9 +37,10 @@ router.get("/prd-view/:name", async function (req, res, next) {
     banners = await adminHelper.getAllbanners();
     abouts = await adminHelper.getAllabouts();
     contacts = await adminHelper.getAllcontacts();
+    branches = await adminHelper.getAllbranches();
     sones = await adminHelper.getAllsones();
     categories = await adminHelper.getAllcategories();
-    res.render("users/prd-view", { admin: false, sites, cat, abouts, contacts, sones, categories, socials, user, banners, products });
+    res.render("users/prd-view", { admin: false, sites, cat, abouts, contacts, sones, categories, socials, user, banners, products, branches });
 
   })
 });
@@ -51,10 +52,11 @@ router.get("/mixers-sanitary-accessories", async function (req, res, next) {
   banners = await adminHelper.getAllbanners();
   abouts = await adminHelper.getAllabouts();
   products = await adminHelper.getAllproducts();
+  branches = await adminHelper.getAllbranches();
   contacts = await adminHelper.getAllcontacts();
   sones = await adminHelper.getAllsones();
   categories = await adminHelper.getAllcategories();
-  res.render("users/mixers-sanitary-accessories", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+  res.render("users/mixers-sanitary-accessories", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches });
 });
 
 router.get("/hand-tools-equipments", async function (req, res, next) {
@@ -64,10 +66,11 @@ router.get("/hand-tools-equipments", async function (req, res, next) {
   banners = await adminHelper.getAllbanners();
   abouts = await adminHelper.getAllabouts();
   products = await adminHelper.getAllproducts();
+  branches = await adminHelper.getAllbranches();
   contacts = await adminHelper.getAllcontacts();
   sones = await adminHelper.getAllsones();
   categories = await adminHelper.getAllcategories();
-  res.render("users/hand-tools-equipments", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+  res.render("users/hand-tools-equipments", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches });
 });
 
 router.get("/hardwares-safety-equipments", async function (req, res, next) {
@@ -77,10 +80,11 @@ router.get("/hardwares-safety-equipments", async function (req, res, next) {
   banners = await adminHelper.getAllbanners();
   abouts = await adminHelper.getAllabouts();
   products = await adminHelper.getAllproducts();
+  branches = await adminHelper.getAllbranches();
   contacts = await adminHelper.getAllcontacts();
   sones = await adminHelper.getAllsones();
   categories = await adminHelper.getAllcategories();
-  res.render("users/hardwares-safety-equipments", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+  res.render("users/hardwares-safety-equipments", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches });
 });
 
 router.get("/pipes-fittings", async function (req, res, next) {
@@ -90,10 +94,11 @@ router.get("/pipes-fittings", async function (req, res, next) {
   banners = await adminHelper.getAllbanners();
   abouts = await adminHelper.getAllabouts();
   products = await adminHelper.getAllproducts();
+  branches = await adminHelper.getAllbranches();
   contacts = await adminHelper.getAllcontacts();
   sones = await adminHelper.getAllsones();
   categories = await adminHelper.getAllcategories();
-  res.render("users/pipes-fittings", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+  res.render("users/pipes-fittings", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches });
 });
 
 
@@ -105,9 +110,10 @@ router.get("/career", async function (req, res, next) {
   abouts = await adminHelper.getAllabouts();
   products = await adminHelper.getAllproducts();
   contacts = await adminHelper.getAllcontacts();
+  branches = await adminHelper.getAllbranches();
   sones = await adminHelper.getAllsones();
   categories = await adminHelper.getAllcategories();
-  res.render("users/career", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+  res.render("users/career", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches });
 });
 
 
@@ -120,28 +126,31 @@ router.get("/", async function (req, res, next) {
   banners = await adminHelper.getAllbanners();
   abouts = await adminHelper.getAllabouts();
   products = await adminHelper.getAllproducts();
+  branches = await adminHelper.getAllbranches();
   contacts = await adminHelper.getAllcontacts();
   sones = await adminHelper.getAllsones();
   categories = await adminHelper.getAllcategories();
 
-  res.render("users/home", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories });
+  res.render("users/home", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches });
 });
 
 router.get("/about-us", async function (req, res, next) {
   sites = await adminHelper.getAllsites();
   socials = await adminHelper.getAllsocials();
   abouts = await adminHelper.getAllabouts();
+  branches = await adminHelper.getAllbranches();
   contacts = await adminHelper.getAllcontacts();
   categories = await adminHelper.getAllcategories();
-  res.render("users/about-us", { admin: false, sites, socials, abouts, contacts, categories });
+  res.render("users/about-us", { admin: false, sites, socials, abouts, contacts, categories, branches });
 }),
 
   router.get("/contact-us", async function (req, res, next) {
     sites = await adminHelper.getAllsites();
     socials = await adminHelper.getAllsocials();
+    branches = await adminHelper.getAllbranches();
     contacts = await adminHelper.getAllcontacts();
     categories = await adminHelper.getAllcategories();
-    res.render("users/contact-us", { admin: false, sites, socials, contacts, categories });
+    res.render("users/contact-us", { admin: false, sites, socials, contacts, categories, branches });
   }),
 
   router.get("/products", async function (req, res, next) {
@@ -149,8 +158,9 @@ router.get("/about-us", async function (req, res, next) {
     socials = await adminHelper.getAllsocials();
     products = await adminHelper.getAllproducts();
     contacts = await adminHelper.getAllcontacts();
+    branches = await adminHelper.getAllbranches();
     categories = await adminHelper.getAllcategories();
-    res.render("users/products", { admin: false, sites, socials, products, contacts, categories });
+    res.render("users/products", { admin: false, sites, socials, products, contacts, categories, branches });
   }),
 
   router.get("/service", async function (req, res, next) {
@@ -158,8 +168,9 @@ router.get("/about-us", async function (req, res, next) {
     socials = await adminHelper.getAllsocials();
     products = await adminHelper.getAllproducts();
     contacts = await adminHelper.getAllcontacts();
+    branches = await adminHelper.getAllbranches();
     categories = await adminHelper.getAllcategories();
-    res.render("users/service", { admin: false, sites, socials, products, contacts, categories });
+    res.render("users/service", { admin: false, sites, socials, products, contacts, categories, branches });
   }),
 
 
