@@ -10,6 +10,5 @@ module.exports = {
     SONE_COLLECTION: "sone",
     CONTACT_COLLECTION: "contact",
     CATEGORY_COLLECTION: "category",
-
-
+    BRANCH_COLLECTION: "branch",
 }

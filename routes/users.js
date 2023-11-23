@@ -13,19 +13,33 @@ const verifySignedIn = (req, res, next) => {
 };
 
 
+router.get("/branches", async function (req, res, next) {
+  let user = req.session.user;
+  sites = await adminHelper.getAllsites();
+  socials = await adminHelper.getAllsocials();
+  banners = await adminHelper.getAllbanners();
+  abouts = await adminHelper.getAllabouts();
+  products = await adminHelper.getAllproducts();
+  contacts = await adminHelper.getAllcontacts();
+  sones = await adminHelper.getAllsones();
+  categories = await adminHelper.getAllcategories();
+  branches = await adminHelper.getAllbranches();
+  res.render("users/branches", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches });
+});
+
 /* GET home page. */
 router.get("/prd-view/:name", async function (req, res, next) {
   let user = req.session.user;
-  let cat=req.params.name;
-  await userHelper.getProductsByCategory(cat).then(async (products)=>{
-     sites = await adminHelper.getAllsites();
-     socials = await adminHelper.getAllsocials();
-     banners = await adminHelper.getAllbanners();
-     abouts = await adminHelper.getAllabouts();
+  let cat = req.params.name;
+  await userHelper.getProductsByCategory(cat).then(async (products) => {
+    sites = await adminHelper.getAllsites();
+    socials = await adminHelper.getAllsocials();
+    banners = await adminHelper.getAllbanners();
+    abouts = await adminHelper.getAllabouts();
     contacts = await adminHelper.getAllcontacts();
-     sones = await adminHelper.getAllsones();
+    sones = await adminHelper.getAllsones();
     categories = await adminHelper.getAllcategories();
-    res.render("users/prd-view", { admin: false, sites,cat,abouts, contacts, sones,categories,socials, user,banners, products});
+    res.render("users/prd-view", { admin: false, sites, cat, abouts, contacts, sones, categories, socials, user, banners, products });
 
   })
 });

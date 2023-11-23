@@ -6,6 +6,99 @@ const objectId = require("mongodb").ObjectID;
 module.exports = {
 
 
+  ///////ADD branches/////////////////////                                         
+  addbranch: (branch, callback) => {
+    console.log(branch);
+    branch.Price = parseInt(branch.Price);
+    db.get()
+      .collection(collections.BRANCH_COLLECTION)
+      .insertOne(branch)
+      .then((data) => {
+        console.log(data);
+        callback(data.ops[0]._id);
+      });
+  },
+
+  ///////GET ALL branches/////////////////////                                            
+  getAllbranches: () => {
+    return new Promise(async (resolve, reject) => {
+      let branches = await db
+        .get()
+        .collection(collections.BRANCH_COLLECTION)
+        .find()
+        .toArray();
+      resolve(branches);
+    });
+  },
+
+  ///////ADD branches DETAILS/////////////////////                                            
+  getbranchDetails: (branchId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BRANCH_COLLECTION)
+        .findOne({
+          _id: objectId(branchId)
+        })
+        .then((response) => {
+          resolve(response);
+        });
+    });
+  },
+
+  ///////DELETE branches/////////////////////                                            
+  deletebranch: (branchId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BRANCH_COLLECTION)
+        .removeOne({
+          _id: objectId(branchId)
+        })
+        .then((response) => {
+          console.log(response);
+          resolve(response);
+        });
+    });
+  },
+
+  ///////UPDATE branches/////////////////////                                            
+  updatebranch: (branchId, branchDetails) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BRANCH_COLLECTION)
+        .updateOne(
+          {
+            _id: objectId(branchId)
+          },
+          {
+            $set: {
+              Name: branchDetails.Name,
+              Category: branchDetails.Category,
+              Price: branchDetails.Price,
+              Description: branchDetails.Description,
+            },
+          }
+        )
+        .then((response) => {
+          resolve();
+        });
+    });
+  },
+
+
+  ///////DELETE ALL branches/////////////////////                                            
+  deleteAllbranches: () => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BRANCH_COLLECTION)
+        .remove({})
+        .then(() => {
+          resolve();
+        });
+    });
+  },
+
+
+
   ///////ADD Category/////////////////////                                         
   addcategory: (category, callback) => {
     console.log(category);

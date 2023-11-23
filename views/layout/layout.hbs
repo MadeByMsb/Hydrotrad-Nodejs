@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Hydro - sanitary ware trading l.L.C. </title>
+	<title>Hydro Sanitary Ware Trading LLC. </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Favicon -->
@@ -49,215 +49,407 @@
 
 
 </head>
-	<!-- loder -->
-	<div class="loader_bg">
-		<div class="loader"></div>
-		<h4 class="loading-title"></h4>
-	</div>
-	{{#each sites}}
-	<style>
-		.header-logo {
-			margin-top: -60px;
-			margin-left: -94px;
+<!-- loder -->
+<div class="loader_bg">
+	<div class="loader"></div>
+	<h4 class="loading-title"></h4>
+</div>
+{{#each sites}}
+<style>
+	.header-logo {
+		margin-top: -60px;
+		margin-left: -94px;
+	}
+
+	.man {
+		width: 431px;
+		margin-top: -226px;
+	}
+
+	.slider-shape2 {
+		position: absolute;
+		top: 53%;
+		right: 35px;
+	}
+
+	.banner-carousel .slide-item {
+		position: relative;
+		overflow: hidden;
+		min-height: 792px;
+	}
+
+	.about-shape {
+		position: absolute;
+		bottom: -32px;
+		right: 111px;
+	}
+
+	.thrown-btn a {
+		background: {
+				{
+				this.btncolor
+			}
 		}
 
-		.man {
-			width: 431px;
-			margin-top: -226px;
+		;
+		color: #FFF;
+		font-size: 18px;
+		font-weight: 500;
+		text-decoration: none;
+		padding: 13px 30px;
+		border-radius: 35px;
+		z-index: 1;
+	}
+
+	.thrown-topbar-area::before {
+		background: white;
+	}
+
+	.thrown-header-area::before {
+		background: white;
+	}
+
+	.mobile-menu-area {
+		background: {
+				{
+				this.primarycolor
+			}
 		}
 
-		.slider-shape2 {
-			position: absolute;
-			top: 53%;
-			right: 35px;
+		;
+	}
+
+	.topbar-info span i {
+		color: {
+				{
+				this.primarycolor
+			}
 		}
 
-		.banner-carousel .slide-item {
-			position: relative;
-			overflow: hidden;
-			min-height: 792px;
+		;
+		margin-right: 5px;
+	}
+
+	.topbar-social-item ul li a i {
+		color: {
+				{
+				this.primarycolor
+			}
 		}
 
-		.about-shape {
-			position: absolute;
-			bottom: -32px;
-			right: 111px;
+		;
+	}
+
+	.topbar-social-item ul li a i::after {
+		background: {
+				{
+				this.primarycolor
+			}
 		}
 
-		.thrown-btn a {
-    background: {{this.btncolor}};
-    color: #FFF;
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 13px 30px;
-    border-radius: 35px;
-    z-index: 1;
-}
-.thrown-topbar-area::before {
-    background: white;
-}
-.thrown-header-area::before {
-    background: white;
-}
+		;
+	}
 
-.mobile-menu-area {
-    background: {{this.primarycolor}};
-}
-.topbar-info span i {
-    color: {{this.primarycolor}};
-    margin-right: 5px;
-}
-.topbar-social-item ul li a i {
-    color: {{this.primarycolor}};
-}
-.topbar-social-item ul li a i::after{
-    background: {{this.primarycolor}};
-}
-.topbar-social-item ul li.active a i {
-    color: {{this.primarycolor}};
-}
+	.topbar-social-item ul li.active a i {
+		color: {
+				{
+				this.primarycolor
+			}
+		}
 
-.thrown-menu ul li a:hover{
-    color: {{this.primarycolor}};
-}
+		;
+	}
 
-.thrown-menu ul li a::before {
-    background: {{this.primarycolor}};
-}
+	.thrown-menu ul li a:hover {
+		color: {
+				{
+				this.primarycolor
+			}
+		}
 
-a.handbag:before {
-    background: {{this.primarycolor}};
-}
-.thrown-menu ul .sub-menu {
-    border-top: 2px solid {{this.primarycolor}};
-}
-.thrown-menu ul .home-menu {
-    border-top: 4px solid {{this.primarycolor}};
-}
-.about-sub-title h4 {
-    color: {{this.primarycolor}};
-}
-.choose-contact {
-    background: {{this.primarycolor}};
-}
-.section-sub-title h4 {
-    color: {{this.primarycolor}};
-}
+		;
+	}
 
-.portfolio-content {
-    background: {{this.primarycolor}};
-}
-.counter-area {
-    background: {{this.primarycolor}};
-}
-.contact-list span i {
-    background: {{this.primarycolor}};  
-}
-.contact-icon i {
-    background: {{this.primarycolor}};  
-}
-.contact-content h5 {
-    color: {{this.primarycolor}};
+	.thrown-menu ul li a::before {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
 
-}
-.form-box-button button {
-    background: {{this.primarycolor}};  
-}
-.footer-wiget-icon ul li a i::after {
-    background: {{this.primarycolor}};  
-}
-.top-wrap .go-top-button {
-    background: {{this.primarycolor}};  
-}
-.loader:before, .loader:after{
-    border: 1em solid {{this.primarycolor}};
-}
-.footer-wiget-menu ul li a:hover {
-    color: {{this.primarycolor}};
-}
-.slider-sub-title span {
-    background: {{this.primarycolor}};  
-}
-.banner-section .owl-prev::before {
-background: {{this.primarycolor}};
-}
-.thrown-menu ul li a {
-    display: inline-block;
-    color: #141422;
-    font-family: Jost;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 38px 0;
-    text-decoration: none;
-    position: relative;
-    transition: .5s;
-}
-.thrown-menu ul li a:hover {
-    color: {{this.primarycolor}};
-   
-}
-.thrown-topbar-area {
-    background: #fff;
-	color:black;
-    padding: 17px 0;
-    position: relative;
-}
-.mobile-menu-area {
-    background: #ffffff;
-}
-.mobile-menu-area.sticky-menu {
-    left: 0;
-    margin: auto;
-    top: 0;
-    right: 0;
-    width: 100%;
-    position: unset !important;
-    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.07);
-    -webkit-animation: 300ms running fadeInDown;
-    animation: 500ms running fadeInUp;
-    -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
-    transition: 0.5s !important;
-    background: #fff!important;
-    z-index: 9999 !important;
-    animation-name: slideInDown;
-    padding: 20px;
-}
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-  font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-  z-index:100;
-}
-.bi-whatsapp::before {
-    content: "\f618";
-    margin-top: 14px;
-}
+		;
+	}
 
-.my-float{
-	margin-top:16px;
-}
-	</style>
+	a.handbag:before {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.thrown-menu ul .sub-menu {
+		border-top: 2px solid {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.thrown-menu ul .home-menu {
+		border-top: 4px solid {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.about-sub-title h4 {
+		color: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.choose-contact {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.section-sub-title h4 {
+		color: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.portfolio-content {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.counter-area {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.contact-list span i {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.contact-icon i {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.contact-content h5 {
+		color: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+
+	}
+
+	.form-box-button button {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.footer-wiget-icon ul li a i::after {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.top-wrap .go-top-button {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.loader:before,
+	.loader:after {
+		border: 1em solid {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.footer-wiget-menu ul li a:hover {
+		color: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.slider-sub-title span {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.banner-section .owl-prev::before {
+		background: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+	}
+
+	.thrown-menu ul li a {
+		display: inline-block;
+		color: #141422;
+		font-family: Jost;
+		font-size: 16px;
+		font-weight: 700;
+		padding: 38px 0;
+		text-decoration: none;
+		position: relative;
+		transition: .5s;
+	}
+
+	.thrown-menu ul li a:hover {
+		color: {
+				{
+				this.primarycolor
+			}
+		}
+
+		;
+
+	}
+
+	.thrown-topbar-area {
+		background: #fff;
+		color: black;
+		padding: 17px 0;
+		position: relative;
+	}
+
+	.mobile-menu-area {
+		background: #ffffff;
+	}
+
+	.mobile-menu-area.sticky-menu {
+		left: 0;
+		margin: auto;
+		top: 0;
+		right: 0;
+		width: 100%;
+		position: unset !important;
+		box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.07);
+		-webkit-animation: 300ms running fadeInDown;
+		animation: 500ms running fadeInUp;
+		-webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+		transition: 0.5s !important;
+		background: #fff !important;
+		z-index: 9999 !important;
+		animation-name: slideInDown;
+		padding: 20px;
+	}
+
+	.float {
+		position: fixed;
+		width: 60px;
+		height: 60px;
+		bottom: 40px;
+		right: 40px;
+		background-color: #25d366;
+		color: #FFF;
+		border-radius: 50px;
+		text-align: center;
+		font-size: 30px;
+		box-shadow: 2px 2px 3px #999;
+		z-index: 100;
+	}
+
+	.bi-whatsapp::before {
+		content: "\f618";
+		margin-top: 14px;
+	}
+
+	.my-float {
+		margin-top: 16px;
+	}
+</style>
 {{/each}}
 
 <body>
-  {{#if admin}}
-  {{>admin-header}}
-  {{else}}
-  {{>user-header}}
-  {{/if}}
+	{{#if admin}}
+	{{>admin-header}}
+	{{else}}
+	{{>user-header}}
+	{{/if}}
 
-  {{{body}}}
+	{{{body}}}
 
- 	<!-- jquery js -->
+	<!-- jquery js -->
 	<script src="/assets/js/vendor/jquery-3.6.2.min.js"></script>
 
 	<script src="/assets/js/popper.min.js"></script>

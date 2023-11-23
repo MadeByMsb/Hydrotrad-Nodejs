@@ -21,6 +21,79 @@ router.get("/", verifySignedIn, function (req, res, next) {
 });
 
 
+
+
+///////ALL branch/////////////////////                                         
+router.get("/all-branches", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  adminHelper.getAllbranches().then((branches) => {
+    res.render("admin/branch/all-branches", { admin: true, layout: "adminlayout", branches, administator });
+  });
+});
+
+///////ADD branches/////////////////////                                         
+router.get("/add-branch", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  res.render("admin/branch/add-branch", { admin: true, layout: "adminlayout", administator });
+});
+
+///////ADD branches/////////////////////                                         
+router.post("/add-branch", function (req, res) {
+  adminHelper.addbranch(req.body, (id) => {
+    let image = req.files.Image;
+    image.mv("./public/images/branch-images/" + id + ".png", (err, done) => {
+      if (!err) {
+        res.redirect("/admin/branch/all-branches");
+      } else {
+        console.log(err);
+      }
+    });
+  });
+});
+
+///////EDIT branches/////////////////////                                         
+router.get("/edit-branch/:id", verifySignedIn, async function (req, res) {
+  let administator = req.session.admin;
+  let branchId = req.params.id;
+  let branch = await adminHelper.getbranchDetails(branchId);
+  console.log(branch);
+  res.render("admin/branch/edit-branch", { admin: true, layout: "adminlayout", branch, administator });
+});
+
+///////EDIT branches/////////////////////                                         
+router.post("/edit-branch/:id", verifySignedIn, function (req, res) {
+  let branchId = req.params.id;
+  adminHelper.updatebranch(branchId, req.body).then(() => {
+    if (req.files) {
+      let image = req.files.Image;
+      if (image) {
+        image.mv("./public/images/branch-images/" + branchId + ".png");
+      }
+    }
+    res.redirect("/admin/branch/all-branches");
+  });
+});
+
+///////DELETE branches/////////////////////                                         
+router.get("/delete-branch/:id", verifySignedIn, function (req, res) {
+  let branchId = req.params.id;
+  adminHelper.deletebranch(branchId).then((response) => {
+    fs.unlinkSync("./public/images/branch-images/" + branchId + ".png");
+    res.redirect("/admin/branch/all-branches");
+  });
+});
+
+///////DELETE ALL branches/////////////////////                                         
+router.get("/delete-all-branches", verifySignedIn, function (req, res) {
+  adminHelper.deleteAllbranches().then(() => {
+    res.redirect("/admin/branch/all-branches");
+  });
+});
+
+
+
+
+
 ///////ALL category/////////////////////                                         
 router.get("/all-categories", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
