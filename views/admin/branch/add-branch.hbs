@@ -12,20 +12,15 @@
           <form action="/admin/branch/add-branch" enctype="multipart/form-data" method="POST">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Brand Name</label>
-              <input type="text" name="bname" class="form-control">
+              <input type="text" name="bname" class="form-control" required>
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Brand Link</label>
-              <input type="text" name="blink" class="form-control" required>
+              <label for="exampleInputEmail1" class="form-label">Destination Link</label>
+              <input type="text" name="dl" class="form-control">
             </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Description</label>
-              <input type="text" name="desc" class="form-control">
-            </div>
-
 
             <div class="mb-4">
-              <label for="exampleInputPassword1" class="form-label">Brand Logo</label><br>
+              <label for="exampleInputPassword1" class="form-label">Image</label><br>
               <input type="file" name="Image" class="form-control" required>
             </div>
 

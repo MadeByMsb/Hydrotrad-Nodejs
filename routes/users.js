@@ -45,6 +45,25 @@ router.get("/prd-view/:name", async function (req, res, next) {
   })
 });
 
+router.get("/brand-view/:name", async function (req, res, next) {
+  let user = req.session.user;
+  let bb = req.params.name;
+  await userHelper.getBranchprosByBranch(bb).then(async (branchpros) => {
+    sites = await adminHelper.getAllsites();
+    socials = await adminHelper.getAllsocials();
+    banners = await adminHelper.getAllbanners();
+    abouts = await adminHelper.getAllabouts();
+    contacts = await adminHelper.getAllcontacts();
+    branches = await adminHelper.getAllbranches();
+    branchpros = await adminHelper.getAllbranchpros();
+    sones = await adminHelper.getAllsones();
+    categories = await adminHelper.getAllcategories();
+    res.render("users/brand-view", { admin: false, sites, bb, abouts, contacts, sones, categories, socials, user, banners, branchpros, branches, branchpros });
+
+  })
+});
+
+
 router.get("/mixers-sanitary-accessories", async function (req, res, next) {
   let user = req.session.user;
   sites = await adminHelper.getAllsites();
@@ -127,11 +146,12 @@ router.get("/", async function (req, res, next) {
   abouts = await adminHelper.getAllabouts();
   products = await adminHelper.getAllproducts();
   branches = await adminHelper.getAllbranches();
+  branchpros = await adminHelper.getAllbranchpros();
   contacts = await adminHelper.getAllcontacts();
   sones = await adminHelper.getAllsones();
   categories = await adminHelper.getAllcategories();
 
-  res.render("users/home", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches });
+  res.render("users/home", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches, branchpros });
 });
 
 router.get("/about-us", async function (req, res, next) {

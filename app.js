@@ -60,6 +60,7 @@ app.use("/admin/product", adminRouter);
 app.use("/admin/contact", adminRouter);
 app.use("/admin/category", adminRouter);
 app.use("/admin/branch", adminRouter);
+app.use("/admin/branchpro", adminRouter);
 
 
 // catch 404 and forward to error handler

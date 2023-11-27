@@ -15,14 +15,40 @@ module.exports = {
       resolve(products);
     });
   },
-  getProductsByCategory:(cat)=>{
+
+  getAllbranchpros: () => {
+    return new Promise(async (resolve, reject) => {
+      let branchpros = await db
+        .get()
+        .collection(collections.BRANCHPRO_COLLECTION)
+        .find()
+        .toArray();
+      resolve(branchpros);
+    });
+  },
+
+
+
+  getProductsByCategory: (cat) => {
     return new Promise(async (resolve, reject) => {
       let products = await db
         .get()
         .collection(collections.PRODUCT_COLLECTION)
-        .find({category:cat})
+        .find({ category: cat })
         .toArray();
       resolve(products);
+    });
+
+  },
+
+  getBranchprosByBranch: (bb) => {
+    return new Promise(async (resolve, reject) => {
+      let branchpros = await db
+        .get()
+        .collection(collections.BRANCHPRO_COLLECTION)
+        .find({ branch: bb })
+        .toArray();
+      resolve(branchpros);
     });
 
   },
@@ -71,7 +97,7 @@ module.exports = {
     return new Promise(async (resolve, reject) => {
       db.get()
         .collection(collections.PRODUCTS_COLLECTION)
-        .createIndex({ Name : "text" }).then(async()=>{
+        .createIndex({ Name: "text" }).then(async () => {
           let result = await db
             .get()
             .collection(collections.PRODUCTS_COLLECTION)

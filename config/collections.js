@@ -11,4 +11,6 @@ module.exports = {
     CONTACT_COLLECTION: "contact",
     CATEGORY_COLLECTION: "category",
     BRANCH_COLLECTION: "branch",
+    BRANCHPRO_COLLECTION: "branchpro",
+
 }

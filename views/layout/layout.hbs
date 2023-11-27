@@ -110,9 +110,7 @@
 	}
 
 	.topbar-info span i {
-		color: {{this.primarycolor}}
-
-		;
+		color: {{this.primarycolor}};
 		margin-right: 5px;
 	}
 
@@ -283,6 +281,44 @@
 	.my-float {
 		margin-top: 16px;
 	}
+
+	@media (min-width: 1200px) and (max-width: 1600px){
+.thrown-menu {
+    text-align: right;
+    margin-right: -24px;
+    margin-top: 15px;
+}}
+.thrown-menu ul .sub-menu {
+    border-top: 9px solid #007bc7;
+}
+.thrown-menu ul .sub-menu {
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    border-radius: 5px;
+    width: 217px;
+    text-align: left;
+    margin: 0;
+    -webkit-box-shadow: 0px 1px 3px rgb(0 0 0 / 30%);
+    transition: .5s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 11;
+}
+.thrown-menu ul .sub-menu ul li a {
+    padding: 5px 12px;
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+    visibility: inherit !important;
+    color: #141422;
+    margin: 0;
+    font-size: 16px;
+}
+.thrown-menu ul .sub-menu ul li a:hover {
+  
+    color: {{this.primarycolor}};
+}
 </style>
 {{/each}}
 

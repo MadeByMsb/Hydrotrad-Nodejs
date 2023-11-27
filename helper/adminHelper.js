@@ -6,6 +6,99 @@ const objectId = require("mongodb").ObjectID;
 module.exports = {
 
 
+
+  ///////ADD branchpro/////////////////////                                         
+  addbranchpro: (branchpro, callback) => {
+    console.log(branchpro);
+    branchpro.Price = parseInt(branchpro.Price);
+    db.get()
+      .collection(collections.BRANCHPRO_COLLECTION)
+      .insertOne(branchpro)
+      .then((data) => {
+        console.log(data);
+        callback(data.ops[0]._id);
+      });
+  },
+
+  ///////GET ALL branchpro/////////////////////                                            
+  getAllbranchpros: () => {
+    return new Promise(async (resolve, reject) => {
+      let branchpros = await db
+        .get()
+        .collection(collections.BRANCHPRO_COLLECTION)
+        .find()
+        .toArray();
+      resolve(branchpros);
+    });
+  },
+
+  ///////ADD branchpro DETAILS/////////////////////                                            
+  getbranchproDetails: (branchproId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BRANCHPRO_COLLECTION)
+        .findOne({
+          _id: objectId(branchproId)
+        })
+        .then((response) => {
+          resolve(response);
+        });
+    });
+  },
+
+  ///////DELETE branchpro/////////////////////                                            
+  deletebranchpro: (branchproId) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BRANCHPRO_COLLECTION)
+        .removeOne({
+          _id: objectId(branchproId)
+        })
+        .then((response) => {
+          console.log(response);
+          resolve(response);
+        });
+    });
+  },
+
+  ///////UPDATE branchpro/////////////////////                                            
+  updatebranchpro: (branchproId, branchproDetails) => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BRANCHPRO_COLLECTION)
+        .updateOne(
+          {
+            _id: objectId(branchproId)
+          },
+          {
+            $set: {
+              Name: branchproDetails.Name,
+              Category: branchproDetails.Category,
+              Price: branchproDetails.Price,
+              Description: branchproDetails.Description,
+            },
+          }
+        )
+        .then((response) => {
+          resolve();
+        });
+    });
+  },
+
+
+  ///////DELETE ALL branchpro/////////////////////                                            
+  deleteAllbranchpros: () => {
+    return new Promise((resolve, reject) => {
+      db.get()
+        .collection(collections.BRANCHPRO_COLLECTION)
+        .remove({})
+        .then(() => {
+          resolve();
+        });
+    });
+  },
+
+
   ///////ADD branches/////////////////////                                         
   addbranch: (branch, callback) => {
     console.log(branch);
