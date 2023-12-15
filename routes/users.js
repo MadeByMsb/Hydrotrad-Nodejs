@@ -13,7 +13,7 @@ const verifySignedIn = (req, res, next) => {
 };
 
 
-router.get("/branches", async function (req, res, next) {
+router.get("/brands", async function (req, res, next) {
   let user = req.session.user;
   sites = await adminHelper.getAllsites();
   socials = await adminHelper.getAllsocials();
@@ -24,7 +24,7 @@ router.get("/branches", async function (req, res, next) {
   sones = await adminHelper.getAllsones();
   categories = await adminHelper.getAllcategories();
   branches = await adminHelper.getAllbranches();
-  res.render("users/branches", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches });
+  res.render("users/brands", { admin: false, sites, socials, user, banners, abouts, products, contacts, sones, categories, branches });
 });
 
 /* GET home page. */
